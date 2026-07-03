@@ -1,0 +1,2824 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Satisfy&display=swap');
+
+/* ==========================
+   DESIGN SYSTEM - BENDITO TALLER (GOOGLE SITES DESIGN)
+========================== */
+:root {
+    --primary-color: #00B8A6; /* Teal verde brillante */
+    --primary-gradient: linear-gradient(135deg, #00B8A6 0%, #009182 100%);
+    --accent-color: #e4b3a9; /* Coral/Rosado suave de Google Sites */
+    --danger-gradient: linear-gradient(135deg, #e4b3a9 0%, #cf9c92 100%);
+    --bg-light: #e6e3df; /* Beige / Gris cálido de Google Sites */
+    --bg-card: #ffffff;
+    --bg-panel: linear-gradient(135deg, #ffffff 0%, #f4f1ed 100%);
+    --text-main: #1c1c1c; /* Carbón / Casi negro */
+    --text-muted: #5a5a5a;
+    --border-color: #d1cbc4;
+    --shadow-sm: 0 4px 12px rgba(28, 28, 28, 0.04);
+    --shadow-md: 0 10px 25px rgba(28, 28, 28, 0.06);
+    --shadow-lg: 0 20px 40px rgba(28, 28, 28, 0.1);
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 26px;
+    --font-serif: 'Merriweather', Georgia, serif;
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+}
+
+/* ===== GENERAL HEADER / NAV ===== */
+.main-navbar {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.main-navbar::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60px; /* Achicado verticalmente en escritorio */
+    background-image: url('img/toldo_vintage6_cropped.png');
+    background-size: 100% 100%; /* Estirado del largo de la barra */
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.15));
+    border-bottom: none;
+}
+
+#catalog-section {
+    scroll-margin-top: 135px;
+}
+
+@media (max-width: 1200px) {
+    .main-navbar::before {
+        height: 45px; /* Achicado en tablets */
+    }
+    #catalog-section {
+        scroll-margin-top: 125px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-navbar::before {
+        background-image: url('img/toldo_nuevo.png');
+        height: 70px; /* Cambiado a 70px según requerimiento */
+        background-size: 100% 100%; /* Mostrar imagen completa */
+    }
+    #catalog-section {
+        scroll-margin-top: 180px; /* Ajustado en base a la nueva altura del toldo */
+    }
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(75, 55, 45, 0.08));
+}
+
+.nav-brand-btn {
+    user-select: none;
+    text-decoration: none;
+    background: linear-gradient(135deg, #95AB9E 0%, #7d9084 100%);
+    color: white !important;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-brand-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    filter: brightness(1.05);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Categorías Dropdown */
+.categories-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    color: #4b372d; /* Café oscuro */
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+
+.dropdown-btn:hover {
+    background: rgba(75, 55, 45, 0.05);
+    color: var(--primary-color);
+}
+
+.dropdown-btn .arrow-down {
+    font-size: 11px;
+    transition: transform 0.2s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    z-index: 1100;
+    margin-top: 8px;
+    overflow: hidden;
+    animation: fadeInDropdown 0.2s ease-out;
+}
+
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-item {
+    color: var(--text-main);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: #fcf9f5;
+    color: var(--primary-color);
+}
+
+/* Buscador en la Barra Superior */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    background: #fdfaf6;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 2px 6px 2px 16px;
+    height: 40px;
+    max-width: 220px;
+    transition: all 0.3s ease;
+}
+
+.search-bar-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 184, 166, 0.15);
+    background: #ffffff;
+}
+
+.search-bar-container input {
+    border: none;
+    background: none;
+    outline: none;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--text-main);
+    width: 100%;
+    padding: 0;
+}
+
+.search-bar-container input::placeholder {
+    color: #a0958d;
+}
+
+.search-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #4b372d;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.search-btn:hover {
+    background-color: rgba(75, 55, 45, 0.05);
+    transform: scale(1.1);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+}
+
+.nav-item a:hover,
+.nav-item.active a {
+    color: var(--primary-color);
+    background: rgba(0, 184, 166, 0.08);
+}
+
+.nav-cart-btn { user-select: none;
+    border: none;
+    background: linear-gradient(135deg, #95AB9E 0%, #7d9084 100%);
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-btn-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-cart-btn * { pointer-events: none; } .nav-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    filter: brightness(1.05);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* ===== HERO BANNER ===== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(245, 236, 225, 0.5) 0%, rgba(229, 218, 203, 0.3) 100%);
+    padding: 60px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--text-main);
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin: 0 0 24px 0;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    filter: brightness(1.03);
+}
+
+/* ===== HOME CATEGORIES ===== */
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin: 40px 0 24px 0;
+    color: var(--text-main);
+}
+
+/* Carrusel Premium */
+.carousel-container {
+    max-width: 750px;
+    height: 480px; /* Más delgado y más alto */
+    margin: 0 auto 40px auto;
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(229, 218, 203, 0.4);
+    background-color: #faf6f0; /* Color de fondo cálido para rellenar */
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Las imágenes se ajustan completamente al contenedor */
+    background-color: #faf6f0;
+    display: block;
+    transition: transform 6s linear;
+}
+
+/* Efecto Ken Burns muy suave para dar vida al carrusel */
+.carousel-slide.active img {
+    transform: scale(1.05);
+}
+
+.carousel-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(75, 55, 45, 0.5) 0%, rgba(75, 55, 45, 0) 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px 40px;
+    z-index: 2;
+}
+
+.carousel-caption {
+    color: #fffcf8;
+    text-shadow: 0 2px 4px rgba(28, 28, 28, 0.3);
+}
+
+.carousel-caption h3 {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.carousel-caption p {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    margin: 0;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Flechas de navegación */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(229, 218, 203, 0.5);
+    color: #4b372d;
+    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.carousel-arrow:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: var(--shadow-md);
+}
+
+.carousel-arrow.prev {
+    left: 20px;
+}
+
+.carousel-arrow.next {
+    right: 20px;
+}
+
+/* Indicadores de puntos */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(75, 55, 45, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+    width: 24px; /* Punto alargado para indicar activo de forma premium */
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 280px; /* un poco más bajo en móvil */
+        margin-bottom: 30px;
+    }
+    .carousel-caption h3 {
+        font-size: 20px;
+    }
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+    .carousel-arrow.prev {
+        left: 10px;
+    }
+    .carousel-arrow.next {
+        right: 10px;
+    }
+}
+
+.categories-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 24px 60px 24px;
+}
+
+/* 1. CONTENEDOR PRINCIPAL Y BORDE */
+.category-card {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    border-radius: 20px;
+    overflow: visible;
+    padding: 3px;
+    box-sizing: border-box;
+    text-decoration: none;
+    display: flex;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: transparent;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* 2. EL RAYO DE LUZ GIRATORIO */
+.category-card::before {
+    display: none;
+}
+
+/* En hover o active, se activa la animación y aumenta la opacidad */
+/*
+.category-card:hover::before,
+.category-card.active::before {
+    opacity: 1;
+    animation: rotateBorder 3s linear infinite;
+}
+*/
+
+
+@keyframes rotateBorder {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 3. CONTENEDOR INTERNO (La tarjeta real) */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 17px;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-color: transparent;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Marco interno decorativo y corazones saliendo de las líneas al pasar el mouse */
+.card-inner::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    
+    background-image: 
+        /* Top border (5 hearts) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        /* Bottom border (5 hearts) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        /* Left border (5 hearts) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        /* Right border (5 hearts) */
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z' fill='%23e4b3a9'/></svg>");
+        
+    background-repeat: no-repeat;
+    background-size: 14px 14px; /* Aumentado un 40% (de 10px a 14px) */
+    will-change: opacity, background-position;
+}
+
+/* Copos de nieve para la tarjeta de Navidad */
+.card-navidad .card-inner::before {
+    background-image: 
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='2' x2='12' y2='22'/><line x1='2' y1='12' x2='22' y2='12'/><line x1='4.93' y1='4.93' x2='19.07' y2='19.07'/><line x1='4.93' y1='19.07' x2='19.07' y2='4.93'/><polyline points='10 5 12 3 14 5'/><polyline points='10 19 12 21 14 19'/><polyline points='5 10 3 12 5 14'/><polyline points='19 10 21 12 19 14'/></svg>");
+}
+
+/* Lunas y soles giratorios para la tarjeta Mística */
+.card-mistico .card-inner::before {
+    background-image: 
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='6s' repeatCount='indefinite'/></g></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><g><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/><animateTransform attributeName='transform' type='rotate' from='0 12 12' to='-360 12 12' dur='8s' repeatCount='indefinite'/></g></svg>");
+}
+
+/* Velas y cruces para la tarjeta de Nichos */
+.card-nichos .card-inner::before {
+    background-image: 
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='9' y='11' width='6' height='11' rx='1'/><path d='M12 8v3'/><path d='M12 2c-.8 1.5-2 3.2-2 4.8a2 2 0 0 0 4 0c0-1.6-1.2-3.3-2-4.8z' fill='%23ffe2b3'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffe2b3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><line x1='12' y1='3' x2='12' y2='21'/><line x1='6' y1='9' x2='18' y2='9'/></svg>");
+}
+
+/*
+.card-inner::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0;
+    margin-top: -5.5cm;
+    transform: scaleY(0.768) scaleX(0.9216) translate3d(0, 0, 0);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+    background-image: url('img/ramas con hojas.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0) invert(1);
+}
+*/
+
+/* Imagen en espejo para la parte inferior de las tarjetas de categoría */
+/*
+.category-card::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0;
+    margin-top: 5.5cm;
+    transform: scaleY(-2.88) scaleX(3.456) translate3d(0, 0, 0);
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+    
+    background-image: url('img/ramas con hojas.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0) invert(1);
+}
+
+.category-card:hover::after,
+.category-card.active::after {
+    opacity: 1;
+    transform: scaleY(-3.0) scaleX(3.6) translate3d(0, 0, 0);
+}
+*/
+
+/*
+.category-card:hover .card-inner::before,
+.category-card.active .card-inner::before {
+    animation: float-hearts 2.2s infinite ease-out;
+}
+*/
+
+
+/*
+.category-card:hover .card-inner::after,
+.category-card.active .card-inner::after {
+    opacity: 1;
+    transform: scaleY(0.8) scaleX(0.96) translate3d(0, 0, 0);
+}
+*/
+
+
+@keyframes float-hearts {
+    0% {
+        opacity: 0;
+        background-position: 
+            /* Top border group starting from center text */
+            40% 40%, 
+            45% 38%, 
+            50% 36%, 
+            55% 38%, 
+            60% 40%,
+            /* Bottom border group starting from center text */
+            40% 60%, 
+            45% 62%, 
+            50% 64%, 
+            55% 62%, 
+            60% 60%,
+            /* Left border group starting from center text */
+            35% 45%, 
+            35% 50%, 
+            35% 55%, 
+            35% 60%, 
+            38% 50%,
+            /* Right border group starting from center text */
+            65% 45%, 
+            65% 50%, 
+            65% 55%, 
+            65% 60%, 
+            62% 50%;
+    }
+    15% {
+        opacity: 0.95;
+    }
+    75%, 100% {
+        opacity: 0;
+        background-position: 
+            /* Floating outwards to the top border and beyond */
+            10% -20px, 
+            30% -20px, 
+            50% -20px, 
+            70% -20px, 
+            90% -20px,
+            /* Floating outwards to the bottom border and beyond */
+            10% calc(100% + 20px), 
+            30% calc(100% + 20px), 
+            50% calc(100% + 20px), 
+            70% calc(100% + 20px), 
+            90% calc(100% + 20px),
+            /* Floating outwards to the left border and beyond */
+            -20px 15%, 
+            -20px 35%, 
+            -20px 55%, 
+            -20px 75%, 
+            -20px 90%,
+            /* Floating outwards to the right border and beyond */
+            calc(100% + 20px) 15%, 
+            calc(100% + 20px) 35%, 
+            calc(100% + 20px) 55%, 
+            calc(100% + 20px) 75%, 
+            calc(100% + 20px) 90%;
+    }
+}
+
+.category-card:hover,
+.category-card.active {
+    transform: translateY(-6px) translate3d(0, 0, 0);
+    box-shadow: none;
+}
+
+/* ---- IMAGEN Y SUPERPOSICIÓN OSCURA ---- */
+.card-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 416px;
+    height: 274px;
+    background-image: url('img/fondo_rayas.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px; /* Suave contorno redondeado */
+    border: 1px solid rgba(75, 55, 45, 0.12); /* Sutil contorno café */
+    z-index: 1;
+    display: block;
+    opacity: 0.9;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, opacity 0.4s ease;
+    will-change: transform, opacity;
+}
+
+.card-corazones .card-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 416px;
+    height: 274px;
+    background-image: url('img/fondo_rayas.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+    border: 1px solid rgba(75, 55, 45, 0.12);
+    z-index: 1;
+    display: block;
+    opacity: 0.9;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, opacity 0.4s ease;
+    will-change: transform, opacity;
+}
+
+.category-card:hover .card-bg,
+.category-card.active .card-bg {
+    display: block;
+    transform: translate(-50%, -50%) scale(1.05);
+    opacity: 1;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card-overlay {
+    display: none;
+}
+
+/*
+.category-card:hover .card-overlay,
+.category-card.active .card-overlay {
+    opacity: 0.6;
+}
+*/
+
+
+/* ---- TEXTOS Y ANIMACIONES ---- */
+.card-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 25px;
+    transform: translate3d(0, 0, 0);
+}
+
+.card-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 345px;
+    height: 224px;
+    transform: translate(-50%, -50%) scale(1);
+    background-image: url('img/fondo_letra.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+    pointer-events: none;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12)) drop-shadow(0 0 0px transparent);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+    will-change: transform, filter;
+}
+
+.category-card:hover .card-content::before,
+.category-card.active .card-content::before {
+    transform: translate(-50%, -50%) scale(1.05);
+    animation: badgeGlowPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes badgeGlowPulse {
+    0%, 100% {
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12)) drop-shadow(0 0 3px rgba(230, 189, 179, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 12px rgba(230, 189, 179, 0.7));
+    }
+}
+
+.card-content::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 345px;
+    height: 224px;
+    transform: translate(-50%, -50%) scale(1);
+    background-image: url('https://padoma.github.io/bendito-taller-carrito/img/grabados_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    -webkit-mask-image: url('img/fondo_letra.png');
+    mask-image: url('img/fondo_letra.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.card-corazones .card-content::after {
+    background-image: url('img/CORAZONES_2.jpg');
+}
+
+.card-nichos .card-content::after {
+    background-image: url('img/FONDO_NICHOS.jpg');
+}
+
+.card-deco .card-content::after {
+    background-image: url('img/fondo_deco_2.jpg');
+}
+
+.card-navidad .card-content::after {
+    background-image: url('img/FONDO_NAVIDAD.jpg');
+}
+
+.category-card:hover .card-content::after,
+.category-card.active .card-content::after {
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    color: #4b372d;
+    position: absolute;
+    top: calc(50% + 28px);
+    left: 50%;
+    transform: translate(-50%, 0) translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.1s, opacity 0.4s ease 0.1s;
+    will-change: transform, opacity;
+    white-space: nowrap;
+}
+
+/* Capa de destello metálico (shimmer) que recorre el contorno de fondo_letra.png */
+.category-card .card-inner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 345px;
+    height: 224px;
+    transform: translate(-50%, -50%) scale(1);
+    background: linear-gradient(115deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0) 35%, 
+        rgba(255, 255, 255, 0.15) 45%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        rgba(255, 255, 255, 0.15) 55%, 
+        rgba(255, 255, 255, 0) 65%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 4; /* Encima de card-content para evitar desalineación por transformaciones de texto */
+    mix-blend-mode: screen;
+    opacity: 0;
+    
+    /* Máscara compuesta: dibuja el badge completo y le resta uno un 6% más pequeño en el centro */
+    -webkit-mask-image: url('img/fondo_letra.png'), url('img/fondo_letra.png');
+    mask-image: url('img/fondo_letra.png'), url('img/fondo_letra.png');
+    -webkit-mask-size: 100% 100%, 94% 90%;
+    mask-size: 100% 100%, 94% 90%;
+    -webkit-mask-position: center, center;
+    mask-position: center, center;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-composite: destination-out; /* WebKit/Chrome/Safari: resta el centro */
+    mask-composite: subtract; /* Estándar W3C: resta el centro */
+    
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+    will-change: transform, opacity, background-position;
+}
+
+.category-card:hover .card-inner::after,
+.category-card.active .card-inner::after {
+    opacity: 0.8; /* Destello tenue y profesional */
+    transform: translate(-50%, -50%) scale(1.05);
+    animation: borderShimmerSweep 8.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+@keyframes borderShimmerSweep {
+    0% {
+        background-position: 200% 0;
+    }
+    35%, 100% {
+        background-position: -120% 0;
+    }
+}
+
+
+
+.card-content h2 {
+    font-family: var(--font-serif);
+    font-size: 40px; /* Letra más grande (de 34px a 40px) */
+    font-weight: 700; /* Peso elegante de Merriweather */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff; /* Blanco para el contorno */
+    -webkit-text-stroke: 2.5px #ffffff; /* Borde blanco muy fino (1.25px real) */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Sutil sombra de apoyo */
+    margin: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    display: inline-block;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Pseudo-elemento para el relleno café oscuro, asegurando que el borde blanco no coma la letra */
+.card-content h2::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #4b372d; /* Relleno café oscuro */
+    -webkit-text-stroke: 0px transparent;
+    text-shadow: none;
+    z-index: 1;
+    pointer-events: none;
+    transform: translate3d(0, 0, 0);
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: #FFBF00; /* Color dorado */
+    position: absolute;
+    top: calc(50% + 56px);
+    left: 50%;
+    transform: translate(-50%, 0) scaleX(1);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.2s;
+    border-radius: 2px;
+    will-change: transform;
+}
+
+.explore {
+    display: none !important;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .subtitle,
+.category-card.active .subtitle {
+    opacity: 1;
+    transform: translate(-50%, 0) translate3d(0, 0, 0);
+}
+
+.category-card:hover .divider,
+.category-card.active .divider {
+    transform: translate(-50%, 0) scaleX(1);
+}
+
+.category-card:hover .arrow,
+.category-card.active .arrow {
+    transform: translateX(5px);
+}
+
+.category-card:hover h2,
+.category-card.active h2 {
+    transform: scale(1.03) translate3d(0, 0, 0);
+    text-shadow: 0 4px 12px rgba(75, 55, 45, 0.15); /* Sutil sombra café */
+}
+
+/* ---- ETIQUETA DESTACADO ---- */
+.badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-name {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* ===== VIDEOS GRID ===== */
+.videos-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    padding: 0 24px 60px 24px;
+}
+
+.video-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 16px;
+}
+
+.video-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: var(--text-main);
+}
+
+/* ===== CATALOG PAGE LAYOUT ===== */
+.catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 28px;
+    padding: 30px 24px 60px 24px;
+}
+
+/* Sidebar Navigation */
+.catalog-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.category-btn {
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.category-btn:hover {
+    background: rgba(75, 55, 45, 0.04);
+    color: var(--text-main);
+}
+
+.category-btn.active {
+    background: var(--primary-gradient);
+    color: white;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Old horizontal branch styles removed - consolidated at the bottom under decorative banner section */
+
+/* Main Content Area */
+.catalog-main {
+    flex-grow: 1;
+}
+
+.catalog-search-bar {
+    margin-bottom: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 1.5px solid var(--border-color);
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text-main);
+    background: var(--bg-card);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(125, 139, 99, 0.15);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+}
+
+/* Product Card */
+.product-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(229, 218, 203, 0.4);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-img-wrapper {
+    position: relative;
+    padding-bottom: 100%; /* Square aspect ratio */
+    background-color: #fcf9f5;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(229, 218, 203, 0.3);
+    cursor: pointer; /* Habilitar cursor interactivo para ampliar foto */
+}
+
+.product-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.04);
+}
+
+.product-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-desc {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.3;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-spec-medida {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.product-prices {
+    margin-top: auto;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.price-value {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.price-value.special {
+    color: var(--primary-color);
+}
+
+/* Measures List Layout for Alternative C */
+.measures-list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: rgba(245, 236, 225, 0.4);
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    border: 1px dashed rgba(75, 55, 45, 0.15);
+    margin-bottom: 8px;
+}
+
+.measure-price-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-main);
+    gap: 4px;
+}
+
+.measure-price-row.header-row {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(75, 55, 45, 0.15);
+    padding-bottom: 3px;
+    margin-bottom: 2px;
+}
+
+.measure-price-row span {
+    text-align: right;
+}
+
+.measure-price-row span:first-child {
+    text-align: left;
+    font-weight: 600;
+}
+
+.simple-price-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-main);
+    gap: 4px;
+}
+
+.simple-price-row.header-row {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(75, 55, 45, 0.15);
+    padding-bottom: 3px;
+    margin-bottom: 2px;
+}
+
+.simple-price-row span {
+    text-align: right;
+}
+
+.simple-price-row span:first-child {
+    text-align: left;
+    font-weight: 700;
+}
+
+.measure-label {
+    color: #4b372d;
+}
+
+.product-action-btn {
+    width: 100%;
+    border: none;
+    background: #f0e6da;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    margin-top: 12px;
+    transition: all 0.2s;
+}
+
+.product-action-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ===== SHOPPING CART PAGE ===== */
+.cart-page-wrapper {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.cart-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cart-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.cart-header p {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ===== GENERAL POPUPS (MODAL) ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(43, 34, 29, 0.4);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 20px;
+}
+
+.modal-container {
+    background: var(--bg-card);
+    width: 100%;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    animation: scaleUp 0.3s forwards cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-container h2 {
+    margin: 0 0 16px 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.modal-image-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: 0 auto 16px auto;
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+}
+
+.modal-input-group {
+    margin-bottom: 14px;
+}
+
+.modal-input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.modal-select, .modal-input, .modal-textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.8);
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text-main);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.modal-select:focus, .modal-input:focus, .modal-textarea:focus {
+    border-color: var(--primary-color);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(125, 139, 99, 0.15);
+}
+
+.modal-btn-primary {
+    width: 100%;
+    margin-top: 18px;
+    border: none;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+}
+
+.modal-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.modal-btn-secondary {
+    width: 100%;
+    margin-top: 8px;
+    border: none;
+    background: var(--danger-gradient);
+    color: white;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+}
+
+.modal-btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== PANEL CARRITO DRAWER (SIDEBAR) ===== */
+#cartPanel {
+    position: fixed;
+    top: 80px;
+    right: 24px;
+    width: 380px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    background: var(--bg-panel);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    z-index: 9999;
+    border: 1px solid rgba(229, 218, 203, 0.5);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+}
+
+.cart-items-list {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 0;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.item-detail {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+#cartTotal {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid var(--border-color);
+    padding-top: 12px;
+}
+
+/* ===== TOAST AVISO ===== */
+#toast {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 99999;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .catalog-container {
+        flex-direction: column;
+    }
+    .catalog-sidebar {
+        width: 100%;
+    }
+    .category-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+    }
+    .category-btn {
+        white-space: nowrap;
+    }
+}
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        row-gap: 28px; /* Separación vertical de al menos 0.7 cm en celular */
+    }
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 16px 10px 16px;
+        position: relative;
+    }
+    .nav-left, .nav-right-group {
+        display: contents !important;
+    }
+    .nav-cart-btn {
+        order: 3 !important;
+        display: flex;
+        flex-direction: row; /* En una sola fila horizontal */
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px; /* Ajustado al largo del texto */
+        border-radius: 18px;
+        background: linear-gradient(135deg, #889c90 0%, #708277 100%);
+        color: white !important;
+        border: none;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s;
+        cursor: pointer;
+        gap: 6px; /* Separación horizontal */
+        box-sizing: border-box;
+        height: 38px; /* Misma altura que Categorías para simetría */
+    }
+    .nav-cart-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }
+    .cart-btn-icon {
+        font-size: 15px;
+        line-height: 1.1;
+    }
+    .cart-btn-label {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .nav-brand-btn {
+        display: none !important;
+    }
+    .categories-dropdown {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1010;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        order: 1 !important;
+    }
+    .categories-dropdown .dropdown-btn {
+        background: linear-gradient(135deg, #889c90 0%, #708277 100%);
+        color: white !important;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 0 18px; /* Ajustado al largo del texto */
+        border-radius: 18px;
+        box-shadow: var(--shadow-sm);
+        height: 38px; /* Altura fija para alinear con botón del carrito y lupa */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        box-sizing: border-box;
+        transition: all 0.2s;
+    }
+    .categories-dropdown .dropdown-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }
+    .categories-dropdown .dropdown-btn .arrow-down {
+        display: inline-block;
+        margin-left: 6px;
+        font-size: 9px;
+        color: white !important;
+    }
+    .search-bar-container {
+        position: relative;
+        top: 0;
+        right: 0;
+        z-index: 1010;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        order: 2 !important;
+    }
+    .search-bar-container input {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        background: #fcf6ef;
+        border: 1.5px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        padding: 8px 12px;
+        z-index: 1000;
+        box-shadow: var(--shadow-md);
+        color: var(--text-main);
+        margin-top: 8px; /* Espacio para que no choque con los botones */
+    }
+    .search-bar-container.active input {
+        display: block;
+    }
+    .search-btn {
+        background: transparent;
+        border: none;
+        font-size: 18px; /* Sintonizado con el tamaño de las letras */
+        padding: 8px;
+        box-shadow: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        transition: transform 0.2s;
+    }
+    .search-btn:hover {
+        transform: scale(1.1);
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+    .catalog-container {
+        padding: 16px 12px 40px 12px;
+    }
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .product-info {
+        padding: 10px;
+    }
+    .product-title {
+        font-size: 9px;
+        margin-bottom: 4px;
+    }
+    .product-desc {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    .product-spec-medida {
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+    .price-row {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+    .measures-list-layout {
+        padding: 6px;
+        gap: 3px;
+        margin-bottom: 6px;
+    }
+    .measure-price-row {
+        font-size: 13px;
+        gap: 2px;
+    }
+    .measure-price-row.header-row {
+        font-size: 10px;
+        padding-bottom: 2px;
+        margin-bottom: 1px;
+    }
+    .simple-price-row {
+        font-size: 13px;
+        gap: 2px;
+    }
+    .simple-price-row.header-row {
+        font-size: 10px;
+        padding-bottom: 2px;
+        margin-bottom: 1px;
+    }
+    .product-action-btn {
+        font-size: 13px;
+        padding: 8px 4px;
+        margin-top: 8px;
+    }
+}
+@media (max-width: 480px) {
+    #cartPanel {
+        width: 92%;
+        right: 4%;
+        top: 70px;
+    }
+}
+
+/* ==========================
+   DECORATIVE PINK BANNER
+========================== */
+.decor-banner-container {
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+    padding: 0 24px;
+    display: block;
+}
+
+.decor-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.decor-banner-img:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+    .decor-banner-container {
+        padding: 0 16px;
+        margin-top: 20px;
+    }
+}
+
+/* ==========================
+   CUSTOM DECORATIVE FLORAL BANNER
+========================== */
+.decor-banner-custom {
+    background-color: #d58b81; /* Color rosado base */
+    min-height: 180px;
+    padding: 40px 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.decor-banner-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.decor-banner-content {
+    position: relative;
+    z-index: 10;
+    max-width: 55%; /* Limita el ancho del texto para evitar que choque con las ramas */
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.decor-banner-title {
+    font-family: 'Satisfy', cursive;
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    color: #1c1c1c; /* Letra carbón oscura premium */
+    line-height: 1.3;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.decor-banner-text {
+    font-family: 'Satisfy', cursive;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.3;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedores de ramas a los lados */
+.banner-branches {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 32%; /* Cubre casi un tercio del banner en cada lado */
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.left-branches {
+    left: 0;
+}
+
+.right-branches {
+    right: 0;
+    transform: scaleX(-1); /* Espeja de forma matemática y exacta todas las ramas del lado derecho */
+}
+
+/* Estilos de las imágenes de ramas */
+.branch-img {
+    position: absolute;
+    height: 120%; /* Sobresale un poco del banner para naturalidad */
+    width: auto;
+    object-fit: contain;
+    opacity: 0.2; /* Reducida un 30% (de 0.3 a 0.2) para mayor transparencia */
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+/* Efecto hover interactivo: las ramas brillan y se mueven levemente */
+.decor-banner-custom:hover .branch-img,
+.dots-banner-container:hover .branch-img {
+    opacity: 0.35; /* Reducida un 30% (de 0.5 a 0.35) para mayor transparencia en hover */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+/* Posicionamiento específico y distribución de las ramas */
+/* 1. Rama Principal (rama1.png) - El esqueleto central */
+.branch-single {
+    left: 0; /* Ubicada exactamente al borde (pegada) */
+    top: -10%;
+    height: 125%;
+    z-index: 3;
+    margin-top: -38px; /* Mueve la rama 1 cm (aprox. 38px) hacia arriba */
+    transform: rotate(-90deg); /* Girada 180° al contrario (-90deg) para quedar vertical invertida */
+    animation: sway-single 4s ease-in-out infinite alternate;
+}
+
+/* 2. Rama Secundaria (rama31.png) - Capa de profundidad detrás de la principal */
+.branch-second {
+    left: 35px; /* Ubicada al lado de la principal (pegada a ella y al borde) */
+    top: -10%;
+    height: 125%;
+    z-index: 2; /* Por detrás de la principal */
+    margin-top: -34px; /* Subida 4mm (aprox. 15px) hacia arriba */
+    transform: scaleX(-1) scaleY(-1) rotate(-90deg); /* Volteada horizontal y verticalmente, rotada -90° */
+    opacity: 0.25;
+    animation: sway-second 4.5s ease-in-out infinite alternate;
+}
+
+/* ANIMACIONES DE BALANCEO SUAVE (EFECTO BRISA) */
+@keyframes sway-single {
+    0% {
+        transform: rotate(-90deg) scale(1);
+    }
+    100% {
+        transform: rotate(-85deg) scale(1.03) translateY(-4px) translateX(2px);
+    }
+}
+
+@keyframes sway-second {
+    0% {
+        transform: scaleX(-1) scaleY(-1) rotate(-90deg) scale(1);
+    }
+    100% {
+        transform: scaleX(-1) scaleY(-1) rotate(-85deg) scale(1.03) translateY(-4px) translateX(-2px);
+    }
+}
+
+/* ADAPTABILIDAD RESPONSIVE */
+@media (max-width: 1100px) {
+    .decor-banner-content {
+        max-width: 60%;
+    }
+    .banner-branches {
+        width: 28%;
+    }
+    .branch-single {
+        left: 0; /* Pegada al borde en pantallas medianas */
+    }
+    .branch-second {
+        left: 30px; /* Pegada al lado de la principal */
+    }
+}
+
+@media (max-width: 950px) {
+    /* En tabletas medianas, reducimos el tamaño de las ramas para que no tapen las letras */
+    .decor-banner-content {
+        max-width: 70%;
+    }
+    .banner-branches {
+        width: 25%;
+    }
+    .decor-banner-title {
+        font-size: 30px;
+    }
+    .decor-banner-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* En dispositivos móviles, mostramos solo una rama a cada lado con tamaño ajustado */
+    .banner-branches {
+        display: block;
+        width: 15%;
+    }
+    .branch-second {
+        display: none; /* Ocultar la rama secundaria */
+    }
+    .branch-single {
+        left: 0; /* Pegada al borde lateral en móviles */
+        top: 5%;
+        height: 80%; /* Reducida la altura para achicar el ancho y ganar separación en el centro */
+        margin-top: 0;
+    }
+    .decor-banner-content {
+        max-width: 75%; /* Dejar espacio para las ramas */
+        padding: 10px 0;
+    }
+    .decor-banner-custom {
+        padding: 30px 16px;
+        min-height: auto;
+    }
+    .decor-banner-title {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+    .decor-banner-text {
+        font-size: 16px;
+    }
+}
+
+/* ==========================
+   DOTS BANNER (INTERACTIVO)
+========================== */
+.dots-banner-container {
+    background-color: #DDB6A8;
+    min-height: 120px;
+    padding: 10px 24px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.dots-banner-container.tall-banner {
+    min-height: 160px;
+}
+
+.dots-banner-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('img/tapiz_ramas_largo.png');
+    background-size: auto 119px; /* Estirado un 20% más (99px * 1.2 = 118.8px) */
+    background-position: center;
+    background-repeat: repeat-x;
+    opacity: 0.075; /* 92.5% transparente (50% más transparente que antes) */
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 0.4s ease; /* Transición suave para iluminarse */
+}
+
+.dots-banner-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.dots-banner-container:hover::after {
+    opacity: 0.22; /* Se ilumina al pasar el mouse por encima */
+}
+
+.dots-banner-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.45) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.6;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+    display: none; /* Desactivado para mostrar el nuevo fondo floral */
+}
+
+.dots-banner-container:hover::before {
+    opacity: 1; /* Los puntos se iluminan tenuemente al hacer hover */
+}
+
+.dots-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 55%;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+.dots-banner-title {
+    font-family: 'Satisfy', cursive;
+    font-size: 38px;
+    font-weight: 400;
+    margin: 0 0 8px 0;
+    color: #1c1c1c;
+    line-height: 1.3;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.dots-banner-text {
+    font-family: 'Satisfy', cursive;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.3;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.banner-insta-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #4b372d;
+    color: #fffcf8 !important;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 18px;
+}
+
+.banner-insta-btn:hover {
+    transform: translateY(-2px);
+    background: #7d8b63;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.banner-insta-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.banner-insta-btn:hover svg {
+    transform: rotate(10deg) scale(1.1);
+}
+
+
+
+@media (max-width: 950px) {
+    .dots-banner-content {
+        max-width: 70%;
+    }
+    .dots-banner-title {
+        font-size: 30px;
+    }
+    .dots-banner-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dots-banner-content {
+        max-width: 90%; /* Ampliado porque ya no hay ramas a los lados */
+        padding: 0; /* Removido padding para recortar altura */
+    }
+    .dots-banner-container {
+        padding: 4px 16px; /* Reducido de 10px a 4px para recortar altura */
+        min-height: 90px;
+    }
+    .dots-banner-container.tall-banner {
+        min-height: 140px;
+    }
+    .dots-banner-title {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+    .dots-banner-text {
+        font-size: 16px;
+    }
+}
+
+/* ===== RESPONSIVE CARD SCALING & GENERAL MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 480px) {
+    .category-card {
+        min-height: auto;
+        aspect-ratio: 416 / 274;
+        padding: 0px;
+    }
+    
+    .card-bg {
+        width: 100%;
+        max-width: 416px;
+        height: auto;
+        aspect-ratio: 416 / 274;
+    }
+    
+    .card-corazones .card-bg {
+        width: 100%;
+        max-width: 416px;
+        height: auto;
+        aspect-ratio: 416 / 274;
+    }
+    
+    .card-content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px 10px;
+    }
+    
+    .card-content::before,
+    .card-content::after,
+    .category-card .card-inner::after {
+        width: 80%; /* Reducido de 95% para ser 15% más pequeño en celular */
+        max-width: 293px; /* Reducido de 345px (345 * 0.85 = 293) */
+        height: auto;
+        aspect-ratio: 345 / 224;
+    }
+    
+
+    
+    .card-content h2 {
+        font-size: 26px !important;
+        -webkit-text-stroke: 1.8px #ffffff;
+    }
+    
+    .card-content .subtitle {
+        font-size: 11px !important;
+        top: calc(50% + 18px) !important;
+        transform: translate(-50%, 0) !important;
+    }
+    
+    .divider {
+        width: 40px;
+        top: calc(50% + 34px) !important;
+        transform: translate(-50%, 0) !important;
+    }
+
+    .carousel-caption p {
+        font-size: 12px;
+        margin-top: 4px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        padding: 0 16px 40px 16px;
+    }
+
+    /* Ajuste de fuentes y tamaño para banners en celulares */
+    .dots-banner-title {
+        font-size: 19px !important;
+        margin-bottom: 6px;
+        line-height: 1.4;
+    }
+    .dots-banner-text {
+        font-size: 14px !important;
+    }
+    .banner-insta-btn {
+        padding: 10px 22px !important;
+        font-size: 14px !important;
+        margin-top: 12px !important;
+    }
+    .dots-banner-container {
+        min-height: 80px;
+    }
+    .dots-banner-container.tall-banner {
+        min-height: 135px;
+    }
+    
+    /* Logos de envío en celulares */
+    .shipping-logos-container {
+        gap: 6px;
+    }
+    .shipping-logo {
+        height: 29px;
+    }
+    .shipping-logo.correos-logo {
+        height: 29px;
+    }
+}
+
+/* ==========================
+   FEATURES SECTION & INSTAGRAM FOOTER (SHARED)
+========================== */
+.features-section {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    position: relative; /* Para posicionar el pseudo-elemento del fondo */
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 30px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden; /* Mantener el fondo recortado en las esquinas redondeadas */
+    background: transparent;
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.35; /* Aumentada la translucidez al 35% para mejor lectura */
+    z-index: -1;
+}
+
+/* Diferentes imágenes de fondo para cada tarjeta de características */
+.feature-card:nth-child(1)::before {
+    background-image: url('img/fondo_cuadros_blancos.jpeg');
+}
+
+.feature-card:nth-child(2)::before {
+    background-image: url('img/fondo_cuadros_blancos1.jpeg');
+}
+
+.feature-card:nth-child(3)::before {
+    background-image: url('img/fondo_cuadros_blancos2.jpeg');
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.feature-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.feature-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.insta-footer {
+    text-align: center;
+    background: #f5ece1;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.insta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #4b372d;
+    color: #fffcf8;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.insta-btn:hover {
+    transform: translateY(-2px);
+    background: #7d8b63;
+}
+
+/* Shipping logos container & image styling */
+.shipping-logos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.shipping-logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.shipping-logo {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.shipping-logo:hover {
+    transform: scale(1.05);
+}
+
+.shipping-logo.correos-logo {
+    height: 38px;
+}
+
+/* Instagram Banner Side-by-Side styling */
+.instagram-banner-content {
+    max-width: 85% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.instagram-banner-content .dots-banner-title {
+    margin: 0;
+    text-align: left;
+}
+
+.instagram-banner-content .banner-insta-btn {
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .instagram-banner-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .instagram-banner-content .dots-banner-title {
+        text-align: center;
+    }
+    .instagram-banner-content .banner-insta-btn {
+        margin-top: 6px !important;
+    }
+}
+
+/* Banner dinámico de categorías en catálogo */
+.category-header-banner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    background-size: auto; /* Usar tamaño real de la foto */
+    background-position: center;
+    background-repeat: repeat; /* Hacer mosaico */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Cortar cualquier desborde para que no sobresalga del banner */
+    box-shadow: 0 8px 24px rgba(75, 55, 45, 0.15);
+    border: 1px solid rgba(75, 55, 45, 0.12);
+    transition: background-image 0.5s ease;
+}
+
+.category-header-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.15); /* Soft overlay to lighten the background image */
+    z-index: 1;
+}
+
+.category-banner-badge {
+    position: relative;
+    width: 435px; /* Agrandado un 50% de 290px */
+    height: 200px; /* Ajustado al alto del banner para no sobresalir */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.category-banner-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/fondo_letra.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.16));
+}
+
+.category-banner-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(149, 171, 158, 0.55) 0%, rgba(125, 144, 132, 0.55) 100%);
+    -webkit-mask-image: url('img/fondo_letra.png');
+    mask-image: url('img/fondo_letra.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    z-index: 0;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.category-banner-badge-inner {
+    text-align: center;
+    padding: 0 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.category-banner-title {
+    font-family: 'Merriweather', serif;
+    font-size: 42px; /* Agrandado un 50% de 28px */
+    font-weight: 700;
+    color: #4b372d;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.category-banner-subtitle {
+    font-family: 'Merriweather', serif;
+    font-size: 16px; /* Agrandado un 50% de 11px */
+    font-weight: 600;
+    color: #4b372d;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.category-banner-divider {
+    width: 60px; /* Agrandado un 50% de 40px */
+    height: 2px;
+    background-color: #FFBF00; /* Dorado */
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .category-header-banner {
+        height: 160px;
+        margin-bottom: 24px;
+        background-size: auto; /* Mantener tamaño real de la foto en móvil */
+    }
+    .category-banner-badge {
+        width: 360px; /* Agrandado un 50% de 240px */
+        height: 160px; /* Ajustado al alto del banner en móvil para no sobresalir */
+    }
+    .category-banner-badge-inner {
+        padding: 0 20px;
+    }
+    .category-banner-title {
+        font-size: 33px; /* Agrandado un 50% de 22px */
+    }
+    .category-banner-subtitle {
+        font-size: 14px; /* Agrandado un 50% de 9px */
+        letter-spacing: 3px;
+    }
+    .category-banner-divider {
+        width: 48px;
+    }
+}
+
+
+
+

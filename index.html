@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bendito Taller | Corte Láser Creativo y Más</title>
+    
+    <!-- Google Fonts Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand-btn">
+                    Bendito Taller
+                </a>
+                
+                <!-- Dropdown Categorías -->
+                <div class="categories-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown(event)">
+                        Categorías <span class="arrow-down">▼</span>
+                    </button>
+                    <div class="dropdown-content" id="categoriesDropdownContent">
+                        <!-- Categorías dinámicas cargadas por script.js -->
+                    </div>
+                </div>
+
+                <!-- Lupa / Buscador -->
+                <div class="search-bar-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar producto..." 
+                        oninput="handleNavbarSearch()"
+                        onkeydown="if(event.key === 'Enter') triggerSearch()"
+                    >
+                    <button class="search-btn" onclick="toggleSearchInput(event)" title="Buscar producto">🔍</button>
+                </div>
+            </div>
+            
+            <div class="nav-right-group" style="display: flex; align-items: center; gap: 12px;">
+                <button class="nav-cart-btn" onclick="toggleCart()" onmouseenter="showCart()" onmouseleave="hideCart()" style="pointer-events: auto;">
+                    <span class="cart-btn-icon" style="pointer-events: none;">🛒</span>
+                    <div class="cart-btn-label" style="pointer-events: none;">
+                        <span>Carrito</span>
+                        <span id="cartCount">(0)</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BANNER -->
+    <!--
+    <header class="hero-section" style="position: relative; display: flex; align-items: center; justify-content: center; background: transparent; padding: 0; border: none; overflow: hidden;">
+        <img src="img/logo_transparente.gif" alt="Bendito Taller" style="position: relative; z-index: 2; height: 1200px; max-height: 90vh; width: auto; max-width: 95%; mix-blend-mode: multiply; display: block; margin: -120px auto;">
+    </header>
+    -->
+    <header class="hero-section" style="position: relative; display: flex; align-items: center; justify-content: center; background: transparent; padding: 10px 0; border: none; overflow: hidden;">
+        <img src="img/logo_madera_sin_fondo.png" alt="Bendito Taller" style="position: relative; z-index: 2; height: 340px; max-height: 40vh; width: auto; max-width: 90%; display: block; margin: 0 auto; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08));">
+    </header>
+
+
+    <!-- BANNER DECORATIVO (ESTILO PREMIUM REFLEJADO) - HISTORIAL GUARDADO -->
+    <!--
+    <div class="decor-banner-container" style="margin-top: 0; max-width: 100%; padding: 0;">
+        <div class="decor-banner-custom" style="border-radius: 0; border-left: none; border-right: none;">
+            <div class="banner-branches left-branches">
+                <img src="img/rama1.png" alt="Rama Izquierda 1" class="branch-img branch-single">
+                <img src="img/rama31.png" alt="Rama Izquierda 2" class="branch-img branch-second">
+            </div>
+
+            <div class="decor-banner-content">
+                <h3 class="decor-banner-title">Insumos en corte láser para tus proyectos y manualidades.</h3>
+                <p class="decor-banner-text">Diseños propios y originales, creados por nosotros, especialmente para ti.</p>
+            </div>
+
+            <div class="banner-branches right-branches">
+                <img src="img/rama1.png" alt="Rama Derecha 1" class="branch-img branch-single">
+                <img src="img/rama31.png" alt="Rama Derecha 2" class="branch-img branch-second">
+            </div>
+        </div>
+    </div>
+    -->
+
+    <!-- NUEVO BANNER DECORATIVO CON PUNTOS INTERACTIVOS -->
+    <div class="decor-banner-container" style="margin-top: 0; max-width: 100%; padding: 0;">
+        <div class="dots-banner-container">
+            <div class="dots-banner-content">
+                <h3 class="dots-banner-title">Insumos en corte láser para tus proyectos y manualidades.</h3>
+                <p class="dots-banner-text">Diseños propios y originales, creados por nosotros, especialmente para ti.</p>
+                <h2 class="section-title" style="margin-top: 16px; margin-bottom: 0;">Explora Nuestras Categorías</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPLORA CATEGORIAS -->
+    <section id="catalog-section" class="container" style="padding-bottom: 60px;">
+        
+        <!-- CARRUSEL DE PRODUCTOS DESTACADOS -->
+        <div class="carousel-container" onmouseenter="detenerAutoSlide()" onmouseleave="iniciarAutoSlide()">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- Poblado dinámicamente por script.js -->
+            </div>
+            
+            <!-- Botones de navegación -->
+            <button class="carousel-arrow prev" onclick="moveCarousel(-1)" title="Anterior">❮</button>
+            <button class="carousel-arrow next" onclick="moveCarousel(1)" title="Siguiente">❯</button>
+            
+            <!-- Indicadores -->
+            <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
+        <div class="categories-grid" style="padding-bottom: 0;">
+                    <a href="catalogo.html?category=corazones" class="category-card card-corazones">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="CORAZONES">CORAZONES</h2>
+                                <span class="subtitle">Creados para ti</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="catalogo.html?category=corazones-alados" class="category-card">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="ALADOS">ALADOS</h2>
+                                <span class="subtitle">diseños variados</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=nichos-y-altares" class="category-card card-nichos">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="NICHOS">NICHOS</h2>
+                                <span class="subtitle">estilo mexicanos</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=mexicanos-y-calacas" class="category-card">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="CALACAS">CALACAS</h2>
+                                <span class="subtitle">y mexicanos</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- PRIMER BANNER REPETIDO -->
+                <div class="decor-banner-container" style="margin: 24px 0; max-width: 100%; padding: 0;">
+                    <div class="dots-banner-container">
+                        <div class="dots-banner-content">
+                            <h3 class="dots-banner-title" style="margin: 0;">Ventas al detalle y al por mayor</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categories-grid" style="padding-top: 0; padding-bottom: 0;">
+                    <a href="catalogo.html?category=grabados" class="category-card">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="GRABADOS">GRABADOS</h2>
+                                <span class="subtitle">infantiles y más</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=deco" class="category-card card-deco">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="DECO">DECO</h2>
+                                <span class="subtitle">creativa</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=navidad" class="category-card card-navidad">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="NAVIDAD">NAVIDAD</h2>
+                                <span class="subtitle">todo el año</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=stencil" class="category-card">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="STENCILS">STENCILS</h2>
+                                <span class="subtitle">creaciones propias</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- SEGUNDO BANNER REPETIDO -->
+                <div class="decor-banner-container" style="margin: 24px 0; max-width: 100%; padding: 0;">
+                    <div class="dots-banner-container">
+                        <div class="dots-banner-content">
+                            <h3 class="dots-banner-title" style="margin: 0;">Productos complementarios para tus proyectos</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="categories-grid" style="padding-top: 0;">
+                    <a href="catalogo.html?category=mistico-y-mas" class="category-card card-mistico">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="MÍSTICO">MÍSTICO</h2>
+                                <span class="subtitle">energía y conexión</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=otros-insumos" class="category-card">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="INSUMOS">INSUMOS</h2>
+                                <span class="subtitle">complementarios</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="catalogo.html?category=libros-3d" class="category-card">
+                        <div class="card-inner">
+                            <div class="card-bg"></div>
+                            <div class="card-overlay"></div>
+                            <div class="card-content">
+                                <h2 data-text="LIBROS 3D">LIBROS 3D</h2>
+                                <span class="subtitle">fantasía y encanto</span>
+                                <div class="divider"></div>
+                                <span class="explore">Explorar colección <span class="arrow">→</span></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- TERCER BANNER REPETIDO (INSTAGRAM) -->
+                <div class="decor-banner-container" style="margin: 24px 0; max-width: 100%; padding: 0;">
+                    <div class="dots-banner-container">
+                        <div class="dots-banner-content instagram-banner-content">
+                            <h3 class="dots-banner-title" style="margin: 0; line-height: 1.4;">
+                                Si tienes alguna duda o deseas hacer un pedido, comunícate con nosotros a nuestro Instagram, pinchando en el botón de enlace.
+                            </h3>
+                            <a href="https://www.instagram.com/bendito_taller_/" target="_blank" class="banner-insta-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                                <span>@bendito_taller_</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+
+
+    <!-- CARACTERISTICAS CLAVE -->
+    <section class="features-section">
+        <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3 class="feature-title">Diseño 100% Original</h3>
+            <p class="feature-desc">Cada pieza es diseñada y manufacturada en nuestro taller propio con la máxima precisión láser.</p>
+        </div>
+        <div class="feature-card">
+            <div class="shipping-logos-container">
+                <div class="shipping-logos-row">
+                    <img src="img/logo_starken.png" alt="Starken" class="shipping-logo">
+                    <img src="img/Logo-Blue.png" alt="Blue Express" class="shipping-logo">
+                </div>
+                <div class="shipping-logos-row">
+                    <img src="img/correos-chile-logo1.jpg" alt="Correos de Chile" class="shipping-logo correos-logo">
+                </div>
+            </div>
+            <h3 class="feature-title">Envíos a Todo Chile</h3>
+            <p class="feature-desc">Enviamos tu pedido por la empresa de transportes de tu preferencia.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏷️</div>
+            <h3 class="feature-title">Ventas al Detalle y Mayor</h3>
+            <p class="feature-desc">Descuentos por mayor automáticos aplicados en el carrito de compras a partir de 4 unidades.</p>
+        </div>
+    </section>
+
+    <!-- FEATURED VIDEOS -->
+    <section style="background: rgba(229, 218, 203, 0.2); padding: 50px 0;">
+        <div class="container">
+            <h2 class="section-title" style="margin-top: 0;">Nuestros Diseños en Acción</h2>
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/8gl6JiQ3Dws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Pintado de Corazón Alado de Madera</h4>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/f9b9mxGQV_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4 class="video-title">Ensamblado de Nicho para Altares</h4>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="videos.html" class="hero-btn" style="background: var(--text-main);">Ver Más Videos y Tutoriales ➜</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM FOOTER -->
+    <footer class="insta-footer">
+        <h3 style="margin: 0 0 10px 0;">¿Tienes dudas o quieres ver novedades diarias?</h3>
+        <p style="color: var(--text-muted); margin: 0 0 20px 0;">Síguenos en nuestro Instagram oficial y mantente informado.</p>
+        <a href="https://www.instagram.com/bendito_taller_/" target="_blank" class="insta-btn">
+            📸 Ir a @bendito_taller_
+        </a>
+        <div style="margin-top: 40px; font-size: 14px; color: var(--text-muted);">
+            © 2026 Bendito Taller. Creado con amor. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- PANEL CARRITO DRAWER (Lado derecho inferior) -->
+    <div id="cartPanel" onmouseenter="showCart()" onmouseleave="hideCart()" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); padding-bottom: 12px; margin-bottom: 12px;">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 700; font-family: var(--font-serif);">Tu Pedido</h2>
+            <button onclick="toggleCart()" style="border: none; background: rgba(75, 55, 45, 0.05); font-size: 16px; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-main);">✕</button>
+        </div>
+
+        <div class="cart-items-list" id="cartItems">
+            <!-- Items del carrito -->
+        </div>
+
+        <div id="cartTotal">
+            <span>Total:</span>
+            <span>$0</span>
+        </div>
+
+        <button class="modal-btn-primary" onclick="location.href='carrito.html'" style="margin-top: 16px;">
+            📋 Revisar Pedido y Enviar Cotización
+        </button>
+
+        <button class="modal-btn-secondary" onclick="vaciarCarrito()" style="margin-top: 10px; background: var(--danger-gradient); color: white;">
+            🗑 Vaciar Carrito
+        </button>
+    </div>
+
+    <!-- TOAST AVISO -->
+    <div id="toast">
+        ✔ Agregado al pedido
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="productos.js"></script>
+    <script src="cart-shared.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Intersection Observer para efecto hover automático al escrolear en celulares
+        function initMobileObserver() {
+            if (window.innerWidth <= 768) {
+                const cards = document.querySelectorAll(".category-card");
+                
+                const observerOptions = {
+                    root: null,
+                    rootMargin: "-35% 0px -35% 0px",
+                    threshold: 0.2
+                };
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                        } else {
+                            entry.target.classList.remove("active");
+                        }
+                    });
+                }, observerOptions);
+                
+                cards.forEach(card => observer.observe(card));
+            }
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initMobileObserver);
+        } else {
+            initMobileObserver();
+        }
+    </script>
+</body>
+</html>
+

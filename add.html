@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando... | Bendito Taller</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #fffcf8; color: #4b372d;">
+    
+    <div style="font-size: 40px; margin-bottom: 20px;">🛍️</div>
+    <h2>Cargando selector de producto...</h2>
+    <p>Por favor espera un momento.</p>
+
+    <!-- Cargar base de datos para validar IDs antes de redirigir -->
+    <script src="productos.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        
+        // Soporta tanto ?id=CA10 como ?producto=CA10 de enlaces antiguos y nuevos
+        const originalId = params.get("id") || params.get("producto") || "";
+        
+        // Normalizar ID antiguo a minúsculas y sin caracteres especiales (ej: reno-base -> renobase)
+        let cleanId = originalId.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+        // Guardar el referrer original de Google Sites (si existe) para saber a qué subpágina específica volver
+        if (document.referrer && (document.referrer.includes("bendito-taller") || document.referrer.includes("benditotaller") || document.referrer.includes("google.com"))) {
+            sessionStorage.setItem("referrerSites", document.referrer);
+        } else {
+            sessionStorage.setItem("referrerSites", "https://sites.google.com/view/bendito-taller/p%C3%A1gina-principal");
+        }
+        sessionStorage.setItem("fromSites", "true");
+
+        // Validar si existe en la base de datos de productos.js
+        if (cleanId && productos[cleanId]) {
+            window.location.href = `index.html?producto=${cleanId}`;
+        } else {
+            let encontrado = false;
+            
+            // Solo buscar coincidencia parcial si cleanId no está vacío
+            if (cleanId) {
+                for (let key in productos) {
+                    if (key.includes(cleanId) || cleanId.includes(key)) {
+                        window.location.href = `index.html?producto=${key}`;
+                        encontrado = true;
+                        break;
+                    }
+                }
+            }
+            
+            // Fallback: Redirigir a la raíz si no hay coincidencia
+            if (!encontrado) {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html>

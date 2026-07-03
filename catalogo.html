@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos | Bendito Taller</title>
+    
+    <!-- Google Fonts Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand-btn">
+                    Bendito Taller
+                </a>
+                
+                <!-- Dropdown Categorías -->
+                <div class="categories-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown(event)">
+                        Categorías <span class="arrow-down">▼</span>
+                    </button>
+                    <div class="dropdown-content" id="categoriesDropdownContent">
+                        <!-- Categorías dinámicas cargadas por script.js -->
+                    </div>
+                </div>
+
+                <!-- Lupa / Buscador -->
+                <div class="search-bar-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar producto..." 
+                        oninput="handleNavbarSearch()"
+                        onkeydown="if(event.key === 'Enter') triggerSearch()"
+                    >
+                    <button class="search-btn" onclick="toggleSearchInput(event)" title="Buscar producto">🔍</button>
+                </div>
+            </div>
+            
+            <div class="nav-right-group" style="display: flex; align-items: center; gap: 12px;">
+                <button class="nav-cart-btn" onclick="toggleCart()" onmouseenter="showCart()" onmouseleave="hideCart()" style="pointer-events: auto;">
+                    <span class="cart-btn-icon" style="pointer-events: none;">🛒</span>
+                    <div class="cart-btn-label" style="pointer-events: none;">
+                        <span>Carrito</span>
+                        <span id="cartCount">(0)</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN DE CATÁLOGO INTERACTIVO -->
+    <section id="catalog-section" class="container" style="scroll-margin-top: 80px; padding-top: 0px; padding-bottom: 60px;">
+        <!-- BANNER DINÁMICO DE CATEGORÍA -->
+        <div id="categoryHeaderBanner" class="category-header-banner" style="display: none;">
+            <div class="category-banner-badge">
+                <div class="category-banner-badge-inner">
+                    <h1 id="categoryBannerTitle" class="category-banner-title"></h1>
+                    <span id="categoryBannerSubtitle" class="category-banner-subtitle"></span>
+                    <div class="category-banner-divider"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="catalog-container">
+            <!-- PRODUCTS GRID -->
+            <section class="catalog-main" style="width: 100%;">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Productos dinámicos cargados por script.js -->
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- CARACTERISTICAS CLAVE -->
+    <section class="features-section">
+        <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3 class="feature-title">Diseño 100% Original</h3>
+            <p class="feature-desc">Cada pieza es diseñada y manufacturada en nuestro taller propio con la máxima precisión láser.</p>
+        </div>
+        <div class="feature-card">
+            <div class="shipping-logos-container">
+                <div class="shipping-logos-row">
+                    <img src="img/logo_starken.png" alt="Starken" class="shipping-logo">
+                    <img src="img/Logo-Blue.png" alt="Blue Express" class="shipping-logo">
+                </div>
+                <div class="shipping-logos-row">
+                    <img src="img/correos-chile-logo1.jpg" alt="Correos de Chile" class="shipping-logo correos-logo">
+                </div>
+            </div>
+            <h3 class="feature-title">Envíos a Todo Chile</h3>
+            <p class="feature-desc">Enviamos tu pedido por la empresa de transportes de tu preferencia.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏷️</div>
+            <h3 class="feature-title">Ventas al Detalle y Mayor</h3>
+            <p class="feature-desc">Descuentos por mayor automáticos aplicados en el carrito de compras a partir de 4 unidades.</p>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM FOOTER -->
+    <footer class="insta-footer">
+        <h3 style="margin: 0 0 10px 0;">¿Tienes dudas o quieres ver novedades diarias?</h3>
+        <p style="color: var(--text-muted); margin: 0 0 20px 0;">Síguenos en nuestro Instagram oficial y mantente informado.</p>
+        <a href="https://www.instagram.com/bendito_taller_/" target="_blank" class="insta-btn">
+            📸 Ir a @bendito_taller_
+        </a>
+        <div style="margin-top: 40px; font-size: 14px; color: var(--text-muted);">
+            © 2026 Bendito Taller. Creado con amor. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- PANEL CARRITO DRAWER (Lado derecho inferior) -->
+    <div id="cartPanel" onmouseenter="showCart()" onmouseleave="hideCart()" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); padding-bottom: 12px; margin-bottom: 12px;">
+            <h2 style="margin: 0; font-size: 20px; font-weight: 700; font-family: var(--font-serif);">Tu Pedido</h2>
+            <button onclick="toggleCart()" style="border: none; background: rgba(75, 55, 45, 0.05); font-size: 16px; cursor: pointer; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-main);">✕</button>
+        </div>
+
+        <div class="cart-items-list" id="cartItems">
+            <!-- Items del carrito -->
+        </div>
+
+        <div id="cartTotal">
+            <span>Total:</span>
+            <span>$0</span>
+        </div>
+
+        <button class="modal-btn-primary" onclick="location.href='carrito.html'" style="margin-top: 16px;">
+            📋 Revisar Pedido y Enviar Cotización
+        </button>
+
+        <button class="modal-btn-secondary" onclick="vaciarCarrito()" style="margin-top: 10px; background: var(--danger-gradient); color: white;">
+            🗑 Vaciar Carrito
+        </button>
+    </div>
+
+    <!-- TOAST AVISO -->
+    <div id="toast">
+        ✔ Agregado al pedido
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="productos.js"></script>
+    <script src="cart-shared.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

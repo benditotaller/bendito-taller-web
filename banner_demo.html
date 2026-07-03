@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo e Instrucciones: Banner Personalizable con Hojas Animadas</title>
+    <!-- Importamos la tipografía cursiva "Satisfy" desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           ESTILOS GENERALES DE LA PÁGINA DE PREVIO
+           ========================================== */
+        body {
+            background-color: #1e1e24; /* Fondo oscuro para resaltar el banner beige/rosado */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #e4b3a9;
+        }
+
+        p.instructions-tag {
+            color: #b0b0b5;
+            font-size: 14px;
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           1. CONTENEDOR DEL BANNER (PERSONALIZABLE)
+           ========================================== */
+        .decor-banner {
+            /* Puedes cambiar el color de fondo aquí (color rosado viejo) */
+            background-color: #d19e93; 
+            
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            min-height: 140px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 35px 24px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Efecto al pasar el cursor sobre el banner entero */
+        .decor-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.4);
+        }
+
+        /* ==========================================
+           2. CAPA DE TEXTO (EDITABLE)
+           ========================================== */
+        .decor-banner-content {
+            text-align: center;
+            z-index: 2; /* Garantiza que el texto quede por encima de los tallos de las hojas */
+            max-width: 75%; /* Evita que el texto choque con las hojas de los costados */
+            pointer-events: none; /* Permite clicks a través del texto */
+        }
+
+        .cursive-text {
+            font-family: 'Satisfy', cursive;
+            color: #1c1c1c; /* Letra carbón oscura del Google Sites original */
+            font-size: 32px;
+            margin: 0 0 12px 0;
+            line-height: 1.3;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+        }
+
+        .cursive-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================
+           3. HOJAS DECORATIVAS (VECTORES SVG)
+           ========================================== */
+        .decor-leaf {
+            position: absolute;
+            bottom: -15px;
+            width: 180px;
+            height: 180px;
+            pointer-events: none; /* No interfieren con el puntero */
+            z-index: 1;
+            opacity: 0.85;
+            transition: opacity 0.4s ease, filter 0.4s ease;
+        }
+
+        /* Resplandor interactivo de las hojas al pasar el mouse por el banner */
+        .decor-banner:hover .decor-leaf {
+            opacity: 1;
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+        }
+
+        /* Configuración específica de la rama izquierda */
+        .decor-leaf-left {
+            left: -15px;
+            transform-origin: 5% 95%; /* Pivote exacto en la base de la rama (eje de rotación) */
+            animation: sway-left 10s ease-in-out infinite;
+        }
+
+        /* Configuración específica de la rama derecha */
+        .decor-leaf-right {
+            right: -15px;
+            transform-origin: 5% 95%; /* Mismo pivote local. CSS scaleX se encarga del espejo */
+            animation: sway-right 8.5s ease-in-out infinite;
+            animation-delay: -2.3s; /* Desfase inicial para romper la simetría robótica */
+        }
+
+        /* ==========================================
+           4. ANIMACIONES CSS (@KEYFRAMES)
+           ========================================== */
+        /* Animación Rama Izquierda: Imita ráfagas y balanceo suave */
+        @keyframes sway-left {
+            0%, 100% {
+                transform: rotate(0deg) scale(1) translateY(0);
+            }
+            30% {
+                transform: rotate(3.5deg) scale(1.01) translateY(-2px) translateX(0.5px);
+            }
+            65% {
+                transform: rotate(0.8deg) scale(0.99) translateY(0.5px);
+            }
+            82% {
+                transform: rotate(4.2deg) scale(1.015) translateY(-2.5px) translateX(1px);
+            }
+        }
+
+        /* Animación Rama Derecha: Reflejada e independiente */
+        @keyframes sway-right {
+            0%, 100% {
+                transform: scaleX(-1) rotate(10deg) scale(1) translateY(0);
+            }
+            35% {
+                transform: scaleX(-1) rotate(13.5deg) scale(1.015) translateY(-2.5px) translateX(-0.5px);
+            }
+            60% {
+                transform: scaleX(-1) rotate(9.2deg) scale(0.99) translateY(0.5px);
+            }
+            84% {
+                transform: scaleX(-1) rotate(14.5deg) scale(1.01) translateY(-1.8px) translateX(-1px);
+            }
+        }
+
+        /* ==========================================
+           5. ADAPTABILIDAD EN MÓVILES (RESPONSIVE)
+           ========================================== */
+        @media (max-width: 768px) {
+            .decor-banner {
+                padding: 40px 16px;
+            }
+            .cursive-text {
+                font-size: 21px; /* Letra más chica para evitar que se desborde */
+            }
+            .decor-leaf {
+                width: 120px; /* Hojas más pequeñas en celulares */
+                height: 120px;
+                opacity: 0.5; /* Más tenues para no tapar el texto estrecho */
+            }
+        }
+
+        /* ==========================================
+           GUÍA DE MODIFICACIONES (PANEL DE AYUDA)
+           ========================================== */
+        .help-panel {
+            background-color: #2b2b35;
+            border-left: 4px solid #e4b3a9;
+            padding: 24px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin-top: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            line-height: 1.6;
+        }
+
+        .help-panel h2 {
+            font-size: 18px;
+            margin-top: 0;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .help-panel ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .help-panel li {
+            margin-bottom: 12px;
+            color: #d1d1d6;
+        }
+
+        .help-panel code {
+            background-color: rgba(0,0,0,0.3);
+            color: #e4b3a9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Visualizador de Banner Interactivo</h1>
+    <p class="instructions-tag">
+        Esta es una página independiente de pruebas. Puedes abrir este archivo directamente en cualquier navegador de tu computadora, editar su código en un bloc de notas y ver el comportamiento en tiempo real.
+    </p>
+
+    <!-- BANNER CONTENEDOR -->
+    <div class="decor-banner">
+        
+        <!-- HOJA IZQUIERDA (SVG VECTORIAL) -->
+        <svg class="decor-leaf decor-leaf-left" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Tallo principal -->
+            <path d="M 10,190 C 35,160 85,120 160,85" />
+            <!-- Hojas con sus nervaduras interiores finas -->
+            <path d="M 30,165 C 20,150 15,130 25,130 C 35,130 40,145 42,150 Z" />
+            <path d="M 30,165 C 27,150 25,138 25,130" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 65,135 C 50,120 40,95 55,95 C 65,95 72,115 75,123 Z" />
+            <path d="M 65,135 C 59,120 57,105 55,95" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 110,110 C 95,95 90,70 105,70 C 115,70 120,90 122,98 Z" />
+            <path d="M 110,110 C 103,95 101,80 105,70" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 160,85 C 175,80 195,85 190,95 C 180,105 168,100 160,85 Z" />
+            <path d="M 160,85 C 172,87 183,91 190,95" stroke-width="0.6" opacity="0.6" />
+            
+            <!-- Ramificación inferior y hojas -->
+            <path d="M 65,135 C 90,135 130,145 165,160" />
+            <path d="M 95,135 C 105,150 115,165 105,170 C 95,175 90,155 95,135 Z" />
+            <path d="M 95,135 C 100,150 102,160 105,170" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 135,148 C 150,165 165,180 155,185 C 145,190 138,170 135,148 Z" />
+            <path d="M 135,148 C 145,165 150,175 155,185" stroke-width="0.6" opacity="0.6" />
+            
+            <!-- Ramificación superior y hojas -->
+            <path d="M 110,110 C 120,90 145,70 175,55" />
+            <path d="M 135,93 C 138,75 142,60 155,62 C 160,65 150,85 135,93 Z" />
+            <path d="M 135,93 C 140,80 148,70 155,62" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 175,55 C 190,45 200,30 190,32 C 180,35 180,48 175,55 Z" />
+            <path d="M 175,55 C 182,45 186,38 190,32" stroke-width="0.6" opacity="0.6" />
+        </svg>
+
+        <!-- CONTENIDO DEL TEXTO (EDITABLE) -->
+        <div class="decor-banner-content">
+            <p class="cursive-text">Insumos en corte láser para tus proyectos y manualidades.</p>
+            <p class="cursive-text">Diseños propios y originales, creados por nosotros, especialmente para ti.</p>
+        </div>
+
+        <!-- HOJA DERECHA (SVG VECTORIAL) -->
+        <svg class="decor-leaf decor-leaf-right" viewBox="0 0 200 200" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Reutiliza el mismo trazado; CSS se encarga del espejado perfecto con scaleX(-1) -->
+            <path d="M 10,190 C 35,160 85,120 160,85" />
+            <path d="M 30,165 C 20,150 15,130 25,130 C 35,130 40,145 42,150 Z" />
+            <path d="M 30,165 C 27,150 25,138 25,130" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 65,135 C 50,120 40,95 55,95 C 65,95 72,115 75,123 Z" />
+            <path d="M 65,135 C 59,120 57,105 55,95" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 110,110 C 95,95 90,70 105,70 C 115,70 120,90 122,98 Z" />
+            <path d="M 110,110 C 103,95 101,80 105,70" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 160,85 C 175,80 195,85 190,95 C 180,105 168,100 160,85 Z" />
+            <path d="M 160,85 C 172,87 183,91 190,95" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 65,135 C 90,135 130,145 165,160" />
+            <path d="M 95,135 C 105,150 115,165 105,170 C 95,175 90,155 95,135 Z" />
+            <path d="M 95,135 C 100,150 102,160 105,170" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 135,148 C 150,165 165,180 155,185 C 145,190 138,170 135,148 Z" />
+            <path d="M 135,148 C 145,165 150,175 155,185" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 110,110 C 120,90 145,70 175,55" />
+            <path d="M 135,93 C 138,75 142,60 155,62 C 160,65 150,85 135,93 Z" />
+            <path d="M 135,93 C 140,80 148,70 155,62" stroke-width="0.6" opacity="0.6" />
+            
+            <path d="M 175,55 C 190,45 200,30 190,32 C 180,35 180,48 175,55 Z" />
+            <path d="M 175,55 C 182,45 186,38 190,32" stroke-width="0.6" opacity="0.6" />
+        </svg>
+
+    </div>
+
+    <!-- PANEL DE INSTRUCCIONES -->
+    <div class="help-panel">
+        <h2>Guía de Modificaciones para este Archivo</h2>
+        <ul>
+            <li>
+                <strong>Modificar el Texto:</strong> Ve a las líneas 186 y 187 de este código HTML. Edita las frases dentro de las etiquetas <code>&lt;p class="cursive-text"&gt;...&lt;/p&gt;</code> para cambiar el mensaje de tu banner.
+            </li>
+            <li>
+                <strong>Cambiar el Color del Banner:</strong> En la línea 47 del CSS, localiza la regla <code>background-color: #d19e93;</code>. Puedes cambiar <code>#d19e93</code> por cualquier otro color hexadecimal que desees.
+            </li>
+            <li>
+                <strong>Ajustar la Velocidad del Balanceo (Viento):</strong> En las líneas 94 y 101, modifica los valores de tiempo (ej. cambiar <code>10s</code> o <code>8.5s</code> por valores menores como <code>5s</code> para movimiento rápido, o mayores como <code>15s</code> para movimiento ultra lento).
+            </li>
+            <li>
+                <strong>Ajustar el Color de las Hojas:</strong> En las etiquetas <code>&lt;svg&gt;</code> de las hojas (líneas 152 y 191), puedes cambiar el parámetro <code>stroke="rgba(255,255,255,0.85)"</code> por cualquier color (por ejemplo, <code>stroke="rgba(28,28,28,0.7)"</code> si quieres hojas oscuras en lugar de blancas).
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

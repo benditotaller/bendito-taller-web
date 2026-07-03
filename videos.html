@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos y Tutoriales | Bendito Taller</title>
+    
+    <!-- Google Fonts Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .intro-text {
+            text-align: center;
+            max-width: 600px;
+            margin: 30px auto 40px auto;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand-btn">
+                    Bendito Taller
+                </a>
+                
+                <!-- Dropdown Categorías -->
+                <div class="categories-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown(event)">
+                        Categorías <span class="arrow-down">▼</span>
+                    </button>
+                    <div class="dropdown-content" id="categoriesDropdownContent">
+                        <!-- Categorías dinámicas cargadas por script.js -->
+                    </div>
+                </div>
+
+                <!-- Lupa / Buscador -->
+                <div class="search-bar-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar producto..." 
+                        oninput="handleNavbarSearch()"
+                        onkeydown="if(event.key === 'Enter') triggerSearch()"
+                    >
+                    <button class="search-btn" onclick="toggleSearchInput(event)" title="Buscar producto">🔍</button>
+                </div>
+            </div>
+            
+            <div class="nav-right-group" style="display: flex; align-items: center; gap: 12px;">
+                <button class="nav-cart-btn" onclick="location.href='carrito.html'" style="pointer-events: auto;">
+                    <span class="cart-btn-icon" style="pointer-events: none;">🛒</span>
+                    <div class="cart-btn-label" style="pointer-events: none;">
+                        <span>Carrito</span>
+                        <span id="cartCount">(0)</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="hero-section" style="padding: 40px 24px;">
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: 36px;">Videos y Tutoriales</h1>
+            <p class="hero-subtitle">
+                Aprende paso a paso cómo decorar, armar y pintar tus insumos de corte láser. Encuentra ideas e inspiración para tus manualidades.
+            </p>
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <main class="container">
+        <div class="videos-grid" style="margin-top: 30px;">
+            <!-- Video 1 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/8gl6JiQ3Dws" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Pintado de Corazón Alado de Madera</h4>
+                </div>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/f9b9mxGQV_4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Ensamblado de Nicho para Altares</h4>
+                </div>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/fy5qasKberY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Técnicas de Decoración de Corazones y Cruces</h4>
+                </div>
+            </div>
+            <!-- Video 4 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Gux8Nbe-LOA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Armado y Superposición de Capas de Madera</h4>
+                </div>
+            </div>
+            <!-- Video 5 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gZE_akzsLIU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Modelos y Adornos de Navidad en MDF</h4>
+                </div>
+            </div>
+            <!-- Video 6 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/NvQPCMOQSu8" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Cómo Armar Cajas de Regalo Grabadas</h4>
+                </div>
+            </div>
+            <!-- Video 7 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/spt81xQUpKQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Colección de Mexicanos, Calacas y Catrinas</h4>
+                </div>
+            </div>
+            <!-- Video 8 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ZfTIZvzji-U" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Uso Correcto de Stencils en Superficies de Madera</h4>
+                </div>
+            </div>
+            <!-- Video 9 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9VdzuGCAREM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Técnicas de Pintura Acrílica en Insumos Láser</h4>
+                </div>
+            </div>
+            <!-- Video 10 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/qCZyZp6JtUM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Cómo usar Láminas DecoTransfer de Feboart</h4>
+                </div>
+            </div>
+            <!-- Video 11 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gQXCSlaVyLk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Aplicación de Pan de Oro y Acabados Metálicos</h4>
+                </div>
+            </div>
+            <!-- Video 12 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/igFkrjIRhiY" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Manualidades en Madera y Decoración del Hogar</h4>
+                </div>
+            </div>
+            <!-- Video 13 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/1o_gqnMkGwc" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Decoración de Pinos y Coronas Navideñas</h4>
+                </div>
+            </div>
+            <!-- Video 14 -->
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ucpPPezeRY4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4 class="video-title">Ideas Creativas y Proyectos de Manualidades 2026</h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="insta-footer" style="margin-top: 60px;">
+        <div style="font-size: 14px; color: var(--text-muted);">
+            © 2026 Bendito Taller. Creado con amor. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        function triggerSearch() {
+            const searchInput = document.getElementById("searchInput");
+            if (!searchInput) return;
+            const query = searchInput.value.trim();
+            window.location.href = `catalogo.html?search=${encodeURIComponent(query)}`;
+        }
+
+        function handleNavbarSearch() {}
+
+        function toggleSearchInput(event) {
+            event.stopPropagation();
+            const container = document.querySelector(".search-bar-container");
+            if (!container) return;
+            const input = container.querySelector("input");
+            if (!input) return;
+            
+            if (window.innerWidth <= 768) {
+                if (!container.classList.contains("active")) {
+                    container.classList.add("active");
+                    input.focus();
+                } else {
+                    if (input.value.trim() !== "") {
+                        triggerSearch();
+                    } else {
+                        container.classList.remove("active");
+                    }
+                }
+            } else {
+                triggerSearch();
+            }
+        }
+
+        window.addEventListener("click", (e) => {
+            const container = document.querySelector(".search-bar-container");
+            if (container && !e.target.closest(".search-bar-container")) {
+                const input = container.querySelector("input");
+                if (input && input.value.trim() === "") {
+                    container.classList.remove("active");
+                }
+            }
+        });
+
+        function updateCartBadge() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            document.getElementById("cartCount").textContent = `(${totalItems})`;
+        }
+
+        window.onload = updateCartBadge;
+    </script>
+</body>
+</html>

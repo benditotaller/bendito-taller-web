@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80" viewBox="0 0 120 80">
+  <defs>
+    <!-- Filtro de textura de papel de algodón (fibra orgánica) -->
+    <filter id="paper-texture" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.26" numOctaves="4" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0
+                                            0 1 0 0 0
+                                            0 0 1 0 0
+                                            0 0 0 0.14 0" result="coloredNoise"/>
+      <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="texture"/>
+      <feBlend mode="multiply" in="SourceGraphic" in2="texture"/>
+    </filter>
+
+    <!-- Gradientes de las franjas (Rayas) - Tonalidades mate, suaves y apagadas -->
+    <linearGradient id="stripe1-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#96a193"/>
+      <stop offset="15%" stop-color="#abbda9"/>
+      <stop offset="50%" stop-color="#b2c0af"/>
+      <stop offset="85%" stop-color="#abbda9"/>
+      <stop offset="100%" stop-color="#96a193"/>
+    </linearGradient>
+
+    <linearGradient id="stripe2-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#798b7e"/>
+      <stop offset="15%" stop-color="#8fa294"/>
+      <stop offset="50%" stop-color="#92a597"/>
+      <stop offset="85%" stop-color="#8fa294"/>
+      <stop offset="100%" stop-color="#798b7e"/>
+    </linearGradient>
+
+    <!-- Gradiente de sombreado vertical (sin reflejos blancos brillantes) -->
+    <linearGradient id="vertical-shade" x1="0" y1="0" x2="0" y2="1">
+      <!-- Sombra superior suave (debajo del borde del techo) -->
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="35%" stop-color="#000000" stop-opacity="0.0"/>
+      <!-- Sombra en la base de la pendiente (pliegue del toldo) -->
+      <stop offset="56%" stop-color="#000000" stop-opacity="0.05"/>
+      <stop offset="64%" stop-color="#000000" stop-opacity="0.24"/>
+      <!-- Sombra en la caída del festoneado -->
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.38"/>
+    </linearGradient>
+
+    <!-- Sombra vertical del pliegue (unión entre franjas) -->
+    <linearGradient id="crease-shadow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.0"/>
+    </linearGradient>
+
+    <!-- Gradiente para simular variaciones orgánicas de color/manchas de acuarela (wash) -->
+    <linearGradient id="watercolor-wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eddcc4" stop-opacity="0.24"/>
+      <stop offset="40%" stop-color="#dfd0b9" stop-opacity="0.10"/>
+      <stop offset="75%" stop-color="#ebd1b5" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#e2cfb7" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Grupo principal con filtro de textura de papel -->
+  <g filter="url(#paper-texture)">
+    <!-- Stripe 1 (Salvia Claro) -->
+    <path d="M 0 0 L 60 0 L 60 50 A 30 30 0 0 1 0 50 Z" fill="url(#stripe1-grad)"/>
+
+    <!-- Stripe 2 (Teal/Verde Oscuro) -->
+    <path d="M 60 0 L 120 0 L 120 50 A 30 30 0 0 1 60 50 Z" fill="url(#stripe2-grad)"/>
+
+    <!-- Capa de sombreado vertical (profundidad sin brillos) -->
+    <path d="M 0 0 L 120 0 L 120 50 A 30 30 0 0 1 60 50 A 30 30 0 0 1 0 50 Z" fill="url(#vertical-shade)" mix-blend-mode="multiply"/>
+
+    <!-- Sombras en los pliegues verticales (uniones) -->
+    <rect x="-3" y="0" width="6" height="80" fill="url(#crease-shadow)" opacity="0.6"/>
+    <rect x="117" y="0" width="6" height="80" fill="url(#crease-shadow)" opacity="0.6"/>
+    <rect x="57" y="0" width="6" height="80" fill="url(#crease-shadow)" opacity="0.6"/>
+
+    <!-- Capa de baño de acuarela / papel envejecido para matizar la brillantez y uniformidad digital -->
+    <rect x="0" y="0" width="120" height="80" fill="url(#watercolor-wash)" mix-blend-mode="multiply"/>
+
+    <!-- Líneas de grano/trama horizontal muy sutiles -->
+    <line x1="8" y1="12" x2="52" y2="12" stroke="#3d2b21" stroke-width="0.5" opacity="0.04" stroke-dasharray="3 6"/>
+    <line x1="68" y1="20" x2="112" y2="20" stroke="#3d2b21" stroke-width="0.5" opacity="0.04" stroke-dasharray="2 4"/>
+    <line x1="8" y1="32" x2="52" y2="32" stroke="#3d2b21" stroke-width="0.5" opacity="0.04" stroke-dasharray="4 8"/>
+    <line x1="68" y1="40" x2="112" y2="40" stroke="#3d2b21" stroke-width="0.5" opacity="0.04" stroke-dasharray="3 5"/>
+
+    <!-- Costuras/líneas verticales de boceto manual (sketching) en las uniones -->
+    <line x1="0" y1="0" x2="0" y2="50" stroke="#3d2b21" stroke-width="0.75" opacity="0.22" stroke-dasharray="8 4"/>
+    <line x1="60" y1="0" x2="60" y2="50" stroke="#3d2b21" stroke-width="0.75" opacity="0.22" stroke-dasharray="6 3"/>
+    <line x1="120" y1="0" x2="120" y2="50" stroke="#3d2b21" stroke-width="0.75" opacity="0.22" stroke-dasharray="8 4"/>
+
+    <!-- Trazos manuales entintados (sketching) oscuros en el borde inferior para el toque editorial -->
+    <!-- Se removió la línea semicircular de color claro (trim crema) y se conservan solo los trazos oscuros finos -->
+    <path d="M 0 50.8 A 30 30 0 0 1 60 50.8 A 30 30 0 0 1 120 50.8" stroke="#3d2b21" stroke-width="0.85" fill="none" opacity="0.45" stroke-linecap="round" stroke-dasharray="90 3 40 4"/>
+    <path d="M 0 49.0 A 30 30 0 0 1 60 49.0 A 30 30 0 0 1 120 49.0" stroke="#3d2b21" stroke-width="0.5" fill="none" opacity="0.25" stroke-linecap="round" stroke-dasharray="4 8 35 5"/>
+  </g>
+</svg>

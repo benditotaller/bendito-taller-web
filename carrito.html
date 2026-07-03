@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Pedido | Bendito Taller</title>
+    
+    <!-- Google Fonts Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: var(--bg-light);
+        }
+        .cart-list {
+            margin-bottom: 25px;
+        }
+        .cart-item-card {
+            display: flex;
+            gap: 20px;
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(229, 218, 203, 0.4);
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cart-item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .cart-item-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(229, 218, 203, 0.3);
+        }
+        .item-details {
+            flex: 1;
+        }
+        .item-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+        .item-meta {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .item-obs {
+            font-size: 13px;
+            font-style: italic;
+            color: #8e8076;
+            margin-top: 4px;
+            background: #fffcf8;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            border-left: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+        .item-controls-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .qty-btn {
+            border: none;
+            background-color: #f0e6da;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .qty-btn:hover {
+            background-color: var(--border-color);
+            transform: scale(1.05);
+        }
+        .qty-btn:active {
+            transform: scale(0.95);
+        }
+        .qty-number {
+            font-size: 15px;
+            font-weight: 700;
+            min-width: 20px;
+            text-align: center;
+        }
+        .item-subtotal {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .summary-card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(229, 218, 203, 0.4);
+        }
+        .summary-card h2 {
+            margin: 0 0 15px 0;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .total-display {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        .obs-label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        textarea.general-obs {
+            width: 100%;
+            height: 55px;
+            border-radius: 18px;
+            border: 1.5px solid var(--border-color);
+            padding: 10px 14px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text-main);
+            resize: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.2s;
+        }
+        textarea.general-obs:focus {
+            border-color: var(--primary-color);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(125, 139, 99, 0.15);
+        }
+        .actions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .btn-action {
+            border: none;
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            grid-column: span 2;
+            font-size: 16px;
+            padding: 18px;
+        }
+        .btn-secondary {
+            background: #e2d9cf;
+            color: var(--text-main);
+        }
+        .btn-secondary:hover {
+            background: var(--border-color);
+        }
+        .btn-danger {
+            background: var(--danger-gradient);
+            color: white;
+        }
+        .delete-btn {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 10px;
+            padding: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .delete-btn:hover {
+            background-color: rgba(220, 53, 69, 0.1);
+            transform: scale(1.1);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: var(--bg-card);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(229, 218, 203, 0.4);
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        .empty-state-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        @media (max-width: 600px) {
+            .actions-grid {
+                grid-template-columns: 1fr;
+            }
+            .btn-primary {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand-btn">
+                    Bendito Taller
+                </a>
+                
+                <!-- Dropdown Categorías -->
+                <div class="categories-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown(event)">
+                        Categorías <span class="arrow-down">▼</span>
+                    </button>
+                    <div class="dropdown-content" id="categoriesDropdownContent">
+                        <!-- Categorías dinámicas cargadas por script.js -->
+                    </div>
+                </div>
+
+                <!-- Lupa / Buscador -->
+                <div class="search-bar-container">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar producto..." 
+                        oninput="handleNavbarSearch()"
+                        onkeydown="if(event.key === 'Enter') triggerSearch()"
+                    >
+                    <button class="search-btn" onclick="toggleSearchInput(event)" title="Buscar producto">🔍</button>
+                </div>
+            </div>
+            
+            <div class="nav-right-group" style="display: flex; align-items: center; gap: 12px;">
+                <button class="nav-cart-btn" onclick="location.reload()" style="pointer-events: auto;">
+                    <span class="cart-btn-icon" style="pointer-events: none;">🛒</span>
+                    <div class="cart-btn-label" style="pointer-events: none;">
+                        <span>Carrito</span>
+                        <span id="cartCount">(0)</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN BODY -->
+    <main class="cart-page-wrapper">
+        <div class="cart-header">
+            <h1>Tu Carrito de Compras</h1>
+            <p>Revisa tus artículos y envía el pedido para cotización por WhatsApp</p>
+        </div>
+
+        <!-- LISTA DE PRODUCTOS -->
+        <div id="cartContainer"></div>
+    </main>
+
+    <script src="cart-shared.js"></script>
+    <script>
+        function triggerSearch() {
+            const searchInput = document.getElementById("searchInput");
+            if (!searchInput) return;
+            const query = searchInput.value.trim();
+            window.location.href = `catalogo.html?search=${encodeURIComponent(query)}`;
+        }
+
+        function handleNavbarSearch() {}
+
+        function toggleSearchInput(event) {
+            event.stopPropagation();
+            const container = document.querySelector(".search-bar-container");
+            if (!container) return;
+            const input = container.querySelector("input");
+            if (!input) return;
+            
+            if (window.innerWidth <= 768) {
+                if (!container.classList.contains("active")) {
+                    container.classList.add("active");
+                    input.focus();
+                } else {
+                    if (input.value.trim() !== "") {
+                        triggerSearch();
+                    } else {
+                        container.classList.remove("active");
+                    }
+                }
+            } else {
+                triggerSearch();
+            }
+        }
+
+        window.addEventListener("click", (e) => {
+            const container = document.querySelector(".search-bar-container");
+            if (container && !e.target.closest(".search-bar-container")) {
+                const input = container.querySelector("input");
+                if (input && input.value.trim() === "") {
+                    container.classList.remove("active");
+                }
+            }
+        });
+
+        // Leer del LocalStorage
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        function updateCartBadge() {
+            const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            document.getElementById("cartCount").textContent = `(${totalItems})`;
+        }
+
+        function render() {
+            const container = document.getElementById("cartContainer");
+            updateCartBadge();
+            
+            if (carrito.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🛒</div>
+                        <div>Tu carrito está vacío.</div>
+                        <button class="btn-action btn-secondary" onclick="volverCatalogo()" style="margin: 20px auto 0 auto;">
+                            ⬅ Volver al Catálogo
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Recalcular precios antes de renderizar
+            recalcularPreciosCarrito(carrito);
+
+            let itemsHtml = "";
+            let total = 0;
+
+            carrito.forEach((item, index) => {
+                let subtotal = item.precio * item.cantidad;
+                total += subtotal;
+
+                let detalles = [];
+                if (item.medida) detalles.push(`Medida: ${item.medida}`);
+                if (item.variante) detalles.push(`Opción: ${item.variante}`);
+                
+                let ahorroStr = "";
+                if (item.precio < item.unitario) {
+                    detalles.push(`<span style="color: var(--primary-color); font-weight: 600;">Por Mayor</span>`);
+                    let ahorro = (item.unitario - item.precio) * item.cantidad;
+                    ahorroStr = `<div style="font-size: 13px; color: #2e7d32; font-weight: 500; margin-top: 4px;">💰 Ahorras $${ahorro.toLocaleString("es-CL")} (Precio mayorista aplicado)</div>`;
+                }
+
+                let detallesStr = detalles.join(" | ");
+
+                itemsHtml += `
+                    <div class="cart-item-card">
+                        <img src="${item.imagen}" alt="${item.nombre}" onerror="this.src='https://via.placeholder.com/100?text=Sin+Foto'">
+                        
+                        <div class="item-details">
+                            <div class="item-name">${item.nombre}</div>
+                            <div class="item-meta">${detallesStr}</div>
+                            ${item.observacion ? `<div class="item-obs">Nota: "${item.observacion}"</div>` : ""}
+                            ${ahorroStr}
+                            
+                            <div class="item-controls-price">
+                                <div class="qty-controls">
+                                    <button class="qty-btn" onclick="restar(${index})">−</button>
+                                    <span class="qty-number">${item.cantidad}</span>
+                                    <button class="qty-btn" onclick="sumar(${index})">+</button>
+                                    <button class="delete-btn" onclick="eliminar(${index})" title="Eliminar producto">🗑️</button>
+                                </div>
+                                <div class="item-subtotal">$${subtotal.toLocaleString("es-CL")}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = `
+                <div class="cart-list">
+                    ${itemsHtml}
+                </div>
+
+                <div class="summary-card">
+                    <h2>Resumen del Pedido</h2>
+                    <div class="total-display">
+                        Total: $<span>${total.toLocaleString("es-CL")}</span>
+                    </div>
+
+                    <label for="obsGeneral" class="obs-label">Observaciones Generales</label>
+                    <textarea id="obsGeneral" class="general-obs" placeholder="con factura / solo boleta"></textarea>
+
+                    <div class="actions-grid">
+                        <button class="btn-action btn-primary" onclick="copiar()">
+                            Envíame tu pedido por WhatsApp pinchando aquí... ❤️
+                        </button>
+                        <button class="btn-action btn-secondary" onclick="volverCatalogo()">
+                            ⬅ Volver al Catálogo
+                        </button>
+                        <button class="btn-action btn-danger" onclick="vaciar()">
+                            🗑 Vaciar Carrito
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function guardar() {
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
+
+        function sumar(index) {
+            carrito[index].cantidad++;
+            guardar();
+            render();
+        }
+
+        function restar(index) {
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad--;
+                guardar();
+                render();
+            }
+        }
+
+        function eliminar(index) {
+            if (confirm("¿Deseas eliminar este producto de tu pedido?")) {
+                carrito.splice(index, 1);
+                guardar();
+                render();
+            }
+        }
+
+        function vaciar() {
+            if (confirm("¿Seguro que deseas vaciar tu carrito?")) {
+                carrito = [];
+                guardar();
+                render();
+            }
+        }
+
+        function volverCatalogo() {
+            // Siempre volver al catálogo de Google Sites en producción por ahora
+            const targetUrl = sessionStorage.getItem("referrerSites") || "https://sites.google.com/view/bendito-taller/p%C3%A1gina-principal";
+            window.location.href = targetUrl;
+        }
+
+        function copiar() {
+            if (carrito.length === 0) return;
+
+            let mensaje = `Hola 😊 quiero cotizar estos productos de Bendito Taller:\n\n`;
+
+            carrito.forEach(item => {
+                let det = [];
+                if (item.medida) det.push(`Medida: ${item.medida}`);
+                if (item.variante) det.push(`Opción: ${item.variante}`);
+                if (item.precio < item.unitario) det.push(`Precio Mayorista aplicado`);
+                let detStr = det.length > 0 ? ` (${det.join(" | ")})` : "";
+
+                mensaje += `• ${item.nombre}${detStr}\n`;
+                mensaje += `  Cantidad: ${item.cantidad}\n`;
+                if (item.observacion) mensaje += `  Nota: "${item.observacion}"\n`;
+                mensaje += `\n`;
+            });
+
+            const total = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
+            mensaje += `💰 Total estimado: $${total.toLocaleString("es-CL")}\n`;
+
+            const obsGeneralVal = document.getElementById("obsGeneral").value.trim();
+            if (obsGeneralVal) {
+                mensaje += `\nObservaciones generales:\n"${obsGeneralVal}"`;
+            }
+
+            navigator.clipboard.writeText(mensaje)
+                .then(() => {
+                    alert("¡Redirigiendo a WhatsApp para enviar tu pedido! (El texto del pedido también ha sido copiado al portapapeles)");
+                    window.open(`https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`, "_blank");
+                })
+                .catch(err => {
+                    console.error("Error al copiar: ", err);
+                    const t = document.createElement("textarea");
+                    t.value = mensaje;
+                    document.body.appendChild(t);
+                    t.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(t);
+                    alert("¡Redirigiendo a WhatsApp para enviar tu pedido!");
+                    window.open(`https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensaje)}`, "_blank");
+                });
+        }
+
+        // Inicializar
+        render();
+    </script>
+</body>
+</html>
