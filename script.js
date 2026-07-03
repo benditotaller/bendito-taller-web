@@ -44,6 +44,7 @@ function inicializarCategorias() {
         else if (key === "stencil") icon = "🎨";
         else if (key === "mistico-y-mas") icon = "🕉️";
         else if (key === "libros-3d") icon = "📚";
+        else if (key === "pascua") icon = "🐰";
         
         item.innerHTML = `${icon} ${label}`;
         item.onclick = (e) => {
@@ -205,7 +206,7 @@ const CATEGORY_BANNER_DATA = {
     "corazones-alados": {
         title: "Alados",
         subtitle: "diseños variados",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_alados.jpeg"
     },
     "nichos-y-altares": {
         title: "Nichos",
@@ -215,12 +216,12 @@ const CATEGORY_BANNER_DATA = {
     "mexicanos-y-calacas": {
         title: "Calacas",
         subtitle: "y mexicanos",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_calacas.jpeg"
     },
     "grabados": {
         title: "Grabados",
         subtitle: "infantiles y más",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_grabados.jpg"
     },
     "navidad": {
         title: "Navidad",
@@ -235,7 +236,7 @@ const CATEGORY_BANNER_DATA = {
     "stencil": {
         title: "Stencils",
         subtitle: "creaciones propias",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_stencil.jpeg"
     },
     "mistico-y-mas": {
         title: "Místico",
@@ -250,7 +251,12 @@ const CATEGORY_BANNER_DATA = {
     "libros-3d": {
         title: "Libros 3D",
         subtitle: "fantasía y encanto",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_3d.jpeg"
+    },
+    "pascua": {
+        title: "Pascua",
+        subtitle: "de resurrección",
+        bg: "img/fondo_pascua.jpeg"
     }
 };
 

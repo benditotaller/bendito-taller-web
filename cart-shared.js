@@ -13,7 +13,8 @@ const CATEGORIAS_MAP = {
     "stencil": "Stencil",
     "mistico-y-mas": "Místico y Más",
     "otros-insumos": "Otros Insumos",
-    "libros-3d": "Libros 3D"
+    "libros-3d": "Libros 3D",
+    "pascua": "Pascua"
 };
 
 // Set de códigos intercambiables normalizados (lowercase, sin caracteres especiales) - Grupo original de Corazones/Cruces/Altares

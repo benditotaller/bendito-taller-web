@@ -1044,6 +1044,31 @@ h1, h2, h3, h4, h5, h6 {
     background-image: url('img/FONDO_NAVIDAD.jpg');
 }
 
+.card-libros .card-content::after {
+    background-image: url('img/fondo_3d.jpeg');
+    opacity: 0.15;
+}
+
+.card-alados .card-content::after {
+    background-image: url('img/fondo_alados.jpeg');
+}
+
+.card-grabados .card-content::after {
+    background-image: url('img/fondo_grabados.jpg');
+}
+
+.card-calacas .card-content::after {
+    background-image: url('img/fondo_calacas.jpeg');
+}
+
+.card-pascua .card-content::after {
+    background-image: url('img/fondo_pascua.jpeg');
+}
+
+.card-stencil .card-content::after {
+    background-image: url('img/fondo_stencil.jpeg');
+}
+
 .category-card:hover .card-content::after,
 .category-card.active .card-content::after {
     transform: translate(-50%, -50%) scale(1.05);
@@ -2085,7 +2110,7 @@ h1, h2, h3, h4, h5, h6 {
 .decor-banner-content {
     position: relative;
     z-index: 10;
-    max-width: 55%; /* Limita el ancho del texto para evitar que choque con las ramas */
+    max-width: 80%; /* Limita el ancho del texto para evitar que choque con las ramas */
     margin: 0 auto;
     pointer-events: none;
 }
@@ -2104,7 +2129,7 @@ h1, h2, h3, h4, h5, h6 {
 .decor-banner-text {
     font-family: 'Parisienne', sans-serif;
     font-style: normal;
-    font-size: 22px;
+    font-size: 38px;
     font-weight: 400;
     margin: 0;
     color: #1c1c1c;
@@ -2328,7 +2353,7 @@ h1, h2, h3, h4, h5, h6 {
 .dots-banner-content {
     position: relative;
     z-index: 2;
-    max-width: 55%;
+    max-width: 80%;
     margin: 0 auto;
     pointer-events: none;
 }
@@ -2347,7 +2372,7 @@ h1, h2, h3, h4, h5, h6 {
 .dots-banner-text {
     font-family: 'Parisienne', sans-serif;
     font-style: normal;
-    font-size: 22px;
+    font-size: 38px;
     font-weight: 400;
     margin: 0;
     color: #1c1c1c;
@@ -2392,13 +2417,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 950px) {
     .dots-banner-content {
-        max-width: 70%;
+        max-width: 85%;
     }
     .dots-banner-title {
         font-size: 30px;
     }
     .dots-banner-text {
-        font-size: 18px;
+        font-size: 30px;
     }
 }
 
@@ -2417,9 +2442,11 @@ h1, h2, h3, h4, h5, h6 {
     .dots-banner-title {
         font-size: 24px;
         margin-bottom: 6px;
+        font-weight: 700;
     }
     .dots-banner-text {
-        font-size: 16px;
+        font-size: 24px;
+        font-weight: 700;
     }
 }
 
@@ -2498,9 +2525,11 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 19px !important;
         margin-bottom: 6px;
         line-height: 1.4;
+        font-weight: 700;
     }
     .dots-banner-text {
-        font-size: 14px !important;
+        font-size: 19px !important;
+        font-weight: 700;
     }
     .banner-insta-btn {
         padding: 10px 22px !important;
