@@ -241,12 +241,12 @@ const CATEGORY_BANNER_DATA = {
     "mistico-y-mas": {
         title: "Místico",
         subtitle: "energía y conexión",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_mistico.jpeg"
     },
     "otros-insumos": {
         title: "Insumos",
         subtitle: "complementarios",
-        bg: "img/grabados_bg.jpg"
+        bg: "img/fondo_insumos.jpeg"
     },
     "libros-3d": {
         title: "Libros 3D",

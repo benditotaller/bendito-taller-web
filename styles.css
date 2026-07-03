@@ -1069,6 +1069,14 @@ h1, h2, h3, h4, h5, h6 {
     background-image: url('img/fondo_stencil.jpeg');
 }
 
+.card-insumos .card-content::after {
+    background-image: url('img/fondo_insumos.jpeg');
+}
+
+.card-mistico .card-content::after {
+    background-image: url('img/fondo_mistico.jpeg');
+}
+
 .category-card:hover .card-content::after,
 .category-card.active .card-content::after {
     transform: translate(-50%, -50%) scale(1.05);
