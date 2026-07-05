@@ -1412,6 +1412,22 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.2s;
     display: flex;
     flex-direction: column;
+    
+    /* Animación de entrada (staggered falling cascade from the banner) */
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+    animation: productCardFadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes productCardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .product-card:hover {
@@ -1628,6 +1644,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     z-index: 99999;
     padding: 20px;
+    touch-action: none; /* Evita que el arrastre con el dedo en celular mueva el fondo */
     
     /* Estados para animación */
     opacity: 0;
@@ -2824,6 +2841,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Banner dinámico de categorías en catálogo */
 .category-header-banner {
+    view-transition-name: active-category-header;
     position: relative;
     width: 100%;
     height: 200px;
@@ -2935,6 +2953,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .category-header-banner {
+    view-transition-name: active-category-header;
         height: 160px;
         margin-bottom: 24px;
         background-size: auto; /* Mantener tamaño real de la foto en móvil */
@@ -2961,3 +2980,26 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+
+/* Personalización de velocidad de transiciones View Transitions (Efecto Héroe lento) */
+::view-transition-group(root) {
+    animation-duration: 0.65s;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.65s;
+}
+::view-transition-group(active-category-header) {
+    animation-duration: 0.85s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); /* Ease-out fluido premium */
+}
+::view-transition-old(active-category-header),
+::view-transition-new(active-category-header) {
+    animation-duration: 0.85s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Bloqueo de scroll de fondo cuando hay un modal abierto */
+body.modal-open {
+    overflow: hidden !important;
+}
