@@ -902,7 +902,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%) scale(1);
     width: 416px;
     height: 274px;
-    background-image: url('img/fondo_rayas.jpg');
+    background-image: url('img/fondo_rayas.png');
     background-size: cover;
     background-position: center;
     border-radius: 24px; /* Suave contorno redondeado */
@@ -922,7 +922,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%) scale(1);
     width: 416px;
     height: 274px;
-    background-image: url('img/fondo_rayas.jpg');
+    background-image: url('img/fondo_rayas.png');
     background-size: cover;
     background-position: center;
     border-radius: 24px;
@@ -1010,7 +1010,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 345px;
     height: 224px;
     transform: translate(-50%, -50%) scale(1);
-    background-image: url('https://benditotaller.github.io/bendito-taller-carrito/img/grabados_bg.jpg');
+    background-image: url('https://benditotaller.github.io/bendito-taller-carrito/img/grabados_bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1029,52 +1029,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-corazones .card-content::after {
-    background-image: url('img/CORAZONES_2.jpg');
+    background-image: url('img/CORAZONES_2.png');
 }
 
 .card-nichos .card-content::after {
-    background-image: url('img/FONDO_NICHOS.jpg');
+    background-image: url('img/FONDO_NICHOS.png');
 }
 
 .card-deco .card-content::after {
-    background-image: url('img/fondo_deco_2.jpg');
+    background-image: url('img/fondo_deco_2.png');
 }
 
 .card-navidad .card-content::after {
-    background-image: url('img/FONDO_NAVIDAD.jpg');
+    background-image: url('img/FONDO_NAVIDAD.png');
 }
 
 .card-libros .card-content::after {
-    background-image: url('img/fondo_3d.jpeg');
+    background-image: url('img/fondo_3d.png');
     opacity: 0.15;
 }
 
 .card-alados .card-content::after {
-    background-image: url('img/fondo_alados.jpeg');
+    background-image: url('img/fondo_alados.png');
 }
 
 .card-grabados .card-content::after {
-    background-image: url('img/fondo_grabados.jpg');
+    background-image: url('img/fondo_grabados.png');
 }
 
 .card-calacas .card-content::after {
-    background-image: url('img/fondo_calacas.jpeg');
+    background-image: url('img/fondo_calacas.png');
 }
 
 .card-pascua .card-content::after {
-    background-image: url('img/fondo_pascua.jpeg');
+    background-image: url('img/fondo_pascua.png');
 }
 
 .card-stencil .card-content::after {
-    background-image: url('img/fondo_stencil.jpeg');
+    background-image: url('img/fondo_stencil.png');
 }
 
 .card-insumos .card-content::after {
-    background-image: url('img/fondo_insumos.jpeg');
+    background-image: url('img/fondo_insumos.png');
 }
 
 .card-mistico .card-content::after {
-    background-image: url('img/fondo_mistico.jpeg');
+    background-image: url('img/fondo_mistico.png');
 }
 
 .category-card:hover .card-content::after,
@@ -2124,24 +2124,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .decor-banner-title {
-    font-family: 'Parisienne', sans-serif;
+    font-family: var(--font-serif);
     font-style: normal;
-    font-size: 38px;
-    font-weight: 400;
+    font-size: 26px;
+    font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c; /* Letra carbón oscura premium */
-    line-height: 1.3;
+    line-height: 1.4;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .decor-banner-text {
-    font-family: 'Parisienne', sans-serif;
+    font-family: var(--font-sans);
     font-style: normal;
-    font-size: 38px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 500;
     margin: 0;
     color: #1c1c1c;
-    line-height: 1.3;
+    line-height: 1.4;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -2251,11 +2251,25 @@ h1, h2, h3, h4, h5, h6 {
         width: 25%;
     }
     .decor-banner-title {
-        font-size: 30px;
-    }
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c; /* Letra carbón oscura premium */
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .decor-banner-text {
-        font-size: 18px;
-    }
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
 }
 
 @media (max-width: 768px) {
@@ -2282,12 +2296,25 @@ h1, h2, h3, h4, h5, h6 {
         min-height: auto;
     }
     .decor-banner-title {
-        font-size: 24px;
-        margin-bottom: 6px;
-    }
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c; /* Letra carbón oscura premium */
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .decor-banner-text {
-        font-size: 16px;
-    }
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
 }
 
 /* ==========================
@@ -2367,24 +2394,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dots-banner-title {
-    font-family: 'Parisienne', sans-serif;
+    font-family: var(--font-serif);
     font-style: normal;
-    font-size: 38px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
-    line-height: 1.3;
+    line-height: 1.4;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .dots-banner-text {
-    font-family: 'Parisienne', sans-serif;
+    font-family: var(--font-sans);
     font-style: normal;
-    font-size: 38px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 500;
     margin: 0;
     color: #1c1c1c;
-    line-height: 1.3;
+    line-height: 1.4;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
@@ -2428,11 +2455,25 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 85%;
     }
     .dots-banner-title {
-        font-size: 30px;
-    }
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .dots-banner-text {
-        font-size: 30px;
-    }
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
 }
 
 @media (max-width: 768px) {
@@ -2448,14 +2489,25 @@ h1, h2, h3, h4, h5, h6 {
         min-height: 140px;
     }
     .dots-banner-title {
-        font-size: 24px;
-        margin-bottom: 6px;
-        font-weight: 700;
-    }
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .dots-banner-text {
-        font-size: 24px;
-        font-weight: 700;
-    }
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
 }
 
 /* ===== RESPONSIVE CARD SCALING & GENERAL MOBILE OPTIMIZATIONS ===== */
@@ -2530,15 +2582,25 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Ajuste de fuentes y tamaño para banners en celulares */
     .dots-banner-title {
-        font-size: 19px !important;
-        margin-bottom: 6px;
-        line-height: 1.4;
-        font-weight: 700;
-    }
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .dots-banner-text {
-        font-size: 19px !important;
-        font-weight: 700;
-    }
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .banner-insta-btn {
         padding: 10px 22px !important;
         font-size: 14px !important;
@@ -2603,15 +2665,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Diferentes imágenes de fondo para cada tarjeta de características */
 .feature-card:nth-child(1)::before {
-    background-image: url('img/fondo_cuadros_blancos.jpeg');
+    background-image: url('img/fondo_cuadros_blancos.png');
 }
 
 .feature-card:nth-child(2)::before {
-    background-image: url('img/fondo_cuadros_blancos1.jpeg');
+    background-image: url('img/fondo_cuadros_blancos1.png');
 }
 
 .feature-card:nth-child(3)::before {
-    background-image: url('img/fondo_cuadros_blancos2.jpeg');
+    background-image: url('img/fondo_cuadros_blancos2.png');
 }
 
 .feature-icon {
@@ -2701,8 +2763,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .instagram-banner-content .dots-banner-title {
-    margin: 0;
-    text-align: left;
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
 .instagram-banner-content .banner-insta-btn {
@@ -2717,8 +2785,15 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
     .instagram-banner-content .dots-banner-title {
-        text-align: center;
-    }
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #1c1c1c;
+    line-height: 1.4;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
     .instagram-banner-content .banner-insta-btn {
         margin-top: 6px !important;
     }

@@ -196,67 +196,67 @@ const CATEGORY_BANNER_DATA = {
     "all": {
         title: "Productos",
         subtitle: "Catálogo completo",
-        bg: "img/fondo_rayas.jpg"
+        bg: "img/fondo_rayas.png"
     },
     "corazones": {
         title: "Corazones",
         subtitle: "Colección",
-        bg: "img/CORAZONES_2.jpg"
+        bg: "img/CORAZONES_2.png"
     },
     "corazones-alados": {
         title: "Alados",
         subtitle: "diseños variados",
-        bg: "img/fondo_alados.jpeg"
+        bg: "img/fondo_alados.png"
     },
     "nichos-y-altares": {
         title: "Nichos",
         subtitle: "estilo mexicanos",
-        bg: "img/FONDO_NICHOS.jpg"
+        bg: "img/FONDO_NICHOS.png"
     },
     "mexicanos-y-calacas": {
         title: "Calacas",
         subtitle: "y mexicanos",
-        bg: "img/fondo_calacas.jpeg"
+        bg: "img/fondo_calacas.png"
     },
     "grabados": {
         title: "Grabados",
         subtitle: "infantiles y más",
-        bg: "img/fondo_grabados.jpg"
+        bg: "img/fondo_grabados.png"
     },
     "navidad": {
         title: "Navidad",
         subtitle: "todo el año",
-        bg: "img/FONDO_NAVIDAD.jpg"
+        bg: "img/FONDO_NAVIDAD.png"
     },
     "deco": {
         title: "Deco",
         subtitle: "creativa",
-        bg: "img/fondo_deco_2.jpg"
+        bg: "img/fondo_deco_2.png"
     },
     "stencil": {
         title: "Stencils",
         subtitle: "creaciones propias",
-        bg: "img/fondo_stencil.jpeg"
+        bg: "img/fondo_stencil.png"
     },
     "mistico-y-mas": {
         title: "Místico",
         subtitle: "energía y conexión",
-        bg: "img/fondo_mistico.jpeg"
+        bg: "img/fondo_mistico.png"
     },
     "otros-insumos": {
         title: "Insumos",
         subtitle: "complementarios",
-        bg: "img/fondo_insumos.jpeg"
+        bg: "img/fondo_insumos.png"
     },
     "libros-3d": {
         title: "Libros 3D",
         subtitle: "fantasía y encanto",
-        bg: "img/fondo_3d.jpeg"
+        bg: "img/fondo_3d.png"
     },
     "pascua": {
         title: "Pascua",
         subtitle: "de resurrección",
-        bg: "img/fondo_pascua.jpeg"
+        bg: "img/fondo_pascua.png"
     }
 };
 
@@ -271,7 +271,7 @@ function actualizarBannerCategoria() {
     if (busquedaActual) {
         titleEl.textContent = "Buscador";
         subtitleEl.textContent = `Resultados para "${busquedaActual}"`;
-        banner.style.backgroundImage = "url('img/fondo_rayas.jpg')";
+        banner.style.backgroundImage = "url('img/fondo_rayas.png')";
     } else {
         titleEl.textContent = bannerData.title;
         subtitleEl.textContent = bannerData.subtitle;
@@ -968,10 +968,10 @@ function procesarParametrosURL() {
 // Carrusel de la página de inicio (Productos Destacados)
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
-    { src: "img/Arabesco Floral1.jpg", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
-    { src: "img/Comp8.jpg", title: "Composición 8", subtitle: "Arte en Madera" },
-    { src: "img/Tienda vintage2.jpg", title: "Tienda Vintage", subtitle: "Estilo Único" },
-    { src: "img/Libromagico1.jpg", title: "Libro Mágico", subtitle: "Creatividad en 3D" }
+    { src: "img/Arabesco Floral1.png", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
+    { src: "img/Comp8.png", title: "Composición 8", subtitle: "Arte en Madera" },
+    { src: "img/Tienda vintage2.png", title: "Tienda Vintage", subtitle: "Estilo Único" },
+    { src: "img/Libromagico1.png", title: "Libro Mágico", subtitle: "Creatividad en 3D" }
 ];
 
 let carouselIndex = 0;
