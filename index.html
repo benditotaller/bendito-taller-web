@@ -360,17 +360,11 @@
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/8gl6JiQ3Dws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="video-info">
-                        <h4 class="video-title">Pintado de Corazón Alado de Madera</h4>
-                    </div>
                 </div>
                 <!-- Video 2 -->
                 <div class="video-card">
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/f9b9mxGQV_4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h4 class="video-title">Ensamblado de Nicho para Altares</h4>
                     </div>
                 </div>
             </div>
@@ -384,9 +378,21 @@
     <footer class="insta-footer">
         <h3 style="margin: 0 0 10px 0;">¿Tienes dudas o quieres ver novedades diarias?</h3>
         <p style="color: var(--text-muted); margin: 0 0 20px 0;">Síguenos en nuestro Instagram oficial y mantente informado.</p>
-        <a href="https://www.instagram.com/bendito_taller_/" target="_blank" class="insta-btn">
-            📸 Ir a @bendito_taller_
-        </a>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 25px;">
+            <div class="footer-profile-img" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(229, 218, 203, 0.8); box-shadow: 0 4px 12px rgba(75, 55, 45, 0.15); flex-shrink: 0;">
+                <img src="img/imagen_lorena.png" alt="Lorena" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%;">
+            </div>
+            <a href="https://www.instagram.com/bendito_taller_/" target="_blank" class="insta-btn" style="margin: 0;">
+                📸 Ir a @bendito_taller_
+            </a>
+        </div>
+        
+        <div style="margin-top: 25px;">
+            <div class="visitor-counter" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(75, 55, 45, 0.04); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(75, 55, 45, 0.12);">
+                <span style="font-size: 14px; color: var(--text-muted); font-weight: 500;">Visitas:</span>
+                <span id="visitCount" style="font-size: 15px; color: var(--text-main); font-weight: 700; font-family: monospace; letter-spacing: 0.5px;">...</span>
+            </div>
+        </div>
         <div style="margin-top: 40px; font-size: 14px; color: var(--text-muted);">
             © 2026 Bendito Taller - Corte Láser Creativo y Más. Creando con amor desde 2023. Todos los derechos reservados.
         </div>
@@ -457,6 +463,32 @@
         } else {
             initMobileObserver();
         }
+
+        // Contador de Visitas con Control de Sesión
+        async function loadVisitorCounter() {
+            try {
+                const visitedKey = "bendito_taller_visited";
+                let url = "https://api.counterapi.dev/v1/benditotaller/visitas";
+                
+                if (!sessionStorage.getItem(visitedKey)) {
+                    url += "/up";
+                    sessionStorage.setItem(visitedKey, "true");
+                }
+                
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    const countEl = document.getElementById("visitCount");
+                    if (countEl) {
+                        countEl.textContent = data.count.toLocaleString("es-CL");
+                    }
+                }
+            } catch (error) {
+                console.error("Error al cargar el contador de visitas:", error);
+            }
+        }
+        
+        loadVisitorCounter();
     </script>
 </body>
 </html>
