@@ -436,6 +436,7 @@ function abrirImagenGrande(id) {
     `;
 
     document.body.appendChild(popup);
+    requestAnimationFrame(() => popup.classList.add("active"));
 }
 
 // Abrir Selector Modal para comprar
@@ -554,6 +555,7 @@ function abrirSelectorProducto() {
     `;
 
     document.body.appendChild(popup);
+    requestAnimationFrame(() => popup.classList.add("active"));
     actualizarPreciosModal();
 }
 
@@ -768,18 +770,25 @@ function agregarProducto() {
 
 function cerrarPopup() {
     const popup = document.getElementById("popupProducto");
-    if (popup) popup.remove();
+    if (!popup) return;
     
-    // Limpiar query param de producto
-    const url = new URL(window.location);
-    url.searchParams.delete('producto');
-    window.history.replaceState({}, document.title, url.pathname + url.search);
+    popup.classList.remove("active");
+    popup.classList.add("closing");
+    
+    setTimeout(() => {
+        popup.remove();
+        
+        // Limpiar query param de producto
+        const url = new URL(window.location);
+        url.searchParams.delete('producto');
+        window.history.replaceState({}, document.title, url.pathname + url.search);
 
-    // Si viene de Google Sites y cancela, redirigir de vuelta a Google Sites
-    if (sessionStorage.getItem("fromSites") === "true") {
-        const targetUrl = sessionStorage.getItem("referrerSites") || "https://sites.google.com/view/bendito-taller/p%C3%A1gina-principal";
-        window.location.href = targetUrl;
-    }
+        // Si viene de Google Sites y cancela, redirigir de vuelta a Google Sites
+        if (sessionStorage.getItem("fromSites") === "true") {
+            const targetUrl = sessionStorage.getItem("referrerSites") || "https://sites.google.com/view/bendito-taller/p%C3%A1gina-principal";
+            window.location.href = targetUrl;
+        }
+    }, 250);
 }
 
 // Cierra el modal de producto sin gatillar la redirección inmediata a Google Sites

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Parisienne&family=Petit+Formal+Script&display=swap');
 
 /* ==========================
    DESIGN SYSTEM - BENDITO TALLER (GOOGLE SITES DESIGN)
@@ -30,6 +30,7 @@ html {
 
 * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -1627,6 +1628,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     z-index: 99999;
     padding: 20px;
+    
+    /* Estados para animación */
+    opacity: 0;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+}
+
+.modal-overlay.closing {
+    opacity: 0;
 }
 
 .modal-container {
@@ -1637,12 +1650,22 @@ h1, h2, h3, h4, h5, h6 {
     padding: 24px;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
-    animation: scaleUp 0.3s forwards cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Estados para animación (Android-style scale bounce) */
+    transform: scale(0.65);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease-out;
 }
 
-@keyframes scaleUp {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+.modal-overlay.active .modal-container {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-overlay.closing .modal-container {
+    transform: scale(0.85);
+    opacity: 0;
+    transition: transform 0.22s cubic-bezier(0.4, 0, 1, 1), opacity 0.22s ease-in;
 }
 
 .modal-container h2 {
@@ -2124,9 +2147,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .decor-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c; /* Letra carbón oscura premium */
@@ -2135,10 +2158,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .decor-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2251,9 +2274,9 @@ h1, h2, h3, h4, h5, h6 {
         width: 25%;
     }
     .decor-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c; /* Letra carbón oscura premium */
@@ -2261,10 +2284,10 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
     .decor-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2296,9 +2319,9 @@ h1, h2, h3, h4, h5, h6 {
         min-height: auto;
     }
     .decor-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 26px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c; /* Letra carbón oscura premium */
@@ -2306,10 +2329,10 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
     .decor-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2394,9 +2417,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dots-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
@@ -2405,10 +2428,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dots-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2455,9 +2478,9 @@ h1, h2, h3, h4, h5, h6 {
         max-width: 85%;
     }
     .dots-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
@@ -2465,10 +2488,10 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
     .dots-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2489,9 +2512,9 @@ h1, h2, h3, h4, h5, h6 {
         min-height: 140px;
     }
     .dots-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
@@ -2499,10 +2522,10 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
     .dots-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2582,9 +2605,9 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Ajuste de fuentes y tamaño para banners en celulares */
     .dots-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
@@ -2592,10 +2615,10 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 }
     .dots-banner-text {
-    font-family: var(--font-sans);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 700;
     margin: 0;
     color: #1c1c1c;
     line-height: 1.4;
@@ -2763,9 +2786,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .instagram-banner-content .dots-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
@@ -2785,9 +2808,9 @@ h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
     .instagram-banner-content .dots-banner-title {
-    font-family: var(--font-serif);
+    font-family: 'Petit Formal Script', cursive;
     font-style: normal;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: 700;
     margin: 0 0 8px 0;
     color: #1c1c1c;
