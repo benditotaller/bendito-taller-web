@@ -700,6 +700,17 @@ function clasificarProducto(id, p) {
         return ["deco"];
     }
 
+    if (
+        idClean.includes("pascua") || 
+        idClean.includes("conejo") || 
+        idClean.includes("huevo") || 
+        nombreClean.includes("pascua") ||
+        nombreClean.includes("conejo") ||
+        nombreClean.includes("huevo")
+    ) {
+        return ["pascua"];
+    }
+
     return ["otros-insumos"];
 }
 
