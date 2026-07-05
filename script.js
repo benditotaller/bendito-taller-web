@@ -987,7 +987,18 @@ const IMAGENES_CARROUSEL = [
     { src: "img/Arabesco Floral1.png", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
     { src: "img/Comp8.png", title: "Composición 8", subtitle: "Arte en Madera" },
     { src: "img/Tienda vintage2.png", title: "Tienda Vintage", subtitle: "Estilo Único" },
-    { src: "img/Libromagico1.png", title: "Libro Mágico", subtitle: "Creatividad en 3D" }
+    { src: "img/Libromagico1.png", title: "Libro Mágico", subtitle: "Creatividad en 3D" },
+    { src: "img/co38.png", title: "CO38", subtitle: "Corazón devoto" },
+    { src: "img/co42.png", title: "CO42", subtitle: "Corazón multicapa flores" },
+    { src: "img/co35.png", title: "CO35", subtitle: "Corazón 5 capas" },
+    { src: "img/altar12.png", title: "ALTAR 12", subtitle: "Altar en capas" },
+    { src: "img/ca20.png", title: "CA20", subtitle: "Corazón alado 3 capas" },
+    { src: "img/ca21.png", title: "CA21", subtitle: "Corazón alado 3 capas" },
+    { src: "img/comp9.png", title: "COMP9", subtitle: "Composición multicapa" },
+    { src: "img/comp12.png", title: "COMP12", subtitle: "Tetera reloj" },
+    { src: "img/comp10.png", title: "COMP10", subtitle: "Composición calaca" },
+    { src: "img/setfiguritas10.png", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
+    { src: "img/setfiguritas11.png", title: "SET FIGURITAS11", subtitle: "Set para pintar" }
 ];
 
 let carouselIndex = 0;

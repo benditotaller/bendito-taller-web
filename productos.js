@@ -1,4 +1,114 @@
 const productos = {
+    "co38": {
+        "codigo": "CO38",
+        "nombre": "CO38",
+        "imagen": "img/co38.png",
+        "tipo": "simple",
+        "mayor": 2500,
+        "unitario": 2900,
+        "descripcion": "Corazón devoto, 2 capas Mdf 5,5mm.",
+        "medida_original": "22 cm. de alto"
+    },
+    "co42": {
+        "codigo": "CO42",
+        "nombre": "CO42",
+        "imagen": "img/co42.png",
+        "tipo": "simple",
+        "mayor": 2900,
+        "unitario": 3700,
+        "descripcion": "Corazón multicapa flores, 4 capas Mdf 3 mm.",
+        "medida_original": "26 cm. de alto"
+    },
+    "co35": {
+        "codigo": "CO35",
+        "nombre": "CO35",
+        "imagen": "img/co35.png",
+        "tipo": "simple",
+        "mayor": 2000,
+        "unitario": 2800,
+        "descripcion": "Corazón 5 capas, Mdf  3 mm.",
+        "medida_original": "20 cm. de alto"
+    },
+    "altar12": {
+        "codigo": "ALTAR 12",
+        "nombre": "ALTAR 12",
+        "imagen": "img/altar12.png",
+        "tipo": "simple",
+        "mayor": 2500,
+        "unitario": 3100,
+        "descripcion": "Altar con corazón en capas, Mdf  5,5mm. base y 3mm. corazón",
+        "medida_original": "23 cm. de alto"
+    },
+    "ca20": {
+        "codigo": "CA20",
+        "nombre": "CA20",
+        "imagen": "img/ca20.png",
+        "tipo": "simple",
+        "mayor": 4800,
+        "unitario": 5600,
+        "descripcion": "Corazón alado 3 capas, Mdf  5,5 mm.",
+        "medida_original": "42 cm. de ancho"
+    },
+    "ca21": {
+        "codigo": "CA21",
+        "nombre": "CA21",
+        "imagen": "img/ca21.png",
+        "tipo": "simple",
+        "mayor": 4300,
+        "unitario": 5100,
+        "descripcion": "Corazón alado 3 capas, Mdf  5,5 mm.",
+        "medida_original": "38 cm. de ancho"
+    },
+    "comp9": {
+        "codigo": "COMP9",
+        "nombre": "COMP9",
+        "imagen": "img/comp9.png",
+        "tipo": "simple",
+        "mayor": 3800,
+        "unitario": 4600,
+        "descripcion": "Composición multicapa corazón, Mdf  3 mm.",
+        "medida_original": "28,5cm. de alto"
+    },
+    "comp12": {
+        "codigo": "COMP12",
+        "nombre": "COMP12",
+        "imagen": "img/comp12.png",
+        "tipo": "simple",
+        "mayor": 2600,
+        "unitario": 3000,
+        "descripcion": "Tetera reloj 4 capas, Mdf  5,5 mm. (no incluye mecanismo reloj)",
+        "medida_original": "25 cm. de alto"
+    },
+    "comp10": {
+        "codigo": "COMP10",
+        "nombre": "COMP10",
+        "imagen": "img/comp10.png",
+        "tipo": "simple",
+        "mayor": 2200,
+        "unitario": 2700,
+        "descripcion": "Composición corazón multicapa, Mdf  5,5 mm.",
+        "medida_original": "21cm. de alto"
+    },
+    "setfiguritas10": {
+        "codigo": "SET FIGURITAS10",
+        "nombre": "SET FIGURITAS10",
+        "imagen": "img/setfiguritas10.png",
+        "tipo": "simple",
+        "mayor": 1500,
+        "unitario": 1800,
+        "descripcion": "Set para pintar, Mdf  3 mm.",
+        "medida_original": "15 y 26cm. de alto"
+    },
+    "setfiguritas11": {
+        "codigo": "SET FIGURITAS11",
+        "nombre": "SET FIGURITAS11",
+        "imagen": "img/setfiguritas11.png",
+        "tipo": "simple",
+        "mayor": 1500,
+        "unitario": 1800,
+        "descripcion": "Set para pintar, Mdf  3 mm.",
+        "medida_original": "15 y 26cm. de alto"
+    },
     "abejareina": {
         "codigo": "Abeja reina",
         "nombre": "Abeja reina",
@@ -4281,4 +4391,5 @@ const productos = {
         "descripcion": "",
         "medida_original": ""
     }
+
 };

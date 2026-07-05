@@ -576,7 +576,18 @@ const PRODUCT_CATEGORY_MAPPING = {
     "vigendelvalle": ["libros-3d"],
     "halloween": ["libros-3d"],
     "circo": ["libros-3d"],
-    "principito2": ["libros-3d"]
+    "principito2": ["libros-3d"],
+    "co38": ["corazones"],
+    "co42": ["corazones"],
+    "co35": ["corazones"],
+    "altar12": ["nichos-y-altares"],
+    "ca20": ["corazones-alados"],
+    "ca21": ["corazones-alados"],
+    "comp9": ["deco"],
+    "comp12": ["deco"],
+    "comp10": ["mexicanos-y-calacas"],
+    "setfiguritas10": ["grabados"],
+    "setfiguritas11": ["grabados"]
 };
 
 function clasificarProducto(id, p) {
