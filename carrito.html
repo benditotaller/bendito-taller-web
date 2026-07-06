@@ -480,9 +480,12 @@
         }
 
         function volverCatalogo() {
-            // Siempre volver al catálogo de Google Sites en producción por ahora
-            const targetUrl = sessionStorage.getItem("referrerSites") || "https://sites.google.com/view/bendito-taller/p%C3%A1gina-principal";
-            window.location.href = targetUrl;
+            const ref = document.referrer;
+            if (ref && (ref.includes("catalogo.html") || ref.includes("index.html"))) {
+                window.location.href = ref;
+            } else {
+                window.location.href = "catalogo.html";
+            }
         }
 
         function copiar() {
@@ -529,7 +532,65 @@
                 });
         }
 
+        // Inicializar Categorías en el menú superior
+        function inicializarCategorias() {
+            const dropdownContent = document.getElementById("categoriesDropdownContent");
+            if (!dropdownContent) return;
+            
+            dropdownContent.innerHTML = "";
+            
+            const allBtn = document.createElement("a");
+            allBtn.className = "dropdown-item";
+            allBtn.href = "catalogo.html";
+            allBtn.innerHTML = "📋 Todas las categorías";
+            dropdownContent.appendChild(allBtn);
+            
+            Object.entries(CATEGORIAS_MAP).forEach(([key, label]) => {
+                const item = document.createElement("a");
+                item.className = "dropdown-item";
+                item.href = `catalogo.html?category=${key}`;
+                
+                let icon = "📦";
+                if (key === "corazones") icon = "❤️";
+                else if (key === "corazones-alados") icon = "👼";
+                else if (key === "nichos-y-altares") icon = "🏛️";
+                else if (key === "mexicanos-y-calacas") icon = "💀";
+                else if (key === "grabados") icon = "✏️";
+                else if (key === "navidad") icon = "🎄";
+                else if (key === "deco") icon = "🏡";
+                else if (key === "stencil") icon = "🎨";
+                else if (key === "mistico-y-mas") icon = "🕉️";
+                else if (key === "libros-3d") icon = "📚";
+                else if (key === "pascua") icon = "🐰";
+                
+                item.innerHTML = `${icon} ${label}`;
+                dropdownContent.appendChild(item);
+            });
+        }
+
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const content = document.getElementById("categoriesDropdownContent");
+            if (content) {
+                content.classList.toggle("show");
+            }
+        }
+
+        function closeDropdown() {
+            const content = document.getElementById("categoriesDropdownContent");
+            if (content) {
+                content.classList.remove("show");
+            }
+        }
+
+        window.addEventListener("click", (e) => {
+            if (!e.target.closest(".categories-dropdown")) {
+                closeDropdown();
+            }
+        });
+
         // Inicializar
+        inicializarCategorias();
         render();
     </script>
 </body>
