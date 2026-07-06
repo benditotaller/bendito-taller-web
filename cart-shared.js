@@ -1,5 +1,5 @@
 // Configuración del contacto de la tienda (número de WhatsApp)
-const numeroWhatsapp = "56976819662";
+const numeroWhatsapp = "56979295426";
 
 // Mapeo de categorías amigables
 const CATEGORIAS_MAP = {
