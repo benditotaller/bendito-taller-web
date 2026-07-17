@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Parisienne&family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Montserrat:wght@400;700&family=Outfit:wght@400;700&family=Parisienne&family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
 /* ==========================
    DESIGN SYSTEM - BENDITO TALLER (GOOGLE SITES DESIGN)
@@ -1028,11 +1028,9 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: transform;
 }
-
 .card-corazones .card-content::after {
     background-image: url('img/CORAZONES_2.png');
 }
-
 .card-nichos .card-content::after {
     background-image: url('img/FONDO_NICHOS.png');
 }
@@ -3003,3 +3001,138 @@ h1, h2, h3, h4, h5, h6 {
 body.modal-open {
     overflow: hidden !important;
 }
+
+/* ---- ETIQUETAS FLOTANTES DE CATEGORÍA (Nuevos Diseños / Ofertas) ---- */
+.card-tag {
+    position: absolute;
+    top: 14px; /* Ajustado para compensar la rotación y la altura de las dos líneas */
+    left: 14px;
+    background-color: #d9534f; /* Rojo coral de contraste para llamar la atención */
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 13px; /* Aumentado un 20% */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 12px; /* Ajustado para dos líneas y evitar que sea gigante */
+    border-radius: 7px;
+    z-index: 10;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    pointer-events: none;
+    text-align: center;
+    line-height: 1.15; /* Más juntas las dos líneas de texto */
+    
+    /* Estado inicial rotado diagonalmente */
+    transform: rotate(-12deg);
+    transform-origin: center;
+    
+    animation: pulseAnimation 3.5s ease-in-out infinite;
+}
+
+.card-tag.tag-danger {
+    background-color: #d9534f;
+}
+
+@keyframes pulseAnimation {
+    0% {
+        transform: rotate(-12deg) scale(1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+        transform: rotate(-12deg) scale(1.15); /* Hacia adelante (acercamiento) manteniendo la inclinación */
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+    100% {
+        transform: rotate(-12deg) scale(1); /* Hacia atrás (alejamiento) */
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.card-tag.tag-nuevos {
+    background-image: url('img/tag_nuevos_disenos.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    width: 75px;
+    height: 115px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    letter-spacing: 0;
+    line-height: 0;
+    overflow: hidden;
+    
+    /* Posicionamiento colgante */
+    top: -10px; /* Colgado desde arriba */
+    left: 18px;
+    
+    /* Animación de balanceo/colgado */
+    transform-origin: 50% 0%; /* Anclado en la parte superior centro */
+    animation: swingAnimation 3.5s ease-in-out infinite;
+}
+
+.card-tag.tag-ofertas {
+    background-image: url('img/tag_ofertas_especiales.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    width: 75px;
+    height: 115px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    letter-spacing: 0;
+    line-height: 0;
+    overflow: hidden;
+    
+    /* Posicionamiento colgante */
+    top: -10px; /* Colgado desde arriba */
+    left: 18px;
+    
+    /* Animación de balanceo/colgado */
+    transform-origin: 50% 0%; /* Anclado en la parte superior centro */
+    animation: swingAnimation 3.5s ease-in-out infinite;
+}
+
+@keyframes swingAnimation {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+.card-infantil .card-content::after {
+    background-image: url('img/Abeja reina.jpg');
+}
+
+/* Ajuste de etiquetas en vista móvil/tablet (alineación con marco interno) */
+@media (max-width: 768px) {
+    .card-tag.tag-nuevos,
+    .card-tag.tag-ofertas {
+        left: -14px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
