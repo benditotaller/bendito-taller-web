@@ -20,7 +20,7 @@
     --radius-sm: 10px;
     --radius-md: 18px;
     --radius-lg: 26px;
-    --font-serif: 'Merriweather', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -2526,26 +2526,29 @@ h1, h2, h3, h4, h5, h6 {
     .dots-banner-container.tall-banner {
         min-height: 140px;
     }
+    .dots-banner-container::after {
+        background-size: auto 100% !important;
+    }
     .dots-banner-title {
-    font-family: 'Petit Formal Script', cursive;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-    color: #1c1c1c;
-    line-height: 1.4;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
+        font-family: 'Petit Formal Script', cursive;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+        color: #1c1c1c;
+        line-height: 1.1 !important;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
     .dots-banner-text {
-    font-family: 'Petit Formal Script', cursive;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0;
-    color: #1c1c1c;
-    line-height: 1.4;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
+        font-family: 'Petit Formal Script', cursive;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0;
+        color: #1c1c1c;
+        line-height: 1.1 !important;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
 }
 
 /* ===== RESPONSIVE CARD SCALING & GENERAL MOBILE OPTIMIZATIONS ===== */
@@ -2620,25 +2623,25 @@ h1, h2, h3, h4, h5, h6 {
 
     /* Ajuste de fuentes y tamaño para banners en celulares */
     .dots-banner-title {
-    font-family: 'Petit Formal Script', cursive;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-    color: #1c1c1c;
-    line-height: 1.4;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
+        font-family: 'Petit Formal Script', cursive;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+        color: #1c1c1c;
+        line-height: 1.1 !important;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
     .dots-banner-text {
-    font-family: 'Petit Formal Script', cursive;
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0;
-    color: #1c1c1c;
-    line-height: 1.4;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
-}
+        font-family: 'Petit Formal Script', cursive;
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0;
+        color: #1c1c1c;
+        line-height: 1.1 !important;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+    }
     .banner-insta-btn {
         padding: 10px 22px !important;
         font-size: 14px !important;
