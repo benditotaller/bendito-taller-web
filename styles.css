@@ -1082,6 +1082,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .subtitle {
+    font-family: var(--font-sans);
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -1158,7 +1159,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .card-content h2 {
-    font-family: var(--font-serif);
+    font-family: 'Merriweather', Georgia, serif;
     font-size: 40px; /* Letra más grande (de 34px a 40px) */
     font-weight: 700; /* Peso elegante de Merriweather */
     text-transform: uppercase;
