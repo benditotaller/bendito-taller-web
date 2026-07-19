@@ -985,7 +985,7 @@ function procesarParametrosURL() {
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
     { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto" },
-    { src: "img/co42.webp", title: "CO42", subtitle: "Corazón multicapa flores" },
+    { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
     { src: "img/Comp8.webp", title: "hola", subtitle: "Arte en Madera" },
     { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
     { src: "img/Libromagico1.webp", title: "LIBRO", subtitle: "PRUEBA" },
