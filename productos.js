@@ -4398,29 +4398,5 @@ const productos = {
         "tipo": "simple",
         "unitario": 2000,
         "mayor": 1800
-    },
-    "co151": {
-        "codigo": "CO151",
-        "nombre": "CO151",
-        "imagen": "img/co151.webp",
-        "tipo": "simple",
-        "unitario": 2000,
-        "mayor": 1500
-    },
-    "co153": {
-        "codigo": "CO153",
-        "nombre": "CO153",
-        "imagen": "img/co153.webp",
-        "tipo": "simple",
-        "unitario": 52,
-        "mayor": 1
-    },
-    "co154": {
-        "codigo": "CO154",
-        "nombre": "CO154",
-        "imagen": "img/co154.webp",
-        "tipo": "simple",
-        "unitario": 56,
-        "mayor": 2
     }
 };
