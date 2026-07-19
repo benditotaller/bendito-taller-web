@@ -3156,9 +3156,7 @@ body.modal-open {
 
 
 
-.card-prueba .card-content::after {
-    background-image: url('img/Abeja reina.webp');
-}
+
 .card-tag.card-tag-custom {
     background-size: contain;
     background-repeat: no-repeat;
