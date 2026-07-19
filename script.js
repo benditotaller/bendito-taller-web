@@ -196,67 +196,67 @@ const CATEGORY_BANNER_DATA = {
     "all": {
         title: "Productos",
         subtitle: "Catálogo completo",
-        bg: "img/fondo_rayas.png"
+        bg: "img/fondo_rayas.webp"
     },
     "corazones": {
         title: "Corazones",
         subtitle: "Colección",
-        bg: "img/CORAZONES_2.png"
+        bg: "img/CORAZONES_2.webp"
     },
     "corazones-alados": {
         title: "Alados",
         subtitle: "diseños variados",
-        bg: "img/fondo_alados.png"
+        bg: "img/fondo_alados.webp"
     },
     "nichos-y-altares": {
         title: "Nichos",
         subtitle: "estilo mexicanos",
-        bg: "img/FONDO_NICHOS.png"
+        bg: "img/FONDO_NICHOS.webp"
     },
     "mexicanos-y-calacas": {
         title: "Calacas",
         subtitle: "y mexicanos",
-        bg: "img/fondo_calacas.png"
+        bg: "img/fondo_calacas.webp"
     },
     "grabados": {
         title: "Grabados",
         subtitle: "infantiles y más",
-        bg: "img/fondo_grabados.png"
+        bg: "img/fondo_grabados.webp"
     },
     "navidad": {
         title: "Navidad",
         subtitle: "todo el año",
-        bg: "img/FONDO_NAVIDAD.png"
+        bg: "img/FONDO_NAVIDAD.webp"
     },
     "deco": {
         title: "Deco",
         subtitle: "creativa",
-        bg: "img/fondo_deco_2.png"
+        bg: "img/fondo_deco_2.webp"
     },
     "stencil": {
         title: "Stencils",
         subtitle: "creaciones propias",
-        bg: "img/fondo_stencil.png"
+        bg: "img/fondo_stencil.webp"
     },
     "mistico-y-mas": {
         title: "Místico",
         subtitle: "energía y conexión",
-        bg: "img/fondo_mistico.png"
+        bg: "img/fondo_mistico.webp"
     },
     "otros-insumos": {
         title: "Insumos",
         subtitle: "complementarios",
-        bg: "img/fondo_insumos.png"
+        bg: "img/fondo_insumos.webp"
     },
     "libros-3d": {
         title: "Libros 3D",
         subtitle: "fantasía y encanto",
-        bg: "img/fondo_3d.png"
+        bg: "img/fondo_3d.webp"
     },
     "pascua": {
         title: "Pascua",
         subtitle: "de resurrección",
-        bg: "img/fondo_pascua.png"
+        bg: "img/fondo_pascua.webp"
     }
 };
 
@@ -271,7 +271,7 @@ function actualizarBannerCategoria() {
     if (busquedaActual) {
         titleEl.textContent = "Buscador";
         subtitleEl.textContent = `Resultados para "${busquedaActual}"`;
-        banner.style.backgroundImage = "url('img/fondo_rayas.png')";
+        banner.style.backgroundImage = "url('img/fondo_rayas.webp')";
     } else {
         titleEl.textContent = bannerData.title;
         subtitleEl.textContent = bannerData.subtitle;
@@ -984,21 +984,21 @@ function procesarParametrosURL() {
 // Carrusel de la página de inicio (Productos Destacados)
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
-    { src: "img/Arabesco Floral1.png", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
-    { src: "img/Comp8.png", title: "Composición 8", subtitle: "Arte en Madera" },
-    { src: "img/Tienda vintage2.png", title: "Tienda Vintage", subtitle: "Estilo Único" },
-    { src: "img/Libromagico1.png", title: "Libro Mágico", subtitle: "Creatividad en 3D" },
-    { src: "img/co38.png", title: "CO38", subtitle: "Corazón devoto" },
-    { src: "img/co42.png", title: "CO42", subtitle: "Corazón multicapa flores" },
-    { src: "img/co35.png", title: "CO35", subtitle: "Corazón 5 capas" },
-    { src: "img/altar12.png", title: "ALTAR 12", subtitle: "Altar en capas" },
-    { src: "img/ca20.png", title: "CA20", subtitle: "Corazón alado 3 capas" },
-    { src: "img/ca21.png", title: "CA21", subtitle: "Corazón alado 3 capas" },
-    { src: "img/comp9.png", title: "COMP9", subtitle: "Composición multicapa" },
-    { src: "img/comp12.png", title: "COMP12", subtitle: "Tetera reloj" },
-    { src: "img/comp10.png", title: "COMP10", subtitle: "Composición calaca" },
-    { src: "img/setfiguritas10.png", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
-    { src: "img/setfiguritas11.png", title: "SET FIGURITAS11", subtitle: "Set para pintar" }
+    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto" },
+    { src: "img/co42.webp", title: "CO42", subtitle: "Corazón multicapa flores" },
+    { src: "img/Comp8.webp", title: "hola", subtitle: "Arte en Madera" },
+    { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
+    { src: "img/Libromagico1.webp", title: "LIBRO", subtitle: "PRUEBA" },
+    { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas" },
+    { src: "img/ca21.webp", title: "CA21", subtitle: "Corazón alado 3 capas" },
+    { src: "img/Arabesco Floral1.webp", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
+    { src: "img/comp9.webp", title: "COMP9", subtitle: "Composición multicapa" },
+    { src: "img/comp12.webp", title: "COMP12", subtitle: "Tetera reloj" },
+    { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
+    { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
+    { src: "img/Corona  Reno.webp", title: "PRUEBA", subtitle: "Arte en Madera" },
+    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" },
+    { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas" }
 ];
 
 let carouselIndex = 0;
@@ -1021,8 +1021,8 @@ function inicializarCarrusel() {
             <img src="${img.src}" alt="${img.title}">
             <div class="carousel-overlay">
                 <div class="carousel-caption">
-                    <p>${img.subtitle}</p>
-                    <h3>${img.title}</h3>
+                    <p>${img.title}</p>
+                    <h3>${img.subtitle}</h3>
                 </div>
             </div>
         `;

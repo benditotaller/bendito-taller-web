@@ -40,6 +40,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-main);
     -webkit-font-smoothing: antialiased;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     width: 100%;
     height: 60px; /* Achicado verticalmente en escritorio */
-    background-image: url('img/toldo_vintage6_cropped.png');
+    background-image: url('img/toldo_vintage6_cropped.webp');
     background-size: 100% 100%; /* Estirado del largo de la barra */
     background-position: center;
     background-repeat: no-repeat;
@@ -84,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .main-navbar::before {
-        background-image: url('img/toldo_nuevo.png');
+        background-image: url('img/toldo_nuevo.webp');
         height: 70px; /* Cambiado a 70px según requerimiento */
         background-size: 100% 100%; /* Mostrar imagen completa */
     }
@@ -771,7 +772,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: scaleY(0.768) scaleX(0.9216) translate3d(0, 0, 0);
     transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform;
-    background-image: url('img/ramas con hojas.png');
+    background-image: url('img/ramas con hojas.webp');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -796,7 +797,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1), transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: opacity, transform;
     
-    background-image: url('img/ramas con hojas.png');
+    background-image: url('img/ramas con hojas.webp');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -903,7 +904,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%) scale(1);
     width: 416px;
     height: 274px;
-    background-image: url('img/fondo_rayas.png');
+    background-image: url('img/fondo_rayas.webp');
     background-size: cover;
     background-position: center;
     border-radius: 24px; /* Suave contorno redondeado */
@@ -923,7 +924,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: translate(-50%, -50%) scale(1);
     width: 416px;
     height: 274px;
-    background-image: url('img/fondo_rayas.png');
+    background-image: url('img/fondo_rayas.webp');
     background-size: cover;
     background-position: center;
     border-radius: 24px;
@@ -976,8 +977,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     width: 345px;
     height: 224px;
-    transform: translate(-50%, -50%) scale(1);
-    background-image: url('img/fondo_letra.png');
+    transform: translate(-50%, -50%) scale(var(--badge-scale, 1));
+    background-image: var(--wood-image, url('img/fondo_letra.webp'));
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -990,7 +991,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .category-card:hover .card-content::before,
 .category-card.active .card-content::before {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translate(-50%, -50%) scale(calc(var(--badge-scale, 1) * 1.05));
     animation: badgeGlowPulse 2.5s infinite ease-in-out;
 }
 
@@ -1010,8 +1011,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     width: 345px;
     height: 224px;
-    transform: translate(-50%, -50%) scale(1);
-    background-image: url('https://benditotaller.github.io/bendito-taller-carrito/img/grabados_bg.png');
+    transform: translate(-50%, -50%) scale(var(--badge-scale, 1));
+    background-image: url('https://benditotaller.github.io/bendito-taller-carrito/img/grabados_bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1019,8 +1020,8 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
     opacity: 0.35;
     mix-blend-mode: multiply;
-    -webkit-mask-image: url('img/fondo_letra.png');
-    mask-image: url('img/fondo_letra.png');
+    -webkit-mask-image: var(--wood-image, url('img/fondo_letra.webp'));
+    mask-image: var(--wood-image, url('img/fondo_letra.webp'));
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -1029,56 +1030,56 @@ h1, h2, h3, h4, h5, h6 {
     will-change: transform;
 }
 .card-corazones .card-content::after {
-    background-image: url('img/CORAZONES_2.png');
+    background-image: url('img/CORAZONES_2.webp');
 }
 .card-nichos .card-content::after {
-    background-image: url('img/FONDO_NICHOS.png');
+    background-image: url('img/FONDO_NICHOS.webp');
 }
 
 .card-deco .card-content::after {
-    background-image: url('img/fondo_deco_2.png');
+    background-image: url('img/fondo_deco_2.webp');
 }
 
 .card-navidad .card-content::after {
-    background-image: url('img/FONDO_NAVIDAD.png');
+    background-image: url('img/FONDO_NAVIDAD.webp');
 }
 
 .card-libros .card-content::after {
-    background-image: url('img/fondo_3d.png');
+    background-image: url('img/fondo_3d.webp');
     opacity: 0.15;
 }
 
 .card-alados .card-content::after {
-    background-image: url('img/fondo_alados.png');
+    background-image: url('img/fondo_alados.webp');
 }
 
 .card-grabados .card-content::after {
-    background-image: url('img/fondo_grabados.png');
+    background-image: url('img/fondo_grabados.webp');
 }
 
 .card-calacas .card-content::after {
-    background-image: url('img/fondo_calacas.png');
+    background-image: url('img/fondo_calacas.webp');
 }
 
 .card-pascua .card-content::after {
-    background-image: url('img/fondo_pascua.png');
+    background-image: url('img/fondo_pascua.webp');
 }
 
 .card-stencil .card-content::after {
-    background-image: url('img/fondo_stencil.png');
+    background-image: url('img/fondo_stencil.webp');
 }
 
 .card-insumos .card-content::after {
-    background-image: url('img/fondo_insumos.png');
+    background-image: url('img/fondo_insumos.webp');
 }
 
 .card-mistico .card-content::after {
-    background-image: url('img/fondo_mistico.png');
+    background-image: url('img/fondo_mistico.webp');
 }
 
 .category-card:hover .card-content::after,
 .category-card.active .card-content::after {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translate(-50%, -50%) scale(calc(var(--badge-scale, 1) * 1.05));
 }
 
 .subtitle {
@@ -1098,7 +1099,7 @@ h1, h2, h3, h4, h5, h6 {
     white-space: nowrap;
 }
 
-/* Capa de destello metálico (shimmer) que recorre el contorno de fondo_letra.png */
+/* Capa de destello metálico (shimmer) que recorre el contorno de fondo_letra.webp */
 .category-card .card-inner::after {
     content: '';
     position: absolute;
@@ -1106,7 +1107,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     width: 345px;
     height: 224px;
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(var(--badge-scale, 1));
     background: linear-gradient(115deg, 
         rgba(255, 255, 255, 0) 0%, 
         rgba(255, 255, 255, 0) 35%, 
@@ -1125,8 +1126,8 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     
     /* Máscara compuesta: dibuja el badge completo y le resta uno un 6% más pequeño en el centro */
-    -webkit-mask-image: url('img/fondo_letra.png'), url('img/fondo_letra.png');
-    mask-image: url('img/fondo_letra.png'), url('img/fondo_letra.png');
+    -webkit-mask-image: var(--wood-image, url('img/fondo_letra.webp')), var(--wood-image, url('img/fondo_letra.webp'));
+    mask-image: var(--wood-image, url('img/fondo_letra.webp')), var(--wood-image, url('img/fondo_letra.webp'));
     -webkit-mask-size: 100% 100%, 94% 90%;
     mask-size: 100% 100%, 94% 90%;
     -webkit-mask-position: center, center;
@@ -1143,7 +1144,7 @@ h1, h2, h3, h4, h5, h6 {
 .category-card:hover .card-inner::after,
 .category-card.active .card-inner::after {
     opacity: 0.8; /* Destello tenue y profesional */
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translate(-50%, -50%) scale(calc(var(--badge-scale, 1) * 1.05));
     animation: borderShimmerSweep 8.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
@@ -1164,8 +1165,8 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700; /* Peso elegante de Merriweather */
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #ffffff; /* Blanco para el contorno */
-    -webkit-text-stroke: 2.5px #ffffff; /* Borde blanco muy fino (1.25px real) */
+    color: var(--title-stroke-color, #ffffff); /* Color para el contorno */
+    -webkit-text-stroke: var(--title-stroke-width, 2.5px) var(--title-stroke-color, #ffffff); /* Borde/contorno */
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12); /* Sutil sombra de apoyo */
     margin: 0;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1183,7 +1184,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    color: #4b372d; /* Relleno café oscuro */
+    color: var(--title-color, #4b372d); /* Relleno café oscuro */
     -webkit-text-stroke: 0px transparent;
     text-shadow: none;
     z-index: 1;
@@ -1192,11 +1193,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .divider {
-    width: 60px;
-    height: 2px;
-    background: #FFBF00; /* Color dorado */
+    width: var(--divider-width, 60px);
+    height: var(--divider-height, 2px);
+    background-color: var(--divider-color, #FFBF00); /* Color dorado */
+    background-image: var(--divider-image, none);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
-    top: calc(50% + 56px);
+    top: calc(50% + var(--divider-top, 56px));
     left: 50%;
     transform: translate(-50%, 0) scaleX(1);
     transform-origin: center;
@@ -2223,7 +2228,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Posicionamiento específico y distribución de las ramas */
-/* 1. Rama Principal (rama1.png) - El esqueleto central */
+/* 1. Rama Principal (rama1.webp) - El esqueleto central */
 .branch-single {
     left: 0; /* Ubicada exactamente al borde (pegada) */
     top: -10%;
@@ -2234,7 +2239,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: sway-single 4s ease-in-out infinite alternate;
 }
 
-/* 2. Rama Secundaria (rama31.png) - Capa de profundidad detrás de la principal */
+/* 2. Rama Secundaria (rama31.webp) - Capa de profundidad detrás de la principal */
 .branch-second {
     left: 35px; /* Ubicada al lado de la principal (pegada a ella y al borde) */
     top: -10%;
@@ -2384,7 +2389,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('img/tapiz_ramas_largo.png');
+    background-image: url('img/tapiz_ramas_largo.webp');
     background-size: auto 119px; /* Estirado un 20% más (99px * 1.2 = 118.8px) */
     background-position: center;
     background-repeat: repeat-x;
@@ -2593,7 +2598,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .card-content h2 {
         font-size: 26px !important;
-        -webkit-text-stroke: 1.8px #ffffff;
+        -webkit-text-stroke: calc(var(--title-stroke-width, 2.5px) * 0.72) var(--title-stroke-color, #ffffff);
     }
     
     .card-content .subtitle {
@@ -2603,8 +2608,14 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     .divider {
-        width: 40px;
-        top: calc(50% + 34px) !important;
+        width: var(--divider-width, 40px);
+        height: var(--divider-height, 2px);
+        background-color: var(--divider-color, #FFBF00);
+        background-image: var(--divider-image, none);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: calc(50% + calc(var(--divider-top, 56px) * 0.6)) !important;
         transform: translate(-50%, 0) !important;
     }
 
@@ -2707,15 +2718,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Diferentes imágenes de fondo para cada tarjeta de características */
 .feature-card:nth-child(1)::before {
-    background-image: url('img/fondo_cuadros_blancos.png');
+    background-image: url('img/fondo_cuadros_blancos.webp');
 }
 
 .feature-card:nth-child(2)::before {
-    background-image: url('img/fondo_cuadros_blancos1.png');
+    background-image: url('img/fondo_cuadros_blancos1.webp');
 }
 
 .feature-card:nth-child(3)::before {
-    background-image: url('img/fondo_cuadros_blancos2.png');
+    background-image: url('img/fondo_cuadros_blancos2.webp');
 }
 
 .feature-icon {
@@ -2889,7 +2900,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/fondo_letra.png');
+    background-image: url('img/fondo_letra.webp');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -2905,8 +2916,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, rgba(149, 171, 158, 0.55) 0%, rgba(125, 144, 132, 0.55) 100%);
-    -webkit-mask-image: url('img/fondo_letra.png');
-    mask-image: url('img/fondo_letra.png');
+    -webkit-mask-image: url('img/fondo_letra.webp');
+    mask-image: url('img/fondo_letra.webp');
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
@@ -3054,7 +3065,7 @@ body.modal-open {
 }
 
 .card-tag.tag-nuevos {
-    background-image: url('img/tag_nuevos_disenos.png');
+    background-image: url('img/tag_nuevos_disenos.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -3081,7 +3092,7 @@ body.modal-open {
 }
 
 .card-tag.tag-ofertas {
-    background-image: url('img/tag_ofertas_especiales.png');
+    background-image: url('img/tag_ofertas_especiales.webp');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -3120,13 +3131,14 @@ body.modal-open {
 }
 
 .card-infantil .card-content::after {
-    background-image: url('img/Abeja reina.jpg');
+    background-image: url('img/Abeja reina.webp');
 }
 
 /* Ajuste de etiquetas en vista móvil/tablet (alineación con marco interno) */
 @media (max-width: 768px) {
     .card-tag.tag-nuevos,
-    .card-tag.tag-ofertas {
+    .card-tag.tag-ofertas,
+    .card-tag.card-tag-custom {
         left: -14px !important;
     }
 }
@@ -3139,4 +3151,28 @@ body.modal-open {
 
 
 
+
+
+
+
+
+.card-prueba .card-content::after {
+    background-image: url('img/Abeja reina.webp');
+}
+.card-tag.card-tag-custom {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    width: 75px;
+    height: 115px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    letter-spacing: 0;
+    line-height: 0;
+}
 
