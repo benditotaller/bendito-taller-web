@@ -4391,14 +4391,6 @@ const productos = {
         "descripcion": "",
         "medida_original": ""
     },
-    "co150": {
-        "codigo": "CO150",
-        "nombre": "CO150",
-        "imagen": "img/co150.webp",
-        "tipo": "simple",
-        "unitario": 2000,
-        "mayor": 1800
-    },
     "co151": {
         "codigo": "CO151",
         "nombre": "CO151",
