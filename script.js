@@ -988,7 +988,7 @@ const IMAGENES_CARROUSEL = [
     { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
     { src: "img/Comp8.webp", title: "Composición sirena", subtitle: "Encuentalo en deco" },
     { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
-    { src: "img/Libromagico1.webp", title: "LIBRO", subtitle: "PRUEBA" },
+    { src: "img/Libromagico1.webp", title: "LIBRO ALICIA 3d", subtitle: "encuentalo en libros 3d" },
     { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas" },
     { src: "img/ca21.webp", title: "CA21", subtitle: "Corazón alado 3 capas" },
     { src: "img/Arabesco Floral1.webp", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
