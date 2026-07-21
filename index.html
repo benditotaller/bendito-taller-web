@@ -511,27 +511,32 @@
     <script>
         // Intersection Observer para efecto hover automático al escrolear en celulares
         function initMobileObserver() {
-            if (window.innerWidth <= 768) {
-                const cards = document.querySelectorAll(".category-card");
-                
-                const observerOptions = {
-                    root: null,
-                    rootMargin: "-35% 0px -35% 0px",
-                    threshold: 0.2
-                };
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
+            const cards = document.querySelectorAll(".category-card");
+            if (!cards.length) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "-25% 0px -25% 0px",
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // Activo en celulares y tablets (hasta 1024px)
+                    if (window.innerWidth <= 1024) {
                         if (entry.isIntersecting) {
                             entry.target.classList.add("active");
                         } else {
                             entry.target.classList.remove("active");
                         }
-                    });
-                }, observerOptions);
-                
-                cards.forEach(card => observer.observe(card));
-            }
+                    } else {
+                        // En escritorio limpiamos la clase para no interferir con :hover
+                        entry.target.classList.remove("active");
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => observer.observe(card));
         }
 
         if (document.readyState === "loading") {
