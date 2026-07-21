@@ -984,7 +984,7 @@ function procesarParametrosURL() {
 // Carrusel de la página de inicio (Productos Destacados)
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
-    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto" },
+    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" },
     { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
     { src: "img/Comp8.webp", title: "Composición sirena", subtitle: "Encuentalo en deco" },
     { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
