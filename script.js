@@ -997,8 +997,7 @@ const IMAGENES_CARROUSEL = [
     { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
     { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
     { src: "img/Corona  Reno.webp", title: "PRUEBA", subtitle: "Arte en Madera" },
-    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" },
-    { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas" }
+    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" }
 ];
 
 let carouselIndex = 0;
