@@ -4390,5 +4390,14 @@ const productos = {
         "mayor": 900,
         "descripcion": "",
         "medida_original": ""
+    },
+    "prueba": {
+        "codigo": "prueba",
+        "nombre": "prueba",
+        "imagen": "img/prueba.webp",
+        "tipo": "simple",
+        "descripcion": "prueba",
+        "unitario": 5200,
+        "mayor": 4600
     }
 };
