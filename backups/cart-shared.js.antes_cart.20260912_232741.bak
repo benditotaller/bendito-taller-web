@@ -76,11 +76,7 @@ const gruposCombinables = [
     {
         id: "tienda_vintage",
         min: 4,
-        codigos: [
-            "tiendavintage1",
-            "tiendavintage2",
-            "retablo"
-        ]
+        codigos: ["tiendavintage1", "tiendavintage2"]
     },
     {
         id: "grabados_gra",
@@ -591,9 +587,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp12": ["deco"],
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
-    "setfiguritas11": ["grabados"],
-    "retablo": ["navidad"],
-    "prueba": ["Místico y Más (mistico-y-mas)"],
+    "setfiguritas11": ["grabados"]
+    "retablo": ["Navidad (navidad)"],
 };
 
 function clasificarProducto(id, p) {

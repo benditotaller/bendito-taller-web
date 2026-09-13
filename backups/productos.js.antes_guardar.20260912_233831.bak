@@ -4399,14 +4399,5 @@ const productos = {
         "descripcion": "retablo 5,5mm",
         "unitario": 5200,
         "mayor": 4600
-    },
-    "prueba": {
-        "codigo": "prueba",
-        "nombre": "prueba",
-        "imagen": "img/prueba.webp",
-        "tipo": "simple",
-        "descripcion": "prueba",
-        "unitario": 5200,
-        "mayor": 4600
     }
 };
