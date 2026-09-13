@@ -588,8 +588,6 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
     "setfiguritas11": ["grabados"]
-    "retablo": ["Navidad (navidad)"],
-    "prueba": ["Navidad (navidad)"],
 };
 
 function clasificarProducto(id, p) {
