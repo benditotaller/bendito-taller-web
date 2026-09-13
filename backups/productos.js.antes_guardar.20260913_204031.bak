@@ -4390,5 +4390,15 @@ const productos = {
         "mayor": 900,
         "descripcion": "",
         "medida_original": ""
+    },
+    "retablo": {
+        "codigo": "RETABLO",
+        "nombre": "RETABLO",
+        "imagen": "img/retablo.webp",
+        "tipo": "simple",
+        "descripcion": "RETABLO NAVIDEÑO",
+        "medida_original": "39cm. x 30cm.",
+        "unitario": 5200,
+        "mayor": 4600
     }
 };

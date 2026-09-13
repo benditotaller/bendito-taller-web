@@ -78,8 +78,8 @@ const gruposCombinables = [
         min: 4,
         codigos: [
             "tiendavintage1",
-            "tiendavintage2"
-        
+            "tiendavintage2",
+            "retablo"
         
         
         
