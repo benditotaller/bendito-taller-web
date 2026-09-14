@@ -131,7 +131,9 @@ const gruposCombinables = [
             "leopardo",
             "leopardo2",
             "tortugahawaiana",
-            "zorrito"
+            "zorrito",
+            "buho"
+        
         
         ]
     },
@@ -147,7 +149,9 @@ const gruposCombinables = [
             "marip4",
             "marip5",
             "marip6",
-            "banderinmexicano"
+            "banderinmexicano",
+            "buho"
+        
         
         
         ]
@@ -619,7 +623,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "setfiguritas11": ["grabados"],
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
-    "buho": ["otros-insumos"],
+    "buho": ["deco"],
 };
 
 function clasificarProducto(id, p) {
