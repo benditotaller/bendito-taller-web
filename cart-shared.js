@@ -78,7 +78,9 @@ const gruposCombinables = [
         min: 4,
         codigos: [
             "tiendavintage1",
-            "tiendavintage2"
+            "tiendavintage2",
+            "retablo"
+        
         
         
         
@@ -598,7 +600,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
     "setfiguritas11": ["grabados"],
-    "retablo": ["mistico-y-mas"],
+    "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
 };
 

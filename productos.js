@@ -4390,5 +4390,15 @@ const productos = {
         "mayor": 900,
         "descripcion": "",
         "medida_original": ""
+    },
+    "retablo": {
+        "codigo": "RETABLO",
+        "nombre": "RETABLO",
+        "imagen": "img/retablo.webp",
+        "tipo": "simple",
+        "descripcion": "Retablo Navideño mdf 5,5 mm",
+        "medida_original": "39 X 30 Cm",
+        "unitario": 5200,
+        "mayor": 4600
     }
 };
