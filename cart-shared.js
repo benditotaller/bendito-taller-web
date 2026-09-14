@@ -598,7 +598,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
     "setfiguritas11": ["grabados"],
-    "retablo": ["navidad"],
+    "retablo": ["mistico-y-mas"],
 "prueba": ["mistico-y-mas"],
 };
 

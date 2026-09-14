@@ -4390,5 +4390,15 @@ const productos = {
         "mayor": 900,
         "descripcion": "",
         "medida_original": ""
+    },
+    "retablo": {
+        "codigo": "RETABLO",
+        "nombre": "RETABLO",
+        "imagen": "img/retablo.webp",
+        "tipo": "simple",
+        "descripcion": "PRUEBA",
+        "medida_original": "10cm.",
+        "unitario": 2,
+        "mayor": 1
     }
 };
