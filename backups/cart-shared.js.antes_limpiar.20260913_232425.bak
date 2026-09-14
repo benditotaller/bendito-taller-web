@@ -78,7 +78,13 @@ const gruposCombinables = [
         min: 4,
         codigos: [
             "tiendavintage1",
-            "tiendavintage2"
+            "tiendavintage2",
+            "retablo"
+        
+        
+        
+        
+        
         
         
         
@@ -120,13 +126,30 @@ const gruposCombinables = [
     {
         id: "animales",
         min: 4,
-        codigos: ["chinita", "leopardo", "leopardo2", "tortugahawaiana", "zorrito"]
+        codigos: [
+            "chinita",
+            "leopardo",
+            "leopardo2",
+            "tortugahawaiana",
+            "zorrito",
+            "buho"
+        ]
     },
     {
         id: "abejas_mariposas",
         min: 4,
         codigos: [
-            "abejareina", "abejareina2", "marip1", "marip2", "marip3", "marip4", "marip5", "marip6", "banderinmexicano"
+            "abejareina",
+            "abejareina2",
+            "marip1",
+            "marip2",
+            "marip3",
+            "marip4",
+            "marip5",
+            "marip6",
+            "banderinmexicano",
+            "buho"
+        
         ]
     },
     {
@@ -596,6 +619,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "setfiguritas11": ["grabados"],
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
+    "buho": ["otros-insumos"],
 };
 
 function clasificarProducto(id, p) {

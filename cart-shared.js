@@ -131,8 +131,8 @@ const gruposCombinables = [
             "leopardo",
             "leopardo2",
             "tortugahawaiana",
-            "zorrito",
-            "buho"
+            "zorrito"
+        
         ]
     },
     {
@@ -147,8 +147,8 @@ const gruposCombinables = [
             "marip4",
             "marip5",
             "marip6",
-            "banderinmexicano",
-            "buho"
+            "banderinmexicano"
+        
         
         ]
     },

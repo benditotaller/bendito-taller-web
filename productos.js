@@ -4400,15 +4400,5 @@ const productos = {
         "medida_original": "39 X 30 Cm",
         "unitario": 5200,
         "mayor": 4600
-    },
-    "buho": {
-        "codigo": "Buho",
-        "nombre": "Buho",
-        "imagen": "img/buho.webp",
-        "tipo": "simple",
-        "descripcion": "Buho Multicapa",
-        "medida_original": "27 X14 Cm.",
-        "unitario": 3800,
-        "mayor": 3300
     }
 };
