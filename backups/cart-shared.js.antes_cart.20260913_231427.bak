@@ -78,7 +78,15 @@ const gruposCombinables = [
         min: 4,
         codigos: [
             "tiendavintage1",
-            "tiendavintage2"
+            "tiendavintage2",
+            "retablo"
+        
+        
+        
+        
+        
+        
+        
         
         ]
     },
@@ -118,7 +126,14 @@ const gruposCombinables = [
     {
         id: "animales",
         min: 4,
-        codigos: ["chinita", "leopardo", "leopardo2", "tortugahawaiana", "zorrito"]
+        codigos: [
+            "chinita",
+            "leopardo",
+            "leopardo2",
+            "tortugahawaiana",
+            "zorrito",
+            "buho"
+        ]
     },
     {
         id: "abejas_mariposas",
@@ -592,8 +607,9 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
     "setfiguritas11": ["grabados"],
-    "retablo": ["Navidad (navidad)"],
-"prueba": ["Místico y Más (mistico-y-mas)"],
+    "retablo": ["navidad"],
+"prueba": ["mistico-y-mas"],
+    "buho": ["otros-insumos"],
 };
 
 function clasificarProducto(id, p) {
