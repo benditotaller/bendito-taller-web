@@ -61,7 +61,12 @@ const gruposCombinables = [
     {
         id: "calaveras",
         min: 4,
-        codigos: ["cal1", "cal2", "cal3"]
+        codigos: [
+            "cal1",
+            "cal2",
+            "cal3",
+            "cal5"
+        ]
     },
     {
         id: "composiciones_1_3",
@@ -133,13 +138,27 @@ const gruposCombinables = [
             "tortugahawaiana",
             "zorrito",
             "buho"
+        
+        
         ]
     },
     {
         id: "abejas_mariposas",
         min: 4,
         codigos: [
-            "abejareina", "abejareina2", "marip1", "marip2", "marip3", "marip4", "marip5", "marip6", "banderinmexicano"
+            "abejareina",
+            "abejareina2",
+            "marip1",
+            "marip2",
+            "marip3",
+            "marip4",
+            "marip5",
+            "marip6",
+            "banderinmexicano",
+            "buho"
+        
+        
+        
         ]
     },
     {
@@ -609,7 +628,9 @@ const PRODUCT_CATEGORY_MAPPING = {
     "setfiguritas11": ["grabados"],
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
-    "buho": ["otros-insumos"],
+    "buho": ["deco"],
+    "cal5": ["mexicanos-y-calacas"],
+    "cal4": ["corazones-alados"],
 };
 
 function clasificarProducto(id, p) {

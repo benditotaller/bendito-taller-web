@@ -4419,5 +4419,15 @@ const productos = {
         "medida_original": "24 Cm",
         "unitario": 3500,
         "mayor": 3000
+    },
+    "cal4": {
+        "codigo": "Cal4",
+        "nombre": "Cal4",
+        "imagen": "img/cal4.webp",
+        "tipo": "simple",
+        "descripcion": "Calaca Multicapa4",
+        "medida_original": "25 cm",
+        "unitario": 3500,
+        "mayor": 3000
     }
 };
