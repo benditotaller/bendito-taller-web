@@ -4411,16 +4411,6 @@ const productos = {
         "unitario": 3800,
         "mayor": 3300
     },
-    "cal4": {
-        "codigo": "Cal4",
-        "nombre": "Cal4",
-        "imagen": "img/cal4.webp",
-        "tipo": "simple",
-        "descripcion": "Calaca Multicapa4",
-        "medida_original": "25 cm",
-        "unitario": 3500,
-        "mayor": 3000
-    },
     "cal5": {
         "codigo": "CAL5",
         "nombre": "CAL5",
@@ -4428,6 +4418,16 @@ const productos = {
         "tipo": "simple",
         "descripcion": "Calaca Multicapa5",
         "medida_original": "24 cm",
+        "unitario": 3500,
+        "mayor": 3000
+    },
+    "cal4": {
+        "codigo": "CAL4",
+        "nombre": "CAL4",
+        "imagen": "img/cal4.webp",
+        "tipo": "simple",
+        "descripcion": "Calaca Multicapa4",
+        "medida_original": "25 cm",
         "unitario": 3500,
         "mayor": 3000
     }
