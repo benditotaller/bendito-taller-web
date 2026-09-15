@@ -4410,5 +4410,14 @@ const productos = {
         "medida_original": "27 X 14 Cm",
         "unitario": 3800,
         "mayor": 3300
+    },
+    "cal5": {
+        "codigo": "Calaca Multicapa 5",
+        "nombre": "Calaca Multicapa 5",
+        "imagen": "img/cal5.webp",
+        "tipo": "simple",
+        "medida_original": "24 Cm",
+        "unitario": 3500,
+        "mayor": 3000
     }
 };
