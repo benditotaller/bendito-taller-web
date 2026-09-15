@@ -65,8 +65,10 @@ const gruposCombinables = [
             "cal1",
             "cal2",
             "cal3",
-            "cal5",
-            "cal4"
+            "cal4",
+            "cal5"
+        
+        
         
         ]
     },
@@ -632,7 +634,7 @@ const PRODUCT_CATEGORY_MAPPING = {
 "prueba": ["mistico-y-mas"],
     "buho": ["deco"],
     "cal5": ["mexicanos-y-calacas"],
-    "cal4": ["corazones-alados"],
+"cal4": ["corazones-alados"],
 };
 
 function clasificarProducto(id, p) {

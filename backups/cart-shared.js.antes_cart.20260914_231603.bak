@@ -61,7 +61,14 @@ const gruposCombinables = [
     {
         id: "calaveras",
         min: 4,
-        codigos: ["cal1", "cal2", "cal3"]
+        codigos: [
+            "cal1",
+            "cal2",
+            "cal3",
+            "cal4"
+        
+        
+        ]
     },
     {
         id: "composiciones_1_3",
@@ -149,7 +156,9 @@ const gruposCombinables = [
             "marip4",
             "marip5",
             "marip6",
-            "banderinmexicano"
+            "banderinmexicano",
+            "buho"
+        
         
         
         ]
@@ -622,6 +631,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
     "buho": ["deco"],
+    "cal5": ["mexicanos-y-calacas"],
+"cal4": ["corazones-alados"],
 };
 
 function clasificarProducto(id, p) {

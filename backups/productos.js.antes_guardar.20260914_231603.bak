@@ -4390,5 +4390,35 @@ const productos = {
         "mayor": 900,
         "descripcion": "",
         "medida_original": ""
+    },
+    "retablo": {
+        "codigo": "RETABLO",
+        "nombre": "RETABLO",
+        "imagen": "img/retablo.webp",
+        "tipo": "simple",
+        "descripcion": "Retablo Navideño mdf 5,5 mm",
+        "medida_original": "39 X 30 Cm",
+        "unitario": 5200,
+        "mayor": 4600
+    },
+    "buho": {
+        "codigo": "Buho",
+        "nombre": "Buho",
+        "imagen": "img/buho.webp",
+        "tipo": "simple",
+        "descripcion": "Buho Multicapa",
+        "medida_original": "27 X 14 Cm",
+        "unitario": 3800,
+        "mayor": 3300
+    },
+    "cal4": {
+        "codigo": "Cal4",
+        "nombre": "Cal4",
+        "imagen": "img/cal4.webp",
+        "tipo": "simple",
+        "descripcion": "Calaca Multicapa4",
+        "medida_original": "25 cm",
+        "unitario": 3500,
+        "mayor": 3000
     }
 };
