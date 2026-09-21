@@ -232,7 +232,9 @@ const gruposCombinables = [
             "coronavillanavidena",
             "coronacasa",
             "coronasimple",
-            "coronasimple2"
+            "coronasimple2",
+            "coronacasita"
+        
         
         
         
@@ -671,6 +673,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "setaplicacionesvintage": ["deco"],
     "libromagico3": ["libros-3d"],
     "coronasimple2": ["navidad"],
+    "coronacasita": ["navidad"],
 };
 
 function clasificarProducto(id, p) {

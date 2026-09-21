@@ -2222,10 +2222,10 @@ const productos = {
         "nombre": "Corona Casa",
         "imagen": "img/Corona Casa.webp",
         "tipo": "simple",
-        "mayor": 3500,
-        "unitario": 4000,
         "descripcion": "Corona casita en capas",
-        "medida_original": "31 cm"
+        "medida_original": "31 cm",
+        "unitario": 4200,
+        "mayor": 3600
     },
     "coronacascanueces": {
         "codigo": "Corona Cascanueces",
@@ -2272,20 +2272,20 @@ const productos = {
         "nombre": "Corona Simple",
         "imagen": "img/Corona Simple.webp",
         "tipo": "simple",
-        "mayor": 3100,
-        "unitario": 3900,
         "descripcion": "Corona campanas en capas",
-        "medida_original": "3 1 cm"
+        "medida_original": "3 1 cm",
+        "unitario": 4000,
+        "mayor": 3300
     },
     "coronasimple2": {
         "codigo": "Corona Simple2",
         "nombre": "Corona Simple2",
         "imagen": "img/Corona Simple2.webp",
         "tipo": "simple",
-        "mayor": 3100,
-        "unitario": 3900,
         "descripcion": "Corona rosa en capas",
-        "medida_original": "3 1 cm"
+        "medida_original": "3 1 cm",
+        "unitario": 4000,
+        "mayor": 3300
     },
     "coronavillanavidena": {
         "codigo": "Corona Villa Navideña",
@@ -4411,14 +4411,44 @@ const productos = {
         "unitario": 3800,
         "mayor": 3300
     },
+    "cal5": {
+        "codigo": "CAL5",
+        "nombre": "CAL5",
+        "imagen": "img/cal5.webp",
+        "tipo": "simple",
+        "descripcion": "Calaca Multicapa5",
+        "medida_original": "24 cm",
+        "unitario": 3500,
+        "mayor": 3000
+    },
     "cal4": {
-        "codigo": "Cal4",
-        "nombre": "Cal4",
+        "codigo": "CAL4",
+        "nombre": "CAL4",
         "imagen": "img/cal4.webp",
         "tipo": "simple",
         "descripcion": "Calaca Multicapa4",
         "medida_original": "25 cm",
         "unitario": 3500,
         "mayor": 3000
+    },
+    "setaplicacionesvintage": {
+        "codigo": "Set Aplicaciones Vintage",
+        "nombre": "Set Aplicaciones Vintage",
+        "imagen": "img/setaplicacionesvintage.webp",
+        "tipo": "simple",
+        "descripcion": "Set de 8 aplicaciones vintage",
+        "medida_original": "2 a 6 cm de alto",
+        "unitario": 1600,
+        "mayor": 1600
+    },
+    "libromagico3": {
+        "codigo": "LIBRO MAGICO3",
+        "nombre": "LIBRO MAGICO3",
+        "imagen": "img/libromagico3.webp",
+        "tipo": "simple",
+        "descripcion": "Libro 3D inspirado en \"La Bella y la Bestia\" Mdf 3 mm",
+        "medida_original": "21,8 x 18 Cm",
+        "unitario": 7600,
+        "mayor": 7000
     }
 };

@@ -4450,5 +4450,15 @@ const productos = {
         "medida_original": "21,8 x 18 Cm",
         "unitario": 7600,
         "mayor": 7000
+    },
+    "coronacasita": {
+        "codigo": "Corona Casita",
+        "nombre": "Corona Casita",
+        "imagen": "img/coronacasita.webp",
+        "tipo": "simple",
+        "descripcion": "Corona navideña en capas",
+        "medida_original": "31 cm",
+        "unitario": 4000,
+        "mayor": 3500
     }
 };
