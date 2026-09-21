@@ -2222,10 +2222,10 @@ const productos = {
         "nombre": "Corona Casa",
         "imagen": "img/Corona Casa.webp",
         "tipo": "simple",
-        "mayor": 3500,
-        "unitario": 4000,
         "descripcion": "Corona casita en capas",
-        "medida_original": "31 cm"
+        "medida_original": "31 cm",
+        "unitario": 4200,
+        "mayor": 3600
     },
     "coronacascanueces": {
         "codigo": "Corona Cascanueces",
@@ -2272,10 +2272,10 @@ const productos = {
         "nombre": "Corona Simple",
         "imagen": "img/Corona Simple.webp",
         "tipo": "simple",
-        "mayor": 3100,
-        "unitario": 3900,
         "descripcion": "Corona campanas en capas",
-        "medida_original": "3 1 cm"
+        "medida_original": "3 1 cm",
+        "unitario": 4000,
+        "mayor": 3300
     },
     "coronasimple2": {
         "codigo": "Corona Simple2",
@@ -4442,13 +4442,13 @@ const productos = {
         "mayor": 1600
     },
     "libromagico3": {
-        "codigo": "LIBROMAGICO3",
-        "nombre": "LIBROMAGICO3",
+        "codigo": "LIBRO MAGICO3",
+        "nombre": "LIBRO MAGICO3",
         "imagen": "img/libromagico3.webp",
         "tipo": "simple",
         "descripcion": "Libro 3D inspirado en \"La Bella y la Bestia\" Mdf 3 mm",
-        "medida_original": "21,8 X18 cm",
-        "unitario": 7000,
-        "mayor": 7600
+        "medida_original": "21,8 x 18 Cm",
+        "unitario": 7600,
+        "mayor": 7000
     }
 };

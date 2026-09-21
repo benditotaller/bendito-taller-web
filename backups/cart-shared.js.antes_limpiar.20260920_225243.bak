@@ -198,8 +198,22 @@ const gruposCombinables = [
         id: "obras_3d",
         min: 4,
         codigos: [
-            "alicia3d", "circo", "halloween", "harrypotter3d", "libromagico1", "libromagico2",
-            "narnia3d", "peter3d", "principito1", "principito2", "ratitapresumida", "snoopy1", "snoopy2", "vigendelvalle"
+            "alicia3d",
+            "circo",
+            "halloween",
+            "harrypotter3d",
+            "libromagico1",
+            "libromagico2",
+            "narnia3d",
+            "peter3d",
+            "principito1",
+            "principito2",
+            "ratitapresumida",
+            "snoopy1",
+            "snoopy2",
+            "vigendelvalle",
+            "libromagico3"
+        
         ]
     },
     {
@@ -210,7 +224,15 @@ const gruposCombinables = [
     {
         id: "coronas_navidad_base",
         min: 4,
-        codigos: ["cascanuecescapas", "coronacasa", "coronaespecial", "coronasimple", "coronasimple2", "coronavillanavidena"]
+        codigos: [
+            "cascanuecescapas",
+            "coronaespecial",
+            "coronasimple",
+            "coronasimple2",
+            "coronavillanavidena",
+            "coronacasa"
+        
+        ]
     },
     {
         id: "cuadros_navidad",
@@ -406,8 +428,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronavillanavidena": ["navidad"],
     "coronasimple": ["navidad"],
     "coronasimple2": ["navidad"],
-    "coronacasa": ["navidad"],
-    "coronacascanueces": ["navidad"],
+    "coronacasa": ["nichos-y-altares"],
+"coronacascanueces": ["navidad"],
     "coronareno": ["navidad"],
     "buzonnavidad": ["navidad"],
     "teatro": ["navidad"],

@@ -214,6 +214,8 @@ const gruposCombinables = [
             "vigendelvalle",
             "libromagico3"
         
+        
+        
         ]
     },
     {
@@ -224,7 +226,17 @@ const gruposCombinables = [
     {
         id: "coronas_navidad_base",
         min: 4,
-        codigos: ["cascanuecescapas", "coronacasa", "coronaespecial", "coronasimple", "coronasimple2", "coronavillanavidena"]
+        codigos: [
+            "cascanuecescapas",
+            "coronaespecial",
+            "coronasimple2",
+            "coronavillanavidena",
+            "coronacasa",
+            "coronasimple"
+        
+        
+        
+        ]
     },
     {
         id: "cuadros_navidad",
@@ -419,9 +431,9 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronaespecial": ["navidad"],
     "coronavillanavidena": ["navidad"],
     "coronasimple": ["navidad"],
-    "coronasimple2": ["navidad"],
-    "coronacasa": ["navidad"],
-    "coronacascanueces": ["navidad"],
+"coronasimple2": ["navidad"],
+    "coronacasa": ["nichos-y-altares"],
+"coronacascanueces": ["navidad"],
     "coronareno": ["navidad"],
     "buzonnavidad": ["navidad"],
     "teatro": ["navidad"],
@@ -655,7 +667,7 @@ const PRODUCT_CATEGORY_MAPPING = {
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
-    "libromagico3": ["deco"],
+    "libromagico3": ["libros-3d"],
 };
 
 function clasificarProducto(id, p) {
