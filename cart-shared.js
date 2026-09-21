@@ -19,22 +19,24 @@ const CATEGORIAS_MAP = {
 
 // Set de códigos intercambiables normalizados (lowercase, sin caracteres especiales) - Grupo original de Corazones/Cruces/Altares
 const codigosIntercambiablesNorm = new Set([
-    "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11", 
-    "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm", 
-    "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm", 
-    "co230cm", "co20", "co21", "co22", "co23", "co2420cm", "co2430cm", 
-    "co2520cm", "co2530cm", "co26", "co2720cm", "co2730cm", "co28", 
-    "co2920cm", "co2930cm", "co3", "co30", "co31", "co32", "co3320cm", 
-    "co3330cm", "co3420cm", "co3430cm", "co3620cm", "co3630cm", 
-    "co37", "co420cm", "co430cm", "co520cm", "co530cm", "co620cm", 
-    "co630cm", "co720cm", "co730cm", "co820cm", "co830cm", "co920cm", 
-    "co930cm", "cruz1", "cruz2", "setcorazonesmulticapa", "florcora1", 
-    "florcora2", "florcora3", "bc1", "bc2", "bc3", "ca120cm", "ca130cm", 
-    "ca1020cm", "ca1030cm", "ca11trio", "ca123mm", "ca1255mm", 
-    "ca133mm", "ca1355mm", "ca14", "ca15", "ca1620cm", "ca1630cm", 
-    "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm", 
-    "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7", 
-    "ca8", "ca9trio"
+    
+    "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
+    "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
+    "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
+    "co230cm", "co20", "co21", "co22", "co23", "co2420cm",
+    "co2430cm", "co2520cm", "co2530cm", "co26", "co2720cm", "co2730cm",
+    "co28", "co2920cm", "co2930cm", "co3", "co30", "co31",
+    "co32", "co3320cm", "co3330cm", "co3420cm", "co3430cm", "co3620cm",
+    "co3630cm", "co37", "co420cm", "co430cm", "co520cm", "co530cm",
+    "co620cm", "co630cm", "co720cm", "co730cm", "co820cm", "co830cm",
+    "co920cm", "co930cm", "cruz1", "cruz2", "setcorazonesmulticapa", "florcora1",
+    "florcora2", "florcora3", "bc1", "bc2", "bc3", "ca120cm",
+    "ca130cm", "ca1020cm", "ca1030cm", "ca11trio", "ca123mm", "ca1255mm",
+    "ca133mm", "ca1355mm", "ca14", "ca15", "ca1620cm", "ca1630cm",
+    "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm",
+    "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
+    "ca8", "ca9trio", "setaplicacionesvintage"
+
 ]);
 
 // Configuración de grupos combinables nuevos
@@ -638,6 +640,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "cal5": ["mexicanos-y-calacas"],
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
+    "setaplicacionesvintage": ["deco"],
 };
 
 function clasificarProducto(id, p) {

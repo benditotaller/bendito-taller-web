@@ -4430,5 +4430,15 @@ const productos = {
         "medida_original": "25 cm",
         "unitario": 3500,
         "mayor": 3000
+    },
+    "setaplicacionesvintage": {
+        "codigo": "Set Aplicaciones Vintage",
+        "nombre": "Set Aplicaciones Vintage",
+        "imagen": "img/setaplicacionesvintage.webp",
+        "tipo": "simple",
+        "descripcion": "Set de 8 aplicaciones vintage",
+        "medida_original": "2 a 6 cm de alto",
+        "unitario": 1600,
+        "mayor": 1600
     }
 };
