@@ -198,8 +198,22 @@ const gruposCombinables = [
         id: "obras_3d",
         min: 4,
         codigos: [
-            "alicia3d", "circo", "halloween", "harrypotter3d", "libromagico1", "libromagico2",
-            "narnia3d", "peter3d", "principito1", "principito2", "ratitapresumida", "snoopy1", "snoopy2", "vigendelvalle"
+            "alicia3d",
+            "circo",
+            "halloween",
+            "harrypotter3d",
+            "libromagico1",
+            "libromagico2",
+            "narnia3d",
+            "peter3d",
+            "principito1",
+            "principito2",
+            "ratitapresumida",
+            "snoopy1",
+            "snoopy2",
+            "vigendelvalle",
+            "libromagico3"
+        
         ]
     },
     {
@@ -641,6 +655,7 @@ const PRODUCT_CATEGORY_MAPPING = {
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
+    "libromagico3": ["deco"],
 };
 
 function clasificarProducto(id, p) {

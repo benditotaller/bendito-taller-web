@@ -4440,5 +4440,15 @@ const productos = {
         "medida_original": "2 a 6 cm de alto",
         "unitario": 1600,
         "mayor": 1600
+    },
+    "libromagico3": {
+        "codigo": "LIBROMAGICO3",
+        "nombre": "LIBROMAGICO3",
+        "imagen": "img/libromagico3.webp",
+        "tipo": "simple",
+        "descripcion": "Libro 3D inspirado en \"La Bella y la Bestia\" Mdf 3 mm",
+        "medida_original": "21,8 X18 cm",
+        "unitario": 7000,
+        "mayor": 7600
     }
 };

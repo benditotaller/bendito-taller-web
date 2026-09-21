@@ -4400,5 +4400,45 @@ const productos = {
         "medida_original": "39 X 30 Cm",
         "unitario": 5200,
         "mayor": 4600
+    },
+    "buho": {
+        "codigo": "Buho",
+        "nombre": "Buho",
+        "imagen": "img/buho.webp",
+        "tipo": "simple",
+        "descripcion": "Buho Multicapa",
+        "medida_original": "27 X 14 Cm",
+        "unitario": 3800,
+        "mayor": 3300
+    },
+    "cal5": {
+        "codigo": "CAL5",
+        "nombre": "CAL5",
+        "imagen": "img/cal5.webp",
+        "tipo": "simple",
+        "descripcion": "Calaca Multicapa5",
+        "medida_original": "24 cm",
+        "unitario": 3500,
+        "mayor": 3000
+    },
+    "cal4": {
+        "codigo": "CAL4",
+        "nombre": "CAL4",
+        "imagen": "img/cal4.webp",
+        "tipo": "simple",
+        "descripcion": "Calaca Multicapa4",
+        "medida_original": "25 cm",
+        "unitario": 3500,
+        "mayor": 3000
+    },
+    "setaplicacionesvintage": {
+        "codigo": "Set Aplicaciones Vintage",
+        "nombre": "Set Aplicaciones Vintage",
+        "imagen": "img/setaplicacionesvintage.webp",
+        "tipo": "simple",
+        "descripcion": "Set de 8 aplicaciones vintage",
+        "medida_original": "2 a 6 cm de alto",
+        "unitario": 1600,
+        "mayor": 1600
     }
 };
