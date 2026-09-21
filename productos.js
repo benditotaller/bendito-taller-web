@@ -2282,10 +2282,10 @@ const productos = {
         "nombre": "Corona Simple2",
         "imagen": "img/Corona Simple2.webp",
         "tipo": "simple",
-        "mayor": 3100,
-        "unitario": 3900,
         "descripcion": "Corona rosa en capas",
-        "medida_original": "3 1 cm"
+        "medida_original": "3 1 cm",
+        "unitario": 4000,
+        "mayor": 3300
     },
     "coronavillanavidena": {
         "codigo": "Corona Villa Navideña",

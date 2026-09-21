@@ -229,10 +229,12 @@ const gruposCombinables = [
         codigos: [
             "cascanuecescapas",
             "coronaespecial",
-            "coronasimple2",
             "coronavillanavidena",
             "coronacasa",
-            "coronasimple"
+            "coronasimple",
+            "coronasimple2"
+        
+        
         
         
         
@@ -668,6 +670,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
     "libromagico3": ["libros-3d"],
+    "coronasimple2": ["navidad"],
 };
 
 function clasificarProducto(id, p) {
