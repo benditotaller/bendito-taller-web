@@ -4470,5 +4470,15 @@ const productos = {
         "medida_original": "19 x 12 cm",
         "unitario": 3200,
         "mayor": 2500
+    },
+    "leonafu": {
+        "codigo": "LeonaFu",
+        "nombre": "LeonaFu",
+        "imagen": "img/leonafu.webp",
+        "tipo": "simple",
+        "descripcion": "Leona en capas mdf 3 mm",
+        "medida_original": "21,5 X 19,9",
+        "unitario": 3600,
+        "mayor": 3000
     }
 };

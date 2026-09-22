@@ -151,7 +151,9 @@ const gruposCombinables = [
             "leopardo2",
             "tortugahawaiana",
             "zorrito",
-            "buho"
+            "buho",
+            "leonafu"
+        
         
         
         ]
@@ -169,7 +171,9 @@ const gruposCombinables = [
             "marip5",
             "marip6",
             "banderinmexicano",
-            "buho"
+            "buho",
+            "leonafu"
+        
         
         
         
@@ -681,6 +685,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronasimple2": ["navidad"],
     "coronacasita": ["navidad"],
     "alebrije3": ["mexicanos-y-calacas"],
+    "leonafu": ["deco"],
 };
 
 function clasificarProducto(id, p) {
