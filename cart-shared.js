@@ -58,7 +58,13 @@ const gruposCombinables = [
     {
         id: "alebrijes_catrinas",
         min: 4,
-        codigos: ["alebrije1", "alebrije2", "catrina1", "catrina2"]
+        codigos: [
+            "alebrije1",
+            "alebrije2",
+            "catrina1",
+            "catrina2",
+            "alebrije3"
+        ]
     },
     {
         id: "calaveras",
@@ -674,6 +680,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "libromagico3": ["libros-3d"],
     "coronasimple2": ["navidad"],
     "coronacasita": ["navidad"],
+    "alebrije3": ["mexicanos-y-calacas"],
 };
 
 function clasificarProducto(id, p) {

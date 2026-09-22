@@ -4460,5 +4460,15 @@ const productos = {
         "medida_original": "31 cm",
         "unitario": 4000,
         "mayor": 3500
+    },
+    "alebrije3": {
+        "codigo": "Alebrije3",
+        "nombre": "Alebrije3",
+        "imagen": "img/alebrije3.webp",
+        "tipo": "simple",
+        "descripcion": "Altar Alebrije para vela led",
+        "medida_original": "19 x 12 cm",
+        "unitario": 3200,
+        "mayor": 2500
     }
 };
