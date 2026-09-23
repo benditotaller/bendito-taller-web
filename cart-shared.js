@@ -64,6 +64,8 @@ const gruposCombinables = [
             "catrina1",
             "catrina2",
             "alebrije3"
+        
+        
         ]
     },
     {
@@ -685,7 +687,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronasimple2": ["navidad"],
     "coronacasita": ["navidad"],
     "alebrije3": ["mexicanos-y-calacas"],
-    "leonafu": ["deco"],
+"leonafu": ["deco"],
 };
 
 function clasificarProducto(id, p) {

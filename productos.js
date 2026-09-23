@@ -4461,16 +4461,6 @@ const productos = {
         "unitario": 4000,
         "mayor": 3500
     },
-    "alebrije3": {
-        "codigo": "Alebrije3",
-        "nombre": "Alebrije3",
-        "imagen": "img/alebrije3.webp",
-        "tipo": "simple",
-        "descripcion": "Altar Alebrije para vela led",
-        "medida_original": "19 x 12 cm",
-        "unitario": 3200,
-        "mayor": 2500
-    },
     "leonafu": {
         "codigo": "LeonaFu",
         "nombre": "LeonaFu",
@@ -4480,5 +4470,15 @@ const productos = {
         "medida_original": "21,5 X 19,9",
         "unitario": 3600,
         "mayor": 3000
+    },
+    "alebrije3": {
+        "codigo": "Alebrije3",
+        "nombre": "Alebrije3",
+        "imagen": "img/alebrije3.webp",
+        "tipo": "simple",
+        "descripcion": "Altar Alebrije para vela led",
+        "medida_original": "19 x 12 cm",
+        "unitario": 3200,
+        "mayor": 2500
     }
 };
