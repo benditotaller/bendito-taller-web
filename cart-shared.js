@@ -253,7 +253,9 @@ const gruposCombinables = [
             "coronacascanueces",
             "coronaosito",
             "coronareno",
-            "cascanuecesbase"
+            "cascanuecesbase",
+            "cascanuecesletrero"
+        
         ]
     },
     {
@@ -710,6 +712,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "alebrije3": ["mexicanos-y-calacas"],
 "leonafu": ["deco"],
     "cascanuecesbase": ["otros-insumos"],
+    "cascanuecesletrero": ["navidad"],
 };
 
 function clasificarProducto(id, p) {

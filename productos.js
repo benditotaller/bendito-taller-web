@@ -4480,5 +4480,15 @@ const productos = {
         "medida_original": "30 cm",
         "unitario": 4500,
         "mayor": 3700
+    },
+    "cascanuecesletrero": {
+        "codigo": "Cascanueces Letrero",
+        "nombre": "Cascanueces Letrero",
+        "imagen": "img/cascanuecesletrero.webp",
+        "tipo": "simple",
+        "descripcion": "Cascanueces en capas",
+        "medida_original": "30 Cm.",
+        "unitario": 3700,
+        "mayor": 3100
     }
 };
