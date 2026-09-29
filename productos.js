@@ -4470,15 +4470,5 @@ const productos = {
         "medida_original": "30 cm",
         "unitario": 3800,
         "mayor": 3000
-    },
-    "comp6": {
-        "codigo": "comp6",
-        "nombre": "comp6",
-        "imagen": "img/comp6.webp",
-        "tipo": "simple",
-        "descripcion": "Composición en capas",
-        "medida_original": "30 cm",
-        "unitario": 4500,
-        "mayor": 3700
     }
 };

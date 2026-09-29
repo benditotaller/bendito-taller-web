@@ -137,8 +137,8 @@ const gruposCombinables = [
             "comp4",
             "comp5",
             "comp7",
-            "comp8",
-            "comp6"
+            "comp8"
+        
         
         
         
