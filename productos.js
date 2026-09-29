@@ -1169,16 +1169,6 @@ const productos = {
         "descripcion": "Cascanueces en capas, con base.",
         "medida_original": "20 cm"
     },
-    "cascanuecescapas": {
-        "codigo": "cascanueces capas",
-        "nombre": "cascanueces capas",
-        "imagen": "img/cascanueces capas.webp",
-        "tipo": "simple",
-        "mayor": 3000,
-        "unitario": 3800,
-        "descripcion": "Retrato cascanueces Mdf 3 mm",
-        "medida_original": "30 cm"
-    },
     "casitamunecas2": {
         "codigo": "Casita Muñecas2",
         "nombre": "Casita Muñecas2",
@@ -2166,16 +2156,6 @@ const productos = {
         "unitario": 4200,
         "descripcion": "Composición 5 Corona y base circular Mdf 3mm",
         "medida_original": "24 cm"
-    },
-    "comp6": {
-        "codigo": "Comp6",
-        "nombre": "Comp6",
-        "imagen": "img/Comp6.webp",
-        "tipo": "simple",
-        "mayor": 3800,
-        "unitario": 4600,
-        "descripcion": "Composición 6 Mdf 3mm",
-        "medida_original": "30 cm"
     },
     "comp7": {
         "codigo": "Comp7",
@@ -4480,5 +4460,25 @@ const productos = {
         "medida_original": "19 x 12 cm",
         "unitario": 3200,
         "mayor": 2500
+    },
+    "cascanuecesbase": {
+        "codigo": "Cascanueces Base",
+        "nombre": "Cascanueces Base",
+        "imagen": "img/cascanuecesbase.webp",
+        "tipo": "simple",
+        "descripcion": "Retrato Cascanueces en capas",
+        "medida_original": "30 cm",
+        "unitario": 3800,
+        "mayor": 3000
+    },
+    "comp6": {
+        "codigo": "Comp6",
+        "nombre": "Comp6",
+        "imagen": "img/comp6.webp",
+        "tipo": "simple",
+        "descripcion": "Composición en capas",
+        "medida_original": "30 cm",
+        "unitario": 4500,
+        "mayor": 3800
     }
 };

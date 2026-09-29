@@ -132,7 +132,15 @@ const gruposCombinables = [
     {
         id: "composiciones_4_8_arabesco",
         min: 4,
-        codigos: ["arabescofloral1", "comp4", "comp5", "comp6", "comp7", "comp8"]
+        codigos: [
+            "arabescofloral1",
+            "comp4",
+            "comp5",
+            "comp7",
+            "comp8",
+            "comp6"
+        
+        ]
     },
     {
         id: "set_anillos",
@@ -233,19 +241,24 @@ const gruposCombinables = [
     {
         id: "corona_navidad_personajes",
         min: 4,
-        codigos: ["coronacascanueces", "coronaosito", "coronareno"]
+        codigos: [
+            "coronacascanueces",
+            "coronaosito",
+            "coronareno",
+            "cascanuecesbase"
+        ]
     },
     {
         id: "coronas_navidad_base",
         min: 4,
         codigos: [
-            "cascanuecescapas",
             "coronaespecial",
             "coronavillanavidena",
             "coronacasa",
             "coronasimple",
             "coronasimple2",
             "coronacasita"
+        
         
         
         
@@ -491,7 +504,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp4": ["deco"],
     "comp5": ["deco"],
     "comp6": ["deco"],
-    "setanillos1": ["deco"],
+"setanillos1": ["deco"],
     "setanillos2": ["deco"],
     "setanillos3": ["deco"],
     "setanillos4": ["deco"],
@@ -688,6 +701,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronacasita": ["navidad"],
     "alebrije3": ["mexicanos-y-calacas"],
 "leonafu": ["deco"],
+    "cascanuecesbase": ["otros-insumos"],
 };
 
 function clasificarProducto(id, p) {
