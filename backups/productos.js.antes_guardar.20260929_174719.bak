@@ -2157,16 +2157,6 @@ const productos = {
         "descripcion": "Composición 5 Corona y base circular Mdf 3mm",
         "medida_original": "24 cm"
     },
-    "comp6": {
-        "codigo": "Comp6",
-        "nombre": "Comp6",
-        "imagen": "img/Comp6.webp",
-        "tipo": "simple",
-        "mayor": 3800,
-        "unitario": 4600,
-        "descripcion": "Composición 6 Mdf 3mm",
-        "medida_original": "30 cm"
-    },
     "comp7": {
         "codigo": "Comp7",
         "nombre": "Comp7",
@@ -4470,5 +4460,15 @@ const productos = {
         "medida_original": "19 x 12 cm",
         "unitario": 3200,
         "mayor": 2500
+    },
+    "cascanuecesbase": {
+        "codigo": "Cascanueces Base",
+        "nombre": "Cascanueces Base",
+        "imagen": "img/cascanuecesbase.webp",
+        "tipo": "simple",
+        "descripcion": "Retrato Cascanueces en capas",
+        "medida_original": "30 cm",
+        "unitario": 3800,
+        "mayor": 3000
     }
 };
