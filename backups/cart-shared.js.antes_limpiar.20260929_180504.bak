@@ -58,7 +58,15 @@ const gruposCombinables = [
     {
         id: "alebrijes_catrinas",
         min: 4,
-        codigos: ["alebrije1", "alebrije2", "catrina1", "catrina2"]
+        codigos: [
+            "alebrije1",
+            "alebrije2",
+            "catrina1",
+            "catrina2",
+            "alebrije3"
+        
+        
+        ]
     },
     {
         id: "calaveras",
@@ -124,7 +132,23 @@ const gruposCombinables = [
     {
         id: "composiciones_4_8_arabesco",
         min: 4,
-        codigos: ["arabescofloral1", "comp4", "comp5", "comp6", "comp7", "comp8"]
+        codigos: [
+            "arabescofloral1",
+            "comp4",
+            "comp5",
+            "comp7",
+            "comp8",
+            "comp6"
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        ]
     },
     {
         id: "set_anillos",
@@ -145,7 +169,9 @@ const gruposCombinables = [
             "leopardo2",
             "tortugahawaiana",
             "zorrito",
-            "buho"
+            "buho",
+            "leonafu"
+        
         
         
         ]
@@ -163,7 +189,9 @@ const gruposCombinables = [
             "marip5",
             "marip6",
             "banderinmexicano",
-            "buho"
+            "buho",
+            "leonafu"
+        
         
         
         
@@ -214,23 +242,38 @@ const gruposCombinables = [
             "vigendelvalle",
             "libromagico3"
         
+        
+        
         ]
     },
     {
         id: "corona_navidad_personajes",
         min: 4,
-        codigos: ["coronacascanueces", "coronaosito", "coronareno"]
+        codigos: [
+            "coronacascanueces",
+            "coronaosito",
+            "coronareno",
+            "cascanuecesbase",
+            "cascanuecesletrero"
+        
+        ]
     },
     {
         id: "coronas_navidad_base",
         min: 4,
         codigos: [
-            "cascanuecescapas",
             "coronaespecial",
+            "coronavillanavidena",
+            "coronacasa",
             "coronasimple",
             "coronasimple2",
-            "coronavillanavidena",
-            "coronacasa"
+            "coronacasita"
+        
+        
+        
+        
+        
+        
         
         ]
     },
@@ -427,7 +470,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronaespecial": ["navidad"],
     "coronavillanavidena": ["navidad"],
     "coronasimple": ["navidad"],
-    "coronasimple2": ["navidad"],
+"coronasimple2": ["navidad"],
     "coronacasa": ["nichos-y-altares"],
 "coronacascanueces": ["navidad"],
     "coronareno": ["navidad"],
@@ -471,7 +514,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp4": ["deco"],
     "comp5": ["deco"],
     "comp6": ["deco"],
-    "setanillos1": ["deco"],
+"setanillos1": ["deco"],
     "setanillos2": ["deco"],
     "setanillos3": ["deco"],
     "setanillos4": ["deco"],
@@ -663,7 +706,13 @@ const PRODUCT_CATEGORY_MAPPING = {
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
-    "libromagico3": ["deco"],
+    "libromagico3": ["libros-3d"],
+    "coronasimple2": ["navidad"],
+    "coronacasita": ["navidad"],
+    "alebrije3": ["mexicanos-y-calacas"],
+"leonafu": ["deco"],
+    "cascanuecesbase": ["otros-insumos"],
+    "cascanuecesletrero": ["navidad"],
 };
 
 function clasificarProducto(id, p) {
