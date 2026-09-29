@@ -4490,5 +4490,15 @@ const productos = {
         "medida_original": "30 Cm.",
         "unitario": 3700,
         "mayor": 3100
+    },
+    "ca22": {
+        "codigo": "CA22",
+        "nombre": "CA22",
+        "imagen": "img/ca22.webp",
+        "tipo": "simple",
+        "descripcion": "Corazón en capas",
+        "medida_original": "35 cm ancho",
+        "unitario": 3500,
+        "mayor": 2800
     }
 };
