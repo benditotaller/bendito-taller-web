@@ -137,7 +137,9 @@ const gruposCombinables = [
             "comp4",
             "comp5",
             "comp7",
-            "comp8"
+            "comp8",
+            "comp6"
+        
         
         
         ]
@@ -503,7 +505,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp7": ["deco"],
     "comp4": ["deco"],
     "comp5": ["deco"],
-    "comp6": ["deco"],
+    "comp6": ["otros-insumos"],
 "setanillos1": ["deco"],
     "setanillos2": ["deco"],
     "setanillos3": ["deco"],
