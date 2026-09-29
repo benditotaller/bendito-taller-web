@@ -4461,16 +4461,6 @@ const productos = {
         "unitario": 3200,
         "mayor": 2500
     },
-    "cascanuecesbase": {
-        "codigo": "Cascanueces Base",
-        "nombre": "Cascanueces Base",
-        "imagen": "img/cascanuecesbase.webp",
-        "tipo": "simple",
-        "descripcion": "Retrato Cascanueces en capas",
-        "medida_original": "30 cm",
-        "unitario": 3800,
-        "mayor": 3000
-    },
     "comp6": {
         "codigo": "Comp6",
         "nombre": "Comp6",

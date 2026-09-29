@@ -257,8 +257,8 @@ const gruposCombinables = [
             "coronacascanueces",
             "coronaosito",
             "coronareno",
-            "cascanuecesbase",
             "cascanuecesletrero"
+        
         
         ]
     },
