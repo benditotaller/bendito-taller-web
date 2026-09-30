@@ -4461,16 +4461,6 @@ const productos = {
         "unitario": 3200,
         "mayor": 2500
     },
-    "comp6": {
-        "codigo": "Comp6",
-        "nombre": "Comp6",
-        "imagen": "img/comp6.webp",
-        "tipo": "simple",
-        "descripcion": "Composición  en capas",
-        "medida_original": "30 cm",
-        "unitario": 4500,
-        "mayor": 3700
-    },
     "cascanuecesletrero": {
         "codigo": "Cascanueces Letrero",
         "nombre": "Cascanueces Letrero",
