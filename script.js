@@ -984,21 +984,19 @@ function procesarParametrosURL() {
 // Carrusel de la página de inicio (Productos Destacados)
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
+    { src: "img/Corona  Reno.webp", title: "Navideños", subtitle: "Corona Reno" },
     { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
     { src: "img/Comp8.webp", title: "Composición sirena", subtitle: "Encuentalo en deco" },
     { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
     { src: "img/Libromagico1.webp", title: "LIBRO ALICIA 3d", subtitle: "encuentalo en libros 3d" },
     { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas" },
     { src: "img/ca21.webp", title: "CA21", subtitle: "Corazón alado 3 capas" },
-    { src: "img/Arabesco Floral1.webp", title: "Arabesco Floral", subtitle: "Diseños Exclusivos" },
     { src: "img/comp9.webp", title: "COMP9", subtitle: "Composición multicapa" },
     { src: "img/comp12.webp", title: "COMP12", subtitle: "Tetera reloj" },
     { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
     { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
-    { src: "img/Corona  Reno.webp", title: "PRUEBA", subtitle: "Arte en Madera" },
     { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" },
-    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" },
-    { src: "img/Comp6.webp", title: "Comp6", subtitle: "Encuéntralo en "Deco"" }
+    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" }
 ];
 
 let carouselIndex = 0;
