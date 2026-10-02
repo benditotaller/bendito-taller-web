@@ -4490,5 +4490,15 @@ const productos = {
         "medida_original": "30 Cm",
         "unitario": 4500,
         "mayor": 3700
+    },
+    "ninacatrina": {
+        "codigo": "Niña Catrina",
+        "nombre": "Niña Catrina",
+        "imagen": "img/ninacatrina.webp",
+        "tipo": "simple",
+        "descripcion": "Catrina en capas",
+        "medida_original": "25 Cm alto",
+        "unitario": 2600,
+        "mayor": 2000
     }
 };

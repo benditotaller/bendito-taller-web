@@ -65,7 +65,9 @@ const gruposCombinables = [
             "alebrije2",
             "catrina1",
             "catrina2",
-            "alebrije3"
+            "alebrije3",
+            "ninacatrina"
+        
         
         
         ]
@@ -722,6 +724,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "cascanuecesbase": ["otros-insumos"],
     "cascanuecesletrero": ["navidad"],
     "ca22": ["corazones-alados"],
+    "ninacatrina": ["mexicanos-y-calacas"],
 };
 
 function clasificarProducto(id, p) {

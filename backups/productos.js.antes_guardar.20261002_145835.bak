@@ -4461,14 +4461,34 @@ const productos = {
         "unitario": 3200,
         "mayor": 2500
     },
-    "cascanuecesbase": {
-        "codigo": "Cascanueces Base",
-        "nombre": "Cascanueces Base",
-        "imagen": "img/cascanuecesbase.webp",
+    "cascanuecesletrero": {
+        "codigo": "Cascanueces Letrero",
+        "nombre": "Cascanueces Letrero",
+        "imagen": "img/cascanuecesletrero.webp",
         "tipo": "simple",
-        "descripcion": "Retrato Cascanueces en capas",
-        "medida_original": "30 cm",
-        "unitario": 3800,
-        "mayor": 3000
+        "descripcion": "Cascanueces en capas",
+        "medida_original": "30 Cm.",
+        "unitario": 3700,
+        "mayor": 3100
+    },
+    "ca22": {
+        "codigo": "CA22",
+        "nombre": "CA22",
+        "imagen": "img/ca22.webp",
+        "tipo": "simple",
+        "descripcion": "Corazón en capas",
+        "medida_original": "35 cm ancho",
+        "unitario": 3500,
+        "mayor": 2800
+    },
+    "comp6": {
+        "codigo": "Comp6",
+        "nombre": "Comp6",
+        "imagen": "img/comp6.webp",
+        "tipo": "simple",
+        "descripcion": "Composición en capas",
+        "medida_original": "30 Cm",
+        "unitario": 4500,
+        "mayor": 3700
     }
 };

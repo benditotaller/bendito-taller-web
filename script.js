@@ -984,7 +984,6 @@ function procesarParametrosURL() {
 // Carrusel de la página de inicio (Productos Destacados)
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
-    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" },
     { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
     { src: "img/Comp8.webp", title: "Composición sirena", subtitle: "Encuentalo en deco" },
     { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
@@ -997,7 +996,9 @@ const IMAGENES_CARROUSEL = [
     { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
     { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
     { src: "img/Corona  Reno.webp", title: "PRUEBA", subtitle: "Arte en Madera" },
-    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" }
+    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" },
+    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" },
+    { src: "img/Comp6.webp", title: "Comp6", subtitle: "Encuéntralo en "Deco"" }
 ];
 
 let carouselIndex = 0;
