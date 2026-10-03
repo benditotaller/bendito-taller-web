@@ -4510,5 +4510,15 @@ const productos = {
         "medida_original": "26 Cm alto aprox.",
         "unitario": 3200,
         "mayor": 2600
+    },
+    "laemperatriz": {
+        "codigo": "La Emperatriz",
+        "nombre": "La Emperatriz",
+        "imagen": "img/laemperatriz.webp",
+        "tipo": "simple",
+        "descripcion": "Inspirada en la arta de tarot",
+        "medida_original": "23,5 cm de alto",
+        "unitario": 3200,
+        "mayor": 2500
     }
 };

@@ -726,6 +726,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "ca22": ["corazones-alados"],
     "ninacatrina": ["mexicanos-y-calacas"],
     "elsol": ["mistico-y-mas"],
+    "laemperatriz": ["mistico-y-mas"],
 };
 
 function clasificarProducto(id, p) {
