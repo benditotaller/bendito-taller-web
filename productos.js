@@ -4500,5 +4500,15 @@ const productos = {
         "medida_original": "25 Cm alto",
         "unitario": 2600,
         "mayor": 2000
+    },
+    "elsol": {
+        "codigo": "EL Sol",
+        "nombre": "EL Sol",
+        "imagen": "img/elsol.webp",
+        "tipo": "simple",
+        "descripcion": "Inspiradas en la carta de tarot",
+        "medida_original": "26 Cm alto aprox.",
+        "unitario": 3200,
+        "mayor": 2600
     }
 };

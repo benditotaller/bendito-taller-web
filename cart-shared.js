@@ -725,6 +725,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "cascanuecesletrero": ["navidad"],
     "ca22": ["corazones-alados"],
     "ninacatrina": ["mexicanos-y-calacas"],
+    "elsol": ["mistico-y-mas"],
 };
 
 function clasificarProducto(id, p) {
