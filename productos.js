@@ -4520,5 +4520,15 @@ const productos = {
         "medida_original": "23,5 cm de alto",
         "unitario": 3200,
         "mayor": 2500
+    },
+    "co43": {
+        "codigo": "CO43",
+        "nombre": "CO43",
+        "imagen": "img/co43.webp",
+        "tipo": "simple",
+        "descripcion": "Corazón Botánico en capas",
+        "medida_original": "36 Alto x 28 Ancho",
+        "unitario": 4500,
+        "mayor": 4000
     }
 };
