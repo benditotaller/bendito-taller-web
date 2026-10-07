@@ -995,8 +995,7 @@ const IMAGENES_CARROUSEL = [
     { src: "img/comp12.webp", title: "COMP12", subtitle: "Tetera reloj" },
     { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
     { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
-    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" },
-    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" }
+    { src: "img/co43.webp", title: "Corazón Botánico XL", subtitle: "encuéntralo en "Corazones"" }
 ];
 
 let carouselIndex = 0;
