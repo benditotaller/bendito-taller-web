@@ -984,6 +984,7 @@ function procesarParametrosURL() {
 // Carrusel de la página de inicio (Productos Destacados)
 // El cliente puede agregar o remover imágenes de forma sencilla aquí:
 const IMAGENES_CARROUSEL = [
+    { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
     { src: "img/Corona  Reno.webp", title: "Navideños", subtitle: "Corona Reno" },
     { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
     { src: "img/Comp8.webp", title: "Composición sirena", subtitle: "Encuentalo en deco" },
@@ -993,9 +994,7 @@ const IMAGENES_CARROUSEL = [
     { src: "img/ca21.webp", title: "CA21", subtitle: "Corazón alado 3 capas" },
     { src: "img/comp9.webp", title: "COMP9", subtitle: "Composición multicapa" },
     { src: "img/comp12.webp", title: "COMP12", subtitle: "Tetera reloj" },
-    { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
-    { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
-    { src: "img/co43.webp", title: "Corazón Botánico XL", subtitle: "encuéntralo en "Corazones"" }
+    { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" }
 ];
 
 let carouselIndex = 0;
