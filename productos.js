@@ -4520,5 +4520,15 @@ const productos = {
         "medida_original": "23,5 cm de alto",
         "unitario": 3200,
         "mayor": 2500
+    },
+    "corazonbotanicoxl": {
+        "codigo": "Corazón Botánico XL",
+        "nombre": "Corazón Botánico XL",
+        "imagen": "img/corazonbotanicoxl.webp",
+        "tipo": "simple",
+        "descripcion": "Corazón en capas",
+        "medida_original": "36 alto  X 28 ancho Aprox.",
+        "unitario": 4500,
+        "mayor": 4000
     }
 };
