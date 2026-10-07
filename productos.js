@@ -4526,7 +4526,7 @@ const productos = {
         "nombre": "CO43",
         "imagen": "img/co43.webp",
         "tipo": "simple",
-        "descripcion": "Corazón Botánico en capas",
+        "descripcion": "Corazón Botánico XL",
         "medida_original": "36 Alto x 28 Ancho",
         "unitario": 4500,
         "mayor": 4000
