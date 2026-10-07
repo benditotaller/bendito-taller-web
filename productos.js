@@ -4500,35 +4500,5 @@ const productos = {
         "medida_original": "25 Cm alto",
         "unitario": 2600,
         "mayor": 2000
-    },
-    "elsol": {
-        "codigo": "EL Sol",
-        "nombre": "EL Sol",
-        "imagen": "img/elsol.webp",
-        "tipo": "simple",
-        "descripcion": "Inspiradas en la carta de tarot",
-        "medida_original": "26 Cm alto aprox.",
-        "unitario": 3200,
-        "mayor": 2600
-    },
-    "laemperatriz": {
-        "codigo": "La Emperatriz",
-        "nombre": "La Emperatriz",
-        "imagen": "img/laemperatriz.webp",
-        "tipo": "simple",
-        "descripcion": "Inspirada en la arta de tarot",
-        "medida_original": "23,5 cm de alto",
-        "unitario": 3200,
-        "mayor": 2500
-    },
-    "co43": {
-        "codigo": "CO43",
-        "nombre": "CO43",
-        "imagen": "img/co43.webp",
-        "tipo": "simple",
-        "descripcion": "Corazón Botánico XL",
-        "medida_original": "36 Alto x 28 Ancho",
-        "unitario": 4500,
-        "mayor": 4000
     }
 };
