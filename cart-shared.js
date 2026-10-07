@@ -21,11 +21,6 @@ const CATEGORIAS_MAP = {
 const codigosIntercambiablesNorm = new Set([
     
     
-    
-    
-    
-    
-    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -41,12 +36,7 @@ const codigosIntercambiablesNorm = new Set([
     "ca133mm", "ca1355mm", "ca14", "ca15", "ca1620cm", "ca1630cm",
     "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm",
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
-    "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43"
-
-
-
-
-
+    "ca8", "ca9trio", "setaplicacionesvintage", "ca22"
 
 
 ]);
@@ -735,10 +725,6 @@ const PRODUCT_CATEGORY_MAPPING = {
     "cascanuecesletrero": ["navidad"],
     "ca22": ["corazones-alados"],
     "ninacatrina": ["mexicanos-y-calacas"],
-    "elsol": ["mistico-y-mas"],
-    "laemperatriz": ["mistico-y-mas"],
-    "corazonbotanicoxl": ["otros-insumos"],
-    "co43": ["corazones"],
 };
 
 function clasificarProducto(id, p) {
