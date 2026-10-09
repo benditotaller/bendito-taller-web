@@ -4480,5 +4480,45 @@ const productos = {
         "medida_original": "35 cm ancho",
         "unitario": 3500,
         "mayor": 2800
+    },
+    "comp6": {
+        "codigo": "Comp6",
+        "nombre": "Comp6",
+        "imagen": "img/comp6.webp",
+        "tipo": "simple",
+        "descripcion": "Composición en capas",
+        "medida_original": "30 Cm",
+        "unitario": 4500,
+        "mayor": 3700
+    },
+    "ninacatrina": {
+        "codigo": "Niña Catrina",
+        "nombre": "Niña Catrina",
+        "imagen": "img/ninacatrina.webp",
+        "tipo": "simple",
+        "descripcion": "Catrina en capas",
+        "medida_original": "25 Cm alto",
+        "unitario": 2600,
+        "mayor": 2000
+    },
+    "co43": {
+        "codigo": "Co43",
+        "nombre": "Co43",
+        "imagen": "img/co43.webp",
+        "tipo": "simple",
+        "descripcion": "Corazón Botánico XL",
+        "medida_original": "36 Alto x 28 Ancho",
+        "unitario": 4500,
+        "mayor": 4000
+    },
+    "buho2": {
+        "codigo": "Buho2",
+        "nombre": "Buho2",
+        "imagen": "img/buho2.webp",
+        "tipo": "simple",
+        "descripcion": "Búho grabado multicapa",
+        "medida_original": "27 x 14 Cm",
+        "unitario": 3800,
+        "mayor": 3300
     }
 };

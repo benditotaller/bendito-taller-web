@@ -4382,8 +4382,8 @@ const productos = {
         "mayor": 4600
     },
     "buho": {
-        "codigo": "Buho",
-        "nombre": "Buho",
+        "codigo": "Búho1",
+        "nombre": "Búho1",
         "imagen": "img/buho.webp",
         "tipo": "simple",
         "descripcion": "Buho Multicapa",

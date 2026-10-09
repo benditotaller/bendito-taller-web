@@ -181,9 +181,11 @@ const gruposCombinables = [
             "leopardo2",
             "tortugahawaiana",
             "zorrito",
-            "buho",
             "leonafu",
-            "buho2"
+            "buho2",
+            "buho"
+        
+        
         
         
         
@@ -203,9 +205,11 @@ const gruposCombinables = [
             "marip5",
             "marip6",
             "banderinmexicano",
-            "buho",
             "leonafu",
-            "buho2"
+            "buho2",
+            "buho"
+        
+        
         
         
         
@@ -718,7 +722,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
     "buho": ["deco"],
-    "cal5": ["mexicanos-y-calacas"],
+"cal5": ["mexicanos-y-calacas"],
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
