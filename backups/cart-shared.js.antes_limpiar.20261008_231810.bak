@@ -20,6 +20,8 @@ const CATEGORIAS_MAP = {
 // Set de códigos intercambiables normalizados (lowercase, sin caracteres especiales) - Grupo original de Corazones/Cruces/Altares
 const codigosIntercambiablesNorm = new Set([
     
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -35,7 +37,9 @@ const codigosIntercambiablesNorm = new Set([
     "ca133mm", "ca1355mm", "ca14", "ca15", "ca1620cm", "ca1630cm",
     "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm",
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
-    "ca8", "ca9trio", "setaplicacionesvintage"
+    "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43"
+
+
 
 ]);
 
@@ -63,7 +67,9 @@ const gruposCombinables = [
             "alebrije2",
             "catrina1",
             "catrina2",
-            "alebrije3"
+            "alebrije3",
+            "ninacatrina"
+        
         
         
         ]
@@ -142,6 +148,18 @@ const gruposCombinables = [
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         ]
     },
     {
@@ -163,8 +181,12 @@ const gruposCombinables = [
             "leopardo2",
             "tortugahawaiana",
             "zorrito",
-            "buho",
-            "leonafu"
+            "leonafu",
+            "buho2",
+            "buho"
+        
+        
+        
         
         
         
@@ -183,8 +205,12 @@ const gruposCombinables = [
             "marip5",
             "marip6",
             "banderinmexicano",
-            "buho",
-            "leonafu"
+            "leonafu",
+            "buho2",
+            "buho"
+        
+        
+        
         
         
         
@@ -247,7 +273,9 @@ const gruposCombinables = [
             "coronacascanueces",
             "coronaosito",
             "coronareno",
-            "cascanuecesbase"
+            "cascanuecesletrero"
+        
+        
         ]
     },
     {
@@ -505,7 +533,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp7": ["deco"],
     "comp4": ["deco"],
     "comp5": ["deco"],
-    "comp6": ["otros-insumos"],
+    "comp6": ["deco"],
 "setanillos1": ["deco"],
     "setanillos2": ["deco"],
     "setanillos3": ["deco"],
@@ -694,7 +722,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
     "buho": ["deco"],
-    "cal5": ["mexicanos-y-calacas"],
+"cal5": ["mexicanos-y-calacas"],
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
@@ -704,6 +732,11 @@ const PRODUCT_CATEGORY_MAPPING = {
     "alebrije3": ["mexicanos-y-calacas"],
 "leonafu": ["deco"],
     "cascanuecesbase": ["otros-insumos"],
+    "cascanuecesletrero": ["navidad"],
+    "ca22": ["corazones-alados"],
+    "ninacatrina": ["mexicanos-y-calacas"],
+    "co43": ["corazones"],
+    "buho2": ["deco"],
 };
 
 function clasificarProducto(id, p) {
