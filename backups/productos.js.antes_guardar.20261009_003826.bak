@@ -4382,8 +4382,8 @@ const productos = {
         "mayor": 4600
     },
     "buho": {
-        "codigo": "Buho",
-        "nombre": "Buho",
+        "codigo": "Búho1",
+        "nombre": "Búho1",
         "imagen": "img/buho.webp",
         "tipo": "simple",
         "descripcion": "Buho Multicapa",
@@ -4481,16 +4481,6 @@ const productos = {
         "unitario": 3500,
         "mayor": 2800
     },
-    "comp6": {
-        "codigo": "Comp6",
-        "nombre": "Comp6",
-        "imagen": "img/comp6.webp",
-        "tipo": "simple",
-        "descripcion": "Composición en capas",
-        "medida_original": "30 Cm",
-        "unitario": 4500,
-        "mayor": 3700
-    },
     "ninacatrina": {
         "codigo": "Niña Catrina",
         "nombre": "Niña Catrina",
@@ -4501,24 +4491,34 @@ const productos = {
         "unitario": 2600,
         "mayor": 2000
     },
-    "elsol": {
-        "codigo": "EL Sol",
-        "nombre": "EL Sol",
-        "imagen": "img/elsol.webp",
+    "co43": {
+        "codigo": "Co43",
+        "nombre": "Co43",
+        "imagen": "img/co43.webp",
         "tipo": "simple",
-        "descripcion": "Inspiradas en la carta de tarot",
-        "medida_original": "26 Cm alto aprox.",
-        "unitario": 3200,
-        "mayor": 2600
+        "descripcion": "Corazón Botánico XL",
+        "medida_original": "36 Alto x 28 Ancho",
+        "unitario": 4500,
+        "mayor": 4000
     },
-    "laemperatriz": {
-        "codigo": "La Emperatriz",
-        "nombre": "La Emperatriz",
-        "imagen": "img/laemperatriz.webp",
+    "buho2": {
+        "codigo": "Buho2",
+        "nombre": "Buho2",
+        "imagen": "img/buho2.webp",
         "tipo": "simple",
-        "descripcion": "Inspirada en la arta de tarot",
-        "medida_original": "23,5 cm de alto",
-        "unitario": 3200,
-        "mayor": 2500
+        "descripcion": "Búho grabado multicapa",
+        "medida_original": "27 x 14 Cm",
+        "unitario": 3800,
+        "mayor": 3300
+    },
+    "comp11": {
+        "codigo": "Comp11",
+        "nombre": "Comp11",
+        "imagen": "img/comp11.webp",
+        "tipo": "simple",
+        "descripcion": "Composición en capas",
+        "medida_original": "30 Cm",
+        "unitario": 4500,
+        "mayor": 3700
     }
 };

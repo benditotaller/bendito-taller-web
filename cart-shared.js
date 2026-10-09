@@ -203,7 +203,6 @@ const gruposCombinables = [
         min: 4,
         codigos: [
             "abejareina",
-            "abejareina2",
             "marip1",
             "marip2",
             "marip3",
@@ -214,6 +213,7 @@ const gruposCombinables = [
             "leonafu",
             "buho2",
             "buho"
+        
         
         
         

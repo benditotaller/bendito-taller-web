@@ -119,16 +119,6 @@ const productos = {
         "descripcion": "Abeja reina multicapa",
         "medida_original": ""
     },
-    "abejareina2": {
-        "codigo": "Abeja reina2",
-        "nombre": "Abeja reina2",
-        "imagen": "img/Abeja reina2.webp",
-        "tipo": "simple",
-        "mayor": 2700,
-        "unitario": 3500,
-        "descripcion": "Abeja Reina Mdf 3 mm 23,6 cm",
-        "medida_original": "23,6 cm"
-    },
     "alebrije1": {
         "codigo": "alebrije1",
         "nombre": "alebrije1",
