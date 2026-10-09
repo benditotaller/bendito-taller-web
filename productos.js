@@ -4500,5 +4500,15 @@ const productos = {
         "medida_original": "25 Cm alto",
         "unitario": 2600,
         "mayor": 2000
+    },
+    "co43": {
+        "codigo": "Co43",
+        "nombre": "Co43",
+        "imagen": "img/co43.webp",
+        "tipo": "simple",
+        "descripcion": "Corazón Botánico XL",
+        "medida_original": "36 Alto x 28 Ancho",
+        "unitario": 4500,
+        "mayor": 4000
     }
 };

@@ -4461,16 +4461,6 @@ const productos = {
         "unitario": 3200,
         "mayor": 2500
     },
-    "comp6": {
-        "codigo": "Comp6",
-        "nombre": "Comp6",
-        "imagen": "img/comp6.webp",
-        "tipo": "simple",
-        "descripcion": "Composición  en capas",
-        "medida_original": "30 cm",
-        "unitario": 4500,
-        "mayor": 3700
-    },
     "cascanuecesletrero": {
         "codigo": "Cascanueces Letrero",
         "nombre": "Cascanueces Letrero",
@@ -4490,5 +4480,25 @@ const productos = {
         "medida_original": "35 cm ancho",
         "unitario": 3500,
         "mayor": 2800
+    },
+    "comp6": {
+        "codigo": "Comp6",
+        "nombre": "Comp6",
+        "imagen": "img/comp6.webp",
+        "tipo": "simple",
+        "descripcion": "Composición en capas",
+        "medida_original": "30 Cm",
+        "unitario": 4500,
+        "mayor": 3700
+    },
+    "ninacatrina": {
+        "codigo": "Niña Catrina",
+        "nombre": "Niña Catrina",
+        "imagen": "img/ninacatrina.webp",
+        "tipo": "simple",
+        "descripcion": "Catrina en capas",
+        "medida_original": "25 Cm alto",
+        "unitario": 2600,
+        "mayor": 2000
     }
 };
