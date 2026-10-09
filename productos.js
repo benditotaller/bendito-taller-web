@@ -4481,16 +4481,6 @@ const productos = {
         "unitario": 3500,
         "mayor": 2800
     },
-    "comp6": {
-        "codigo": "Comp6",
-        "nombre": "Comp6",
-        "imagen": "img/comp6.webp",
-        "tipo": "simple",
-        "descripcion": "Composición en capas",
-        "medida_original": "30 Cm",
-        "unitario": 4500,
-        "mayor": 3700
-    },
     "ninacatrina": {
         "codigo": "Niña Catrina",
         "nombre": "Niña Catrina",
