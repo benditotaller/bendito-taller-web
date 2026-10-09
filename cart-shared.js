@@ -182,7 +182,9 @@ const gruposCombinables = [
             "tortugahawaiana",
             "zorrito",
             "buho",
-            "leonafu"
+            "leonafu",
+            "buho2"
+        
         
         
         
@@ -202,7 +204,9 @@ const gruposCombinables = [
             "marip6",
             "banderinmexicano",
             "buho",
-            "leonafu"
+            "leonafu",
+            "buho2"
+        
         
         
         
@@ -728,6 +732,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "ca22": ["corazones-alados"],
     "ninacatrina": ["mexicanos-y-calacas"],
     "co43": ["corazones"],
+    "buho2": ["deco"],
 };
 
 function clasificarProducto(id, p) {

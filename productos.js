@@ -4510,5 +4510,15 @@ const productos = {
         "medida_original": "36 Alto x 28 Ancho",
         "unitario": 4500,
         "mayor": 4000
+    },
+    "buho2": {
+        "codigo": "Buho2",
+        "nombre": "Buho2",
+        "imagen": "img/buho2.webp",
+        "tipo": "simple",
+        "descripcion": "Búho grabado multicapa",
+        "medida_original": "27 x 14 Cm",
+        "unitario": 3800,
+        "mayor": 3300
     }
 };
