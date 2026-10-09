@@ -4520,5 +4520,15 @@ const productos = {
         "medida_original": "30 Cm",
         "unitario": 4500,
         "mayor": 3700
+    },
+    "comp11": {
+        "codigo": "Comp11",
+        "nombre": "Comp11",
+        "imagen": "img/comp11.webp",
+        "tipo": "simple",
+        "descripcion": "Composición en capas",
+        "medida_original": "30 Cm",
+        "unitario": 4500,
+        "mayor": 3700
     }
 };

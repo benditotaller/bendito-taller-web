@@ -144,7 +144,9 @@ const gruposCombinables = [
             "comp5",
             "comp7",
             "comp8",
-            "comp6"
+            "comp6",
+            "comp11"
+        
         
         
         
@@ -741,6 +743,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "ninacatrina": ["mexicanos-y-calacas"],
     "co43": ["corazones"],
     "buho2": ["deco"],
+    "comp11": ["deco"],
 };
 
 function clasificarProducto(id, p) {
