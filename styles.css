@@ -1449,6 +1449,32 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer; /* Habilitar cursor interactivo para ampliar foto */
 }
 
+/* Badge de Producto Nuevo (Opción Turquesa / Calipso) */
+.product-badge-nuevo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+    background: linear-gradient(135deg, #00B8A6, #008f81);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 4px 11px;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0, 184, 166, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none; /* Permite hacer clic a través en la foto */
+}
+
+.product-badge-nuevo .badge-icon {
+    font-size: 11px;
+    line-height: 1;
+}
+
 .product-img {
     position: absolute;
     top: 0;

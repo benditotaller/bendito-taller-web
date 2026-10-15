@@ -280,6 +280,16 @@ function actualizarBannerCategoria() {
     banner.style.display = "flex";
 }
 
+// Verificar si un producto es nuevo (creado hace 20 días o menos)
+function esProductoNuevo(p) {
+    if (!p || !p.fecha_creacion) return false;
+    const fecha = new Date(p.fecha_creacion);
+    if (isNaN(fecha.getTime())) return false;
+    const ahora = new Date();
+    const diffDias = (ahora - fecha) / (1000 * 60 * 60 * 24);
+    return diffDias >= 0 && diffDias <= 20;
+}
+
 // Renderizar grilla de catálogo
 function renderCatalog() {
     const grid = document.getElementById("productsGrid");
@@ -288,7 +298,8 @@ function renderCatalog() {
     actualizarBannerCategoria();
     
     // Obtener sólo productos padres (filtrar los aliases de medidas que apuntan a padres)
-    const parentKeys = Object.keys(productos).filter(key => !productos[key].parent);
+    // Se invierte el orden (.reverse()) para que los productos más recientes agregados al catálogo queden al inicio
+    const parentKeys = Object.keys(productos).filter(key => !productos[key].parent).reverse();
     
     let productosFiltrados = parentKeys.filter(key => {
         const p = productos[key];
@@ -310,17 +321,14 @@ function renderCatalog() {
         return true;
     });
 
-    // Ordenar productosFiltrados para agrupar productos con medida única (simple) arriba de los con medidas múltiples (medidas)
+    // Ordenar productosFiltrados:
+    // 1. Productos con etiqueta 'nuevo' (creados hace 20 días o menos) van primero arriba
+    // 2. Si ambos son nuevos o ambos son estándar, se respeta el orden cronológico más reciente primero
     productosFiltrados.sort((a, b) => {
-        const typeA = productos[a].tipo || "simple";
-        const typeB = productos[b].tipo || "simple";
-        
-        if (typeA === "simple" && typeB === "medidas") {
-            return -1;
-        }
-        if (typeA === "medidas" && typeB === "simple") {
-            return 1;
-        }
+        const nuevoA = esProductoNuevo(productos[a]);
+        const nuevoB = esProductoNuevo(productos[b]);
+        if (nuevoA && !nuevoB) return -1;
+        if (!nuevoA && nuevoB) return 1;
         return 0;
     });
 
@@ -380,11 +388,20 @@ function renderCatalog() {
             `;
         }
 
+        const esNuevo = esProductoNuevo(p);
+        const badgeNuevoHtml = esNuevo ? `
+            <div class="product-badge-nuevo">
+                <span class="badge-icon">⭐</span>
+                <span>NUEVO</span>
+            </div>
+        ` : '';
+
         const card = document.createElement("div");
         card.className = "product-card";
         card.style.animationDelay = (idx * 0.05 + 0.15) + 's';
         card.innerHTML = `
             <div class="product-img-wrapper" onclick="abrirImagenGrande('${key}')" title="Ver imagen en grande">
+                ${badgeNuevoHtml}
                 <img 
                     src="${p.imagen}" 
                     alt="${p.nombre}" 
