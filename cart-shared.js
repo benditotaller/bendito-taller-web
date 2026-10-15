@@ -744,6 +744,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "co43": ["corazones"],
     "buho2": ["deco"],
     "comp11": ["deco"],
+    "prueba": ["otros-insumos"],
 };
 
 function clasificarProducto(id, p) {
