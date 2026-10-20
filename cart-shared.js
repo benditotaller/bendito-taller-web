@@ -515,6 +515,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "estrellas": ["navidad"],
     "copos": ["navidad"],
     "renograbado": ["navidad"],
+    "estrellasgrabadas": ["navidad"],
+    "estrellasgrabadas9cm": ["navidad"],
     "estrellasgrabadas5cm": ["navidad"],
     "angel1": ["navidad"],
     "angel2": ["navidad"],
@@ -744,7 +746,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "co43": ["corazones"],
     "buho2": ["deco"],
     "comp11": ["deco"],
-    "prueba": ["otros-insumos"],
+    "girasolmulticapas": ["deco"],
+    "prueba": ["otros-insumos"]
 };
 
 function clasificarProducto(id, p) {
@@ -771,10 +774,12 @@ function clasificarProducto(id, p) {
         idClean.includes("pino") || 
         idClean.includes("nieve") || 
         idClean.includes("pesebre") ||
+        idClean.includes("estrella") ||
         idClean.startsWith("setnavideno") ||
         nombreClean.includes("navidad") ||
         nombreClean.includes("reno") ||
-        nombreClean.includes("pino")
+        nombreClean.includes("pino") ||
+        nombreClean.includes("estrella")
     ) {
         return ["navidad"];
     }
@@ -847,6 +852,8 @@ function clasificarProducto(id, p) {
         idClean.startsWith("farol") ||
         idClean.startsWith("repisa") ||
         idClean.startsWith("sol") ||
+        idClean.includes("girasol") ||
+        nombreClean.includes("girasol") ||
         ["leopardo", "leopardo2", "zorrito", "chinita", "tortugahawaiana", "caballodemar", "caballomecedor", "caballovintage", "alicia3d", "circo", "halloween", "harrypotter3d", "libromagico1", "libromagico2", "narnia3d", "peter3d", "principito1", "principito2", "ratitapresumida", "snoopy1", "snoopy2", "vigendelvalle", "abejareina", "abejareina2", "marip1", "marip2", "marip3", "marip4", "marip5", "marip6"].includes(idClean) ||
         nombreClean.includes("cuadro") ||
         nombreClean.includes("decoración") ||
