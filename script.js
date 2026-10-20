@@ -1012,23 +1012,23 @@ function procesarParametrosURL() {
     }
 }
 
-// Carrusel de la página de inicio (Productos Destacados)
-// El cliente puede agregar o remover imágenes de forma sencilla aquí:
+// Carrusel de la página de inicio (Productos Destacados - Seleccionados para ti)
+// El cliente puede agregar o remover imágenes con su categoría y código correspondiente:
 const IMAGENES_CARROUSEL = [
-    { src: "img/co43.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" },
-    { src: "img/Corona  Reno.webp", title: "Navideños", subtitle: "Corona Reno" },
-    { src: "img/Comp8.webp", title: "Composición sirena", subtitle: "Encuentalo en deco" },
-    { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas" },
-    { src: "img/Libromagico1.webp", title: "LIBRO ALICIA 3d", subtitle: "encuentalo en libros 3d" },
-    { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas" },
-    { src: "img/ca21.webp", title: "CA21", subtitle: "Corazón alado 3 capas" },
-    { src: "img/comp9.webp", title: "COMP9", subtitle: "Composición multicapa" },
-    { src: "img/comp12.webp", title: "COMP12", subtitle: "Tetera reloj" },
-    { src: "img/setfiguritas10.webp", title: "SET FIGURITAS10", subtitle: "Set para pintar" },
-    { src: "img/setfiguritas11.webp", title: "SET FIGURITAS11", subtitle: "Set para pintar" },
-    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "ENCUENTRALO EN DECO" },
-    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas" },
-    { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "encuentralo en Corazones" }
+    { src: "img/co43.webp", title: "Corazón multicapa Flores", subtitle: "Colección Corazones", categoria: "corazones", producto: "co43" },
+    { src: "img/Corona  Reno.webp", title: "Corona Reno", subtitle: "Colección Navideños", categoria: "navidad", producto: "coronareno" },
+    { src: "img/Comp8.webp", title: "Composición Sirena", subtitle: "Colección Deco Creativa", categoria: "deco", producto: "comp8" },
+    { src: "img/altar12.webp", title: "ALTAR 12", subtitle: "Altar en capas", categoria: "nichos-y-altares", producto: "altar12" },
+    { src: "img/Libromagico1.webp", title: "LIBRO ALICIA 3D", subtitle: "Colección Libros 3D", categoria: "libros-3d", producto: "libromagico1" },
+    { src: "img/ca20.webp", title: "CA20", subtitle: "Corazón alado 3 capas", categoria: "corazones-alados", producto: "ca20" },
+    { src: "img/ca21.webp", title: "CA21", subtitle: "Corazón alado 3 capas", categoria: "corazones-alados", producto: "ca21" },
+    { src: "img/comp9.webp", title: "COMP9", subtitle: "Composición multicapa", categoria: "deco", producto: "comp9" },
+    { src: "img/comp12.webp", title: "COMP12", subtitle: "Tetera reloj", categoria: "deco", producto: "comp12" },
+    { src: "img/setfiguritas10.webp", title: "SET FIGURITAS 10", subtitle: "Set para pintar", categoria: "grabados", producto: "setfiguritas10" },
+    { src: "img/setfiguritas11.webp", title: "SET FIGURITAS 11", subtitle: "Set para pintar", categoria: "grabados", producto: "setfiguritas11" },
+    { src: "img/Tienda vintage2.webp", title: "Tienda Vintage", subtitle: "Colección Deco Creativa", categoria: "deco", producto: "tiendavintage2" },
+    { src: "img/co38.webp", title: "CO38", subtitle: "Corazón devoto en capas", categoria: "corazones", producto: "co38" },
+    { src: "img/co42.webp", title: "Corazón multicapa Flores", subtitle: "Colección Corazones", categoria: "corazones", producto: "co42" }
 ];
 
 let carouselIndex = 0;
@@ -1043,16 +1043,60 @@ function inicializarCarrusel() {
     dotsContainer.innerHTML = "";
     
     IMAGENES_CARROUSEL.forEach((img, index) => {
-        // Crear slide
+        // Resolver categoría y producto
+        let catKey = img.categoria || null;
+        let prodKey = img.producto || null;
+        
+        // Si no vienen definidos explícitamente, buscarlos dinámicamente en productos
+        if (!catKey || !prodKey) {
+            let cleanSrc = (img.src || "").toLowerCase().replace(/\s+/g, "").replace("img/", "").replace(/\.[^.]+$/, "");
+            if (typeof productos !== "undefined" && productos) {
+                for (let k in productos) {
+                    let p = productos[k];
+                    let pImg = (p.imagen || "").toLowerCase().replace(/\s+/g, "").replace("img/", "").replace(/\.[^.]+$/, "");
+                    let pCod = (p.codigo || "").toLowerCase().replace(/\s+/g, "");
+                    if (p.imagen === img.src || pImg === cleanSrc || k === cleanSrc || pCod === cleanSrc) {
+                        prodKey = prodKey || k;
+                        if (!catKey && typeof clasificarProducto === "function") {
+                            let cats = clasificarProducto(k, p);
+                            if (cats && cats.length > 0) catKey = cats[0];
+                        }
+                        break;
+                    }
+                }
+            }
+            if (!catKey && typeof clasificarProducto === "function") {
+                let tempP = { nombre: img.title, descripcion: img.subtitle, imagen: img.src };
+                let cats = clasificarProducto(cleanSrc, tempP);
+                if (cats && cats.length > 0) catKey = cats[0];
+            }
+        }
+        
+        catKey = (catKey && typeof CATEGORIAS_MAP !== "undefined" && CATEGORIAS_MAP[catKey]) ? catKey : "all";
+        const catLabel = (typeof CATEGORIAS_MAP !== "undefined" && CATEGORIAS_MAP[catKey]) ? CATEGORIAS_MAP[catKey] : "Catálogo";
+
+        // Crear slide interactivo
         const slide = document.createElement("div");
         slide.className = `carousel-slide ${index === 0 ? "active" : ""}`;
+        slide.style.cursor = "pointer";
+        slide.title = `Ver ${img.title} en categoría ${catLabel}`;
+        
+        slide.onclick = () => {
+            if (catKey && catKey !== "all") {
+                const hash = prodKey ? `#prod-${encodeURIComponent(prodKey)}` : "";
+                window.location.href = `catalogo.html?category=${encodeURIComponent(catKey)}${hash}`;
+            } else {
+                window.location.href = "catalogo.html";
+            }
+        };
         
         slide.innerHTML = `
             <img src="${img.src}" alt="${img.title}">
             <div class="carousel-overlay">
                 <div class="carousel-caption">
-                    <p>${img.title}</p>
-                    <h3>${img.subtitle}</h3>
+                    <p style="color: #debca6; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">✦ ${catLabel}</p>
+                    <h3>${img.title}</h3>
+                    <p style="font-size: 13px; opacity: 0.95; text-transform: none;">${img.subtitle}</p>
                 </div>
             </div>
         `;
@@ -1061,6 +1105,7 @@ function inicializarCarrusel() {
         // Crear dot
         const dot = document.createElement("button");
         dot.className = `carousel-dot ${index === 0 ? "active" : ""}`;
+        dot.setAttribute("aria-label", `Slide seleccionado ${index + 1}`);
         dot.onclick = () => irASlide(index);
         dotsContainer.appendChild(dot);
     });
