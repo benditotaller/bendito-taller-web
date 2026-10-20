@@ -398,6 +398,7 @@ function renderCatalog() {
 
         const card = document.createElement("div");
         card.className = "product-card";
+        card.id = `prod-${key}`;
         card.style.animationDelay = (idx * 0.05 + 0.15) + 's';
         card.innerHTML = `
             <div class="product-img-wrapper" onclick="abrirImagenGrande('${key}')" title="Ver imagen en grande">
@@ -962,8 +963,8 @@ function procesarParametrosURL() {
     const params = new URLSearchParams(window.location.search);
     let autoScroll = false;
     
-    // Cargar búsqueda de URL si existe
-    const searchVal = params.get("search");
+    // Cargar búsqueda de URL si existe (soporta ?search= y ?buscar=)
+    const searchVal = params.get("search") || params.get("buscar");
     if (searchVal) {
         busquedaActual = searchVal.trim().toLowerCase();
         const searchInput = document.getElementById("searchInput");
@@ -988,7 +989,20 @@ function procesarParametrosURL() {
         autoScroll = true;
     }
     
-    if (autoScroll) {
+    // Auto-scroll y resaltado suave si viene con ancla de producto (#prod-xxx)
+    if (window.location.hash) {
+        setTimeout(() => {
+            const targetCard = document.querySelector(window.location.hash);
+            if (targetCard) {
+                targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+                targetCard.classList.add("product-card-highlight");
+                setTimeout(() => targetCard.classList.remove("product-card-highlight"), 2500);
+            } else if (autoScroll) {
+                const section = document.getElementById("catalog-section");
+                if (section) section.scrollIntoView({ behavior: "smooth" });
+            }
+        }, 250);
+    } else if (autoScroll) {
         setTimeout(() => {
             const section = document.getElementById("catalog-section");
             if (section) {
@@ -1139,12 +1153,20 @@ function inicializarCarruselNuevos() {
     
     ultimos10Keys.forEach((key, index) => {
         const p = productos[key];
+        const categorias = (typeof clasificarProducto === "function") ? clasificarProducto(key, p) : [];
+        const catKey = (categorias && categorias.length > 0 && typeof CATEGORIAS_MAP !== "undefined" && CATEGORIAS_MAP[categorias[0]]) ? categorias[0] : "all";
+        const catLabel = (typeof CATEGORIAS_MAP !== "undefined" && CATEGORIAS_MAP[catKey]) ? CATEGORIAS_MAP[catKey] : "Catálogo";
+
         const slide = document.createElement("div");
         slide.className = `carousel-slide ${index === 0 ? "active" : ""}`;
         slide.style.cursor = "pointer";
-        slide.title = `Ver ${p.nombre || p.codigo} en el catálogo`;
+        slide.title = `Ver ${p.nombre || p.codigo} en categoría ${catLabel}`;
         slide.onclick = () => {
-            window.location.href = `catalogo.html?buscar=${encodeURIComponent(p.codigo || p.nombre || key)}`;
+            if (catKey && catKey !== "all") {
+                window.location.href = `catalogo.html?category=${encodeURIComponent(catKey)}#prod-${encodeURIComponent(key)}`;
+            } else {
+                window.location.href = "catalogo.html";
+            }
         };
         
         const imgSrc = p.imagen || "img/logo_circulo.webp";
@@ -1155,7 +1177,7 @@ function inicializarCarruselNuevos() {
             <img src="${imgSrc}" alt="${titulo}" loading="lazy">
             <div class="carousel-overlay">
                 <div class="carousel-caption">
-                    <p style="color: #ff9e7d; font-weight: 700; letter-spacing: 1.5px;">&#10024; RECI&Eacute;N INGRESADO</p>
+                    <p style="color: #ff9e7d; font-weight: 700; letter-spacing: 1.5px;">&#10024; RECI&Eacute;N INGRESADO &bull; ${catLabel.toUpperCase()}</p>
                     <h3>${titulo}</h3>
                     <p style="font-size: 13px; opacity: 0.95; text-transform: none;">${subtitulo}</p>
                 </div>
