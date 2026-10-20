@@ -175,18 +175,51 @@
     <!-- EXPLORA CATEGORIAS -->
     <section id="catalog-section" class="container" style="padding-bottom: 60px;">
         
-        <!-- CARRUSEL DE PRODUCTOS DESTACADOS -->
-        <div class="carousel-container" onmouseenter="detenerAutoSlide()" onmouseleave="iniciarAutoSlide()">
-            <div class="carousel-track" id="carouselTrack">
-                <!-- Poblado dinámicamente por script.js -->
+        <!-- CARRUSELES DUALES LADO A LADO -->
+        <div class="dual-carousels-wrapper">
+            <!-- Carrusel 1: Seleccionados para ti -->
+            <div class="carousel-column">
+                <div class="carousel-header">
+                    <div class="carousel-title-tag">
+                        <span class="carousel-title-icon">&#10022;</span>
+                        <h3 class="carousel-title-text">SELECCIONADOS PARA TI</h3>
+                    </div>
+                </div>
+                <div class="carousel-container" onmouseenter="detenerAutoSlide()" onmouseleave="iniciarAutoSlide()">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Poblado dinámicamente por script.js -->
+                    </div>
+                    
+                    <!-- Botones de navegación -->
+                    <button class="carousel-arrow prev" onclick="moveCarousel(-1)" title="Anterior" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-arrow next" onclick="moveCarousel(1)" title="Siguiente" aria-label="Siguiente">&#10095;</button>
+                    
+                    <!-- Indicadores -->
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
             </div>
-            
-            <!-- Botones de navegación -->
-            <button class="carousel-arrow prev" onclick="moveCarousel(-1)" title="Anterior">❮</button>
-            <button class="carousel-arrow next" onclick="moveCarousel(1)" title="Siguiente">❯</button>
-            
-            <!-- Indicadores -->
-            <div class="carousel-dots" id="carouselDots"></div>
+
+            <!-- Carrusel 2: Lo + nuevo -->
+            <div class="carousel-column">
+                <div class="carousel-header">
+                    <div class="carousel-title-tag tag-lo-nuevo">
+                        <span class="carousel-title-icon">&#10024;</span>
+                        <h3 class="carousel-title-text">LO + NUEVO</h3>
+                    </div>
+                </div>
+                <div class="carousel-container" id="carouselNuevosContainer" onmouseenter="detenerAutoSlideNuevos()" onmouseleave="iniciarAutoSlideNuevos()">
+                    <div class="carousel-track" id="carouselNuevosTrack">
+                        <!-- Poblado dinámicamente con los últimos 10 productos -->
+                    </div>
+                    
+                    <!-- Botones de navegación -->
+                    <button class="carousel-arrow prev" onclick="moveCarouselNuevos(-1)" title="Anterior" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-arrow next" onclick="moveCarouselNuevos(1)" title="Siguiente" aria-label="Siguiente">&#10095;</button>
+                    
+                    <!-- Indicadores -->
+                    <div class="carousel-dots" id="carouselNuevosDots"></div>
+                </div>
+            </div>
         </div>
 
         <div class="categories-grid" style="padding-bottom: 0;">

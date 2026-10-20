@@ -1068,7 +1068,9 @@ function detenerAutoSlide() {
 }
 
 function moveCarousel(direction) {
-    const slides = document.querySelectorAll(".carousel-slide");
+    const track = document.getElementById("carouselTrack");
+    if (!track) return;
+    const slides = track.querySelectorAll(".carousel-slide");
     if (slides.length === 0) return;
     
     carouselIndex = (carouselIndex + direction + slides.length) % slides.length;
@@ -1084,12 +1086,13 @@ function irASlide(index) {
 
 function actualizarCarrusel() {
     const track = document.getElementById("carouselTrack");
+    const dotsContainer = document.getElementById("carouselDots");
     if (!track) return;
     
     track.style.transform = `translateX(-${carouselIndex * 100}%)`;
     
     // Actualizar clase active en slides
-    const slides = document.querySelectorAll(".carousel-slide");
+    const slides = track.querySelectorAll(".carousel-slide");
     slides.forEach((slide, index) => {
         if (index === carouselIndex) {
             slide.classList.add("active");
@@ -1099,14 +1102,134 @@ function actualizarCarrusel() {
     });
     
     // Actualizar dots
-    const dots = document.querySelectorAll(".carousel-dot");
-    dots.forEach((dot, index) => {
-        if (index === carouselIndex) {
-            dot.classList.add("active");
+    if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll(".carousel-dot");
+        dots.forEach((dot, index) => {
+            if (index === carouselIndex) {
+                dot.classList.add("active");
+            } else {
+                dot.classList.remove("active");
+            }
+        });
+    }
+}
+
+// ==========================================
+// CARRUSEL 2: LO + NUEVO (Últimos 10 productos subidos)
+// ==========================================
+let carouselNuevosIndex = 0;
+let carouselNuevosInterval = null;
+
+function inicializarCarruselNuevos() {
+    const track = document.getElementById("carouselNuevosTrack");
+    const dotsContainer = document.getElementById("carouselNuevosDots");
+    if (!track || !dotsContainer) return;
+    
+    track.innerHTML = "";
+    dotsContainer.innerHTML = "";
+    
+    if (typeof productos === "undefined" || !productos) return;
+    
+    // Obtener sólo productos padres en orden cronológico inverso (.reverse())
+    // y tomar exactamente los últimos 10 productos ingresados
+    const parentKeys = Object.keys(productos).filter(key => !productos[key].parent).reverse();
+    const ultimos10Keys = parentKeys.slice(0, 10);
+    
+    if (ultimos10Keys.length === 0) return;
+    
+    ultimos10Keys.forEach((key, index) => {
+        const p = productos[key];
+        const slide = document.createElement("div");
+        slide.className = `carousel-slide ${index === 0 ? "active" : ""}`;
+        slide.style.cursor = "pointer";
+        slide.title = `Ver ${p.nombre || p.codigo} en el catálogo`;
+        slide.onclick = () => {
+            window.location.href = `catalogo.html?buscar=${encodeURIComponent(p.codigo || p.nombre || key)}`;
+        };
+        
+        const imgSrc = p.imagen || "img/logo_circulo.webp";
+        const titulo = p.nombre || p.codigo || "Producto Nuevo";
+        const subtitulo = p.descripcion ? p.descripcion : (p.unitario ? `$${Number(p.unitario).toLocaleString('es-CL')}` : "Ver producto");
+        
+        slide.innerHTML = `
+            <img src="${imgSrc}" alt="${titulo}" loading="lazy">
+            <div class="carousel-overlay">
+                <div class="carousel-caption">
+                    <p style="color: #ff9e7d; font-weight: 700; letter-spacing: 1.5px;">&#10024; RECI&Eacute;N INGRESADO</p>
+                    <h3>${titulo}</h3>
+                    <p style="font-size: 13px; opacity: 0.95; text-transform: none;">${subtitulo}</p>
+                </div>
+            </div>
+        `;
+        track.appendChild(slide);
+        
+        // Crear dot
+        const dot = document.createElement("button");
+        dot.className = `carousel-dot ${index === 0 ? "active" : ""}`;
+        dot.setAttribute("aria-label", `Slide nuevo ${index + 1}`);
+        dot.onclick = () => irASlideNuevos(index);
+        dotsContainer.appendChild(dot);
+    });
+    
+    iniciarAutoSlideNuevos();
+}
+
+function iniciarAutoSlideNuevos() {
+    detenerAutoSlideNuevos();
+    carouselNuevosInterval = setInterval(() => {
+        moveCarouselNuevos(1);
+    }, 4500); // 4.5 segundos
+}
+
+function detenerAutoSlideNuevos() {
+    if (carouselNuevosInterval) {
+        clearInterval(carouselNuevosInterval);
+    }
+}
+
+function moveCarouselNuevos(direction) {
+    const track = document.getElementById("carouselNuevosTrack");
+    if (!track) return;
+    const slides = track.querySelectorAll(".carousel-slide");
+    if (slides.length === 0) return;
+    
+    carouselNuevosIndex = (carouselNuevosIndex + direction + slides.length) % slides.length;
+    actualizarCarruselNuevos();
+    iniciarAutoSlideNuevos();
+}
+
+function irASlideNuevos(index) {
+    carouselNuevosIndex = index;
+    actualizarCarruselNuevos();
+    iniciarAutoSlideNuevos();
+}
+
+function actualizarCarruselNuevos() {
+    const track = document.getElementById("carouselNuevosTrack");
+    const dotsContainer = document.getElementById("carouselNuevosDots");
+    if (!track) return;
+    
+    track.style.transform = `translateX(-${carouselNuevosIndex * 100}%)`;
+    
+    const slides = track.querySelectorAll(".carousel-slide");
+    slides.forEach((slide, index) => {
+        if (index === carouselNuevosIndex) {
+            slide.classList.add("active");
         } else {
-            dot.classList.remove("active");
+            slide.classList.remove("active");
         }
     });
+    
+    if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll(".carousel-dot");
+        dots.forEach((dot, index) => {
+            if (index === carouselNuevosIndex) {
+                dot.classList.add("active");
+            } else {
+                dot.classList.remove("active");
+            }
+        });
+    }
 }
 
 // Inicializar al cargar
@@ -1115,6 +1238,7 @@ window.addEventListener("DOMContentLoaded", () => {
     renderCarrito();
     procesarParametrosURL();
     inicializarCarrusel();
+    inicializarCarruselNuevos();
     
     // Asignar view-transition-name a las tarjetas de categorías al hacer click
     document.querySelectorAll(".category-card").forEach(card => {
