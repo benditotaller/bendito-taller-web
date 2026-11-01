@@ -90,14 +90,14 @@ const productos = {
         "medida_original": "21cm. de alto"
     },
     "setfiguritas10": {
-        "codigo": "SET FIGURITAS10",
-        "nombre": "SET FIGURITAS10",
+        "codigo": "Grabado20",
+        "nombre": "Grabado20",
         "imagen": "img/setfiguritas10.webp",
         "tipo": "simple",
-        "mayor": 1500,
+        "descripcion": "Set gatitos para pintar, Mdf 3 mm.",
+        "medida_original": "15 y 26cm. de alto",
         "unitario": 1800,
-        "descripcion": "Set para pintar, Mdf  3 mm.",
-        "medida_original": "15 y 26cm. de alto"
+        "mayor": 1500
     },
     "setfiguritas11": {
         "codigo": "SET FIGURITAS11",
@@ -4510,5 +4510,33 @@ const productos = {
         "medida_original": "30 Cm",
         "unitario": 4500,
         "mayor": 3700
+    },
+    "co45": {
+        "codigo": "CO45",
+        "nombre": "CO45",
+        "imagen": "img/co45.webp",
+        "tipo": "medidas",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Corazón grabado en capas",
+        "opciones": [
+            {
+                "medida": "20 cm",
+                "mayor": 2000,
+                "unitario": 2700
+            },
+            {
+                "medida": "30 cm",
+                "mayor": 2800,
+                "unitario": 3700
+            }
+        ]
+    },
+    "co4520cm": {
+        "parent": "co45",
+        "preselect": "20 cm"
+    },
+    "co4530cm": {
+        "parent": "co45",
+        "preselect": "30 cm"
     }
 };
