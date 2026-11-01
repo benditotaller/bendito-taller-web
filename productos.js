@@ -4580,5 +4580,16 @@ const productos = {
         "medida_original": "26 cm alto",
         "unitario": 3200,
         "mayor": 2500
+    },
+    "figuritas19": {
+        "codigo": "Figuritas19",
+        "nombre": "Figuritas19",
+        "imagen": "img/figuritas19.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Figuritas grabadas de cactus",
+        "medida_original": "Medida de 6 a 7,8 cm aprox.",
+        "unitario": 1200,
+        "mayor": 1200
     }
 };

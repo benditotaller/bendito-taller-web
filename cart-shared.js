@@ -759,6 +759,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "deconavidena": ["navidad"],
     "estrellanavidena": ["navidad"],
     "virgenlourdes": ["deco"],
+    "figuritas19": ["grabados"],
 };
 
 function clasificarProducto(id, p) {
