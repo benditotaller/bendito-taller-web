@@ -752,6 +752,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "girasolmulticapas": ["deco"],
     "prueba": ["otros-insumos"],
     "co45": ["corazones"],
+    "setfiguritas18": ["navidad"],
+    "setfiguritas11": ["grabados"],
 };
 
 function clasificarProducto(id, p) {

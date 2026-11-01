@@ -100,14 +100,14 @@ const productos = {
         "mayor": 1500
     },
     "setfiguritas11": {
-        "codigo": "SET FIGURITAS11",
-        "nombre": "SET FIGURITAS11",
+        "codigo": "Grabado21",
+        "nombre": "Grabado21",
         "imagen": "img/setfiguritas11.webp",
         "tipo": "simple",
-        "mayor": 1500,
+        "descripcion": "Set gatitos para pintar, Mdf  3 mm.",
+        "medida_original": "15 y 26cm. de alto",
         "unitario": 1800,
-        "descripcion": "Set para pintar, Mdf  3 mm.",
-        "medida_original": "15 y 26cm. de alto"
+        "mayor": 1500
     },
     "abejareina": {
         "codigo": "Abeja reina",
@@ -4538,5 +4538,15 @@ const productos = {
     "co4530cm": {
         "parent": "co45",
         "preselect": "30 cm"
+    },
+    "setfiguritas18": {
+        "codigo": "Set figuritas18",
+        "nombre": "Set figuritas18",
+        "imagen": "img/setfiguritas18.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Figuritas grabadas pintables",
+        "unitario": 1500,
+        "mayor": 1500
     }
 };
