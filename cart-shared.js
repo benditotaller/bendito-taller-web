@@ -754,6 +754,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "co45": ["corazones"],
     "setfiguritas18": ["navidad"],
     "setfiguritas11": ["grabados"],
+    "deconavidena": ["navidad"],
+    "estrellanavidena": ["navidad"],
 };
 
 function clasificarProducto(id, p) {

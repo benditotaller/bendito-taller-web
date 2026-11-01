@@ -4548,5 +4548,26 @@ const productos = {
         "descripcion": "Figuritas grabadas pintables",
         "unitario": 1500,
         "mayor": 1500
+    },
+    "deconavidena": {
+        "codigo": "DECONAVIDEÑA",
+        "nombre": "DECONAVIDEÑA",
+        "imagen": "img/deconavidena.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Colgante Navidad calado",
+        "unitario": 500,
+        "mayor": 400
+    },
+    "estrellanavidena": {
+        "codigo": "ESTRELLANAVIDEÑA",
+        "nombre": "ESTRELLANAVIDEÑA",
+        "imagen": "img/estrellanavidena.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Estrella calada",
+        "medida_original": "7,6 cm Alto  - 8cm  ancho",
+        "unitario": 500,
+        "mayor": 400
     }
 };
