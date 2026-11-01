@@ -4569,5 +4569,16 @@ const productos = {
         "medida_original": "7,6 cm Alto  - 8cm  ancho",
         "unitario": 500,
         "mayor": 400
+    },
+    "virgenlourdes": {
+        "codigo": "VIRGEN LOURDES",
+        "nombre": "VIRGEN LOURDES",
+        "imagen": "img/virgenlourdes.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Virgen en capas",
+        "medida_original": "26 cm alto",
+        "unitario": 3200,
+        "mayor": 2500
     }
 };
