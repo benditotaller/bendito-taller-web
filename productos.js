@@ -4611,8 +4611,8 @@ const productos = {
         "fecha_creacion": "2026-11-01",
         "descripcion": "Hada pintable con accesorios",
         "medida_original": "Medida: 34 cm",
-        "unitario": 1900,
-        "mayor": 2700
+        "unitario": 2700,
+        "mayor": 1900
     },
     "hada3": {
         "codigo": "HADA3",
@@ -4622,7 +4622,29 @@ const productos = {
         "fecha_creacion": "2026-11-01",
         "descripcion": "Hada pintable con accesorios",
         "medida_original": "Medida: 34 Cm alto",
-        "unitario": 1900,
-        "mayor": 2700
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "senoraclauss": {
+        "codigo": "Señora Clauss",
+        "nombre": "Señora Clauss",
+        "imagen": "img/senoraclauss.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Cuadro en capas Sra. Clauss",
+        "medida_original": "Medida 26 Cm",
+        "unitario": 4100,
+        "mayor": 3400
+    },
+    "santaclauss": {
+        "codigo": "Santa Clauss",
+        "nombre": "Santa Clauss",
+        "imagen": "img/santaclauss.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Cuadro Navideño en capas",
+        "medida_original": "Medida: 26 Cm.",
+        "unitario": 4000,
+        "mayor": 3400
     }
 };

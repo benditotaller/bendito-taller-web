@@ -100,14 +100,14 @@ const productos = {
         "mayor": 1500
     },
     "setfiguritas11": {
-        "codigo": "SET FIGURITAS11",
-        "nombre": "SET FIGURITAS11",
+        "codigo": "Grabado21",
+        "nombre": "Grabado21",
         "imagen": "img/setfiguritas11.webp",
         "tipo": "simple",
-        "mayor": 1500,
+        "descripcion": "Set gatitos para pintar, Mdf  3 mm.",
+        "medida_original": "15 y 26cm. de alto",
         "unitario": 1800,
-        "descripcion": "Set para pintar, Mdf  3 mm.",
-        "medida_original": "15 y 26cm. de alto"
+        "mayor": 1500
     },
     "abejareina": {
         "codigo": "Abeja reina",
@@ -4538,5 +4538,102 @@ const productos = {
     "co4530cm": {
         "parent": "co45",
         "preselect": "30 cm"
+    },
+    "setfiguritas18": {
+        "codigo": "Set figuritas18",
+        "nombre": "Set figuritas18",
+        "imagen": "img/setfiguritas18.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Figuritas grabadas pintables",
+        "unitario": 1500,
+        "mayor": 1500
+    },
+    "deconavidena": {
+        "codigo": "DECONAVIDEÑA",
+        "nombre": "DECONAVIDEÑA",
+        "imagen": "img/deconavidena.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Colgante Navidad calado",
+        "unitario": 500,
+        "mayor": 400
+    },
+    "estrellanavidena": {
+        "codigo": "ESTRELLANAVIDEÑA",
+        "nombre": "ESTRELLANAVIDEÑA",
+        "imagen": "img/estrellanavidena.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Estrella calada",
+        "medida_original": "7,6 cm Alto  - 8cm  ancho",
+        "unitario": 500,
+        "mayor": 400
+    },
+    "virgenlourdes": {
+        "codigo": "VIRGEN LOURDES",
+        "nombre": "VIRGEN LOURDES",
+        "imagen": "img/virgenlourdes.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Virgen en capas",
+        "medida_original": "26 cm alto",
+        "unitario": 3200,
+        "mayor": 2500
+    },
+    "figuritas19": {
+        "codigo": "Figuritas19",
+        "nombre": "Figuritas19",
+        "imagen": "img/figuritas19.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Figuritas grabadas de cactus",
+        "medida_original": "Medida de 6 a 7,8 cm aprox.",
+        "unitario": 1200,
+        "mayor": 1200
+    },
+    "hada1": {
+        "codigo": "HADA1",
+        "nombre": "HADA1",
+        "imagen": "img/hada1.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "Medida: 34 cm",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "hada2": {
+        "codigo": "HADA2",
+        "nombre": "HADA2",
+        "imagen": "img/hada2.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "Medida: 34 cm",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "hada3": {
+        "codigo": "HADA3",
+        "nombre": "HADA3",
+        "imagen": "img/hada3.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "Medida: 34 Cm alto",
+        "unitario": 1900,
+        "mayor": 2700
+    },
+    "senoraclauss": {
+        "codigo": "Señora Clauss",
+        "nombre": "Señora Clauss",
+        "imagen": "img/senoraclauss.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Cuadro en capas Sra. Clauss",
+        "medida_original": "Medida 26 Cm",
+        "unitario": 4100,
+        "mayor": 3400
     }
 };

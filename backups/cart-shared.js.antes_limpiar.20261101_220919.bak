@@ -22,6 +22,11 @@ const codigosIntercambiablesNorm = new Set([
     
     
     
+    
+    
+    
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -37,7 +42,13 @@ const codigosIntercambiablesNorm = new Set([
     "ca133mm", "ca1355mm", "ca14", "ca15", "ca1620cm", "ca1630cm",
     "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm",
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
-    "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "corazonbotanicoxl"
+    "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43", "co4520cm",
+    "co4530cm", "virgenlourdes", "hada1", "hada2", "hada3"
+
+
+
+
+
 
 
 
@@ -144,7 +155,13 @@ const gruposCombinables = [
             "comp5",
             "comp7",
             "comp8",
-            "comp6"
+            "comp11"
+        
+        
+        
+        
+        
+        
         
         
         
@@ -181,8 +198,12 @@ const gruposCombinables = [
             "leopardo2",
             "tortugahawaiana",
             "zorrito",
-            "buho",
-            "leonafu"
+            "leonafu",
+            "buho2",
+            "buho"
+        
+        
+        
         
         
         
@@ -193,7 +214,6 @@ const gruposCombinables = [
         min: 4,
         codigos: [
             "abejareina",
-            "abejareina2",
             "marip1",
             "marip2",
             "marip3",
@@ -201,8 +221,13 @@ const gruposCombinables = [
             "marip5",
             "marip6",
             "banderinmexicano",
-            "buho",
-            "leonafu"
+            "leonafu",
+            "buho2",
+            "buho"
+        
+        
+        
+        
         
         
         
@@ -501,6 +526,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "estrellas": ["navidad"],
     "copos": ["navidad"],
     "renograbado": ["navidad"],
+    "estrellasgrabadas": ["navidad"],
+    "estrellasgrabadas9cm": ["navidad"],
     "estrellasgrabadas5cm": ["navidad"],
     "angel1": ["navidad"],
     "angel2": ["navidad"],
@@ -710,11 +737,11 @@ const PRODUCT_CATEGORY_MAPPING = {
     "comp12": ["deco"],
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
-    "setfiguritas11": ["grabados"],
+"setfiguritas11": ["grabados"],
     "retablo": ["navidad"],
 "prueba": ["mistico-y-mas"],
     "buho": ["deco"],
-    "cal5": ["mexicanos-y-calacas"],
+"cal5": ["mexicanos-y-calacas"],
 "cal4": ["corazones-alados"],
     "cal4": ["mexicanos-y-calacas"],
     "setaplicacionesvintage": ["deco"],
@@ -727,9 +754,22 @@ const PRODUCT_CATEGORY_MAPPING = {
     "cascanuecesletrero": ["navidad"],
     "ca22": ["corazones-alados"],
     "ninacatrina": ["mexicanos-y-calacas"],
-    "elsol": ["mistico-y-mas"],
-    "laemperatriz": ["mistico-y-mas"],
-    "corazonbotanicoxl": ["otros-insumos"],
+    "co43": ["corazones"],
+    "buho2": ["deco"],
+    "comp11": ["deco"],
+    "girasolmulticapas": ["deco"],
+    "prueba": ["otros-insumos"],
+    "co45": ["corazones"],
+    "setfiguritas18": ["navidad"],
+    "setfiguritas11": ["grabados"],
+    "deconavidena": ["navidad"],
+    "estrellanavidena": ["navidad"],
+    "virgenlourdes": ["deco"],
+    "figuritas19": ["grabados"],
+    "hada1": ["grabados"],
+    "hada2": ["grabados"],
+    "hada3": ["grabados"],
+    "senoraclauss": ["navidad"],
 };
 
 function clasificarProducto(id, p) {
@@ -756,10 +796,12 @@ function clasificarProducto(id, p) {
         idClean.includes("pino") || 
         idClean.includes("nieve") || 
         idClean.includes("pesebre") ||
+        idClean.includes("estrella") ||
         idClean.startsWith("setnavideno") ||
         nombreClean.includes("navidad") ||
         nombreClean.includes("reno") ||
-        nombreClean.includes("pino")
+        nombreClean.includes("pino") ||
+        nombreClean.includes("estrella")
     ) {
         return ["navidad"];
     }
@@ -832,6 +874,8 @@ function clasificarProducto(id, p) {
         idClean.startsWith("farol") ||
         idClean.startsWith("repisa") ||
         idClean.startsWith("sol") ||
+        idClean.includes("girasol") ||
+        nombreClean.includes("girasol") ||
         ["leopardo", "leopardo2", "zorrito", "chinita", "tortugahawaiana", "caballodemar", "caballomecedor", "caballovintage", "alicia3d", "circo", "halloween", "harrypotter3d", "libromagico1", "libromagico2", "narnia3d", "peter3d", "principito1", "principito2", "ratitapresumida", "snoopy1", "snoopy2", "vigendelvalle", "abejareina", "abejareina2", "marip1", "marip2", "marip3", "marip4", "marip5", "marip6"].includes(idClean) ||
         nombreClean.includes("cuadro") ||
         nombreClean.includes("decoración") ||

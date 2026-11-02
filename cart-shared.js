@@ -27,6 +27,10 @@ const codigosIntercambiablesNorm = new Set([
     
     
     
+    
+    
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -44,6 +48,10 @@ const codigosIntercambiablesNorm = new Set([
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
     "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43", "co4520cm",
     "co4530cm", "virgenlourdes", "hada1", "hada2", "hada3"
+
+
+
+
 
 
 
@@ -317,7 +325,11 @@ const gruposCombinables = [
     {
         id: "cuadros_navidad",
         min: 4,
-        codigos: ["cuadronavideno", "cuadronoel"]
+        codigos: [
+            "cuadronavideno",
+            "cuadronoel",
+            "santaclauss"
+        ]
     },
     {
         id: "arboles_navidad_pino",
@@ -768,7 +780,10 @@ const PRODUCT_CATEGORY_MAPPING = {
     "figuritas19": ["grabados"],
     "hada1": ["grabados"],
     "hada2": ["grabados"],
+"hada3": ["grabados"],
+    "senoraclauss": ["navidad"],
     "hada3": ["grabados"],
+    "santaclauss": ["navidad"],
 };
 
 function clasificarProducto(id, p) {
