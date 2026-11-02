@@ -4647,27 +4647,5 @@ const productos = {
         "medida_original": "Medida: 22 x 18 Cm",
         "unitario": 2600,
         "mayor": 1800
-    },
-    "cuadroflor2": {
-        "codigo": "Cuadro flor2",
-        "nombre": "Cuadro flor2",
-        "imagen": "img/cuadroflor2.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Cuadro con flor",
-        "medida_original": "Medida: 22 x 18 Cm",
-        "unitario": 2600,
-        "mayor": 1800
-    },
-    "virgen5": {
-        "codigo": "Virgen5",
-        "nombre": "Virgen5",
-        "imagen": "img/virgen5.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Cuadro temático 3D Virgen del Valle Mdf 3 mm",
-        "medida_original": "Medida: 25 x 17 cm.",
-        "unitario": 5200,
-        "mayor": 4200
     }
 };
