@@ -4421,16 +4421,6 @@ const productos = {
         "unitario": 7600,
         "mayor": 7000
     },
-    "coronacasita": {
-        "codigo": "Corona Casita",
-        "nombre": "Corona Casita",
-        "imagen": "img/coronacasita.webp",
-        "tipo": "simple",
-        "descripcion": "Corona navideña en capas",
-        "medida_original": "31 cm",
-        "unitario": 4000,
-        "mayor": 3500
-    },
     "leonafu": {
         "codigo": "LeonaFu",
         "nombre": "LeonaFu",
@@ -4659,14 +4649,47 @@ const productos = {
         "mayor": 1800
     },
     "cuadroflor2": {
-        "codigo": "Cuadro flor2",
-        "nombre": "Cuadro flor2",
+        "codigo": "Cuadro Flor2",
+        "nombre": "Cuadro Flor2",
         "imagen": "img/cuadroflor2.webp",
         "tipo": "simple",
         "fecha_creacion": "2026-11-01",
-        "descripcion": "Cuadro con flor",
+        "descripcion": "Marco con flor",
         "medida_original": "Medida: 22 x 18 Cm",
         "unitario": 2600,
         "mayor": 1800
+    },
+    "virgen6": {
+        "codigo": "Virgen6",
+        "nombre": "Virgen6",
+        "imagen": "img/virgen6.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Virgen de Guadalupe en capas",
+        "medida_original": "Medidas: 22 cm alto",
+        "unitario": 2800,
+        "mayor": 2200
+    },
+    "frida6": {
+        "codigo": "Frida6",
+        "nombre": "Frida6",
+        "imagen": "img/frida6.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Corazón Frida 5 Mdf 3 mm",
+        "medida_original": "Medidas 28 x 22 cm.",
+        "unitario": 3600,
+        "mayor": 3000
+    },
+    "co44": {
+        "codigo": "CO44",
+        "nombre": "CO44",
+        "imagen": "img/co44.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-02",
+        "descripcion": "Corazón 4 capas Mdf 3 mm",
+        "medida_original": "Medida 21 Cm",
+        "unitario": 2000,
+        "mayor": 2800
     }
 };

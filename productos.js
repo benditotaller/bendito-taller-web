@@ -3901,16 +3901,6 @@ const productos = {
         "descripcion": "Útero Florido",
         "medida_original": "27 cm diámetro"
     },
-    "vigendelvalle": {
-        "codigo": "Vigendelvalle",
-        "nombre": "Vigendelvalle",
-        "imagen": "img/Vigendelvalle.webp",
-        "tipo": "simple",
-        "mayor": 4500,
-        "unitario": 5200,
-        "descripcion": "Cuadro temático 3D",
-        "medida_original": "25 x 17 cm"
-    },
     "virgen1": {
         "codigo": "Virgen1",
         "nombre": "Virgen1",
@@ -4659,17 +4649,6 @@ const productos = {
         "unitario": 2600,
         "mayor": 1800
     },
-    "virgen5": {
-        "codigo": "Virgen del Valle",
-        "nombre": "Virgen del Valle",
-        "imagen": "img/virgen5.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Cuadro temático 3D Virgen del Valle",
-        "medida_original": "Medida: 25 x 17 cm",
-        "unitario": 5200,
-        "mayor": 4500
-    },
     "virgen6": {
         "codigo": "Virgen6",
         "nombre": "Virgen6",
@@ -4691,5 +4670,16 @@ const productos = {
         "medida_original": "Medidas 28 x 22 cm.",
         "unitario": 3600,
         "mayor": 3000
+    },
+    "co44": {
+        "codigo": "CO44",
+        "nombre": "CO44",
+        "imagen": "img/co44.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-02",
+        "descripcion": "Corazón 4 capas Mdf 3 mm",
+        "medida_original": "Medida 21 Cm",
+        "unitario": 2000,
+        "mayor": 2800
     }
 };
