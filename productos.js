@@ -4421,16 +4421,6 @@ const productos = {
         "unitario": 7600,
         "mayor": 7000
     },
-    "coronacasita": {
-        "codigo": "Corona Casita",
-        "nombre": "Corona Casita",
-        "imagen": "img/coronacasita.webp",
-        "tipo": "simple",
-        "descripcion": "Corona navideña en capas",
-        "medida_original": "31 cm",
-        "unitario": 4000,
-        "mayor": 3500
-    },
     "leonafu": {
         "codigo": "LeonaFu",
         "nombre": "LeonaFu",
@@ -4668,5 +4658,16 @@ const productos = {
         "medida_original": "Medida: 22 x 18 Cm",
         "unitario": 2600,
         "mayor": 1800
+    },
+    "virgen5": {
+        "codigo": "Virgen5",
+        "nombre": "Virgen5",
+        "imagen": "img/virgen5.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Cuadro temático 3D Virgen del Valle Mdf 3 mm",
+        "medida_original": "Medida: 25 x 17 cm.",
+        "unitario": 5200,
+        "mayor": 4200
     }
 };
