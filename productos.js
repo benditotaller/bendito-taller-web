@@ -4660,8 +4660,8 @@ const productos = {
         "mayor": 1800
     },
     "virgen5": {
-        "codigo": "Virgen5",
-        "nombre": "Virgen5",
+        "codigo": "Virgen del Valle",
+        "nombre": "Virgen del Valle",
         "imagen": "img/virgen5.webp",
         "tipo": "simple",
         "fecha_creacion": "2026-11-01",
@@ -4680,5 +4680,16 @@ const productos = {
         "medida_original": "Medidas: 22 cm alto",
         "unitario": 2800,
         "mayor": 2200
+    },
+    "frida6": {
+        "codigo": "Frida6",
+        "nombre": "Frida6",
+        "imagen": "img/frida6.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Corazón Frida 5 Mdf 3 mm",
+        "medida_original": "Medidas 28 x 22 cm.",
+        "unitario": 3600,
+        "mayor": 3000
     }
 };
