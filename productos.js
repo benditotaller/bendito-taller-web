@@ -4646,5 +4646,27 @@ const productos = {
         "medida_original": "Medida: 26 Cm.",
         "unitario": 4000,
         "mayor": 3400
+    },
+    "cuadroflores1": {
+        "codigo": "Cuadro flor1",
+        "nombre": "Cuadro flor1",
+        "imagen": "img/cuadroflores1.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Marco con flor",
+        "medida_original": "Medida: 22 x 18 Cm",
+        "unitario": 2600,
+        "mayor": 1800
+    },
+    "cuadroflor2": {
+        "codigo": "Cuadro flor2",
+        "nombre": "Cuadro flor2",
+        "imagen": "img/cuadroflor2.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-01",
+        "descripcion": "Cuadro con flor",
+        "medida_original": "Medida: 22 x 18 Cm",
+        "unitario": 2600,
+        "mayor": 1800
     }
 };
