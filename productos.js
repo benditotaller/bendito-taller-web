@@ -2534,10 +2534,9 @@ const productos = {
         "nombre": "figuritas14",
         "imagen": "img/figuritas14.webp",
         "tipo": "simple",
-        "mayor": 1200,
-        "unitario": 1200,
         "descripcion": "Set de 4 figuritas para imanes Pajaritos sin imanes",
-        "medida_original": ""
+        "unitario": 1500,
+        "mayor": 1500
     },
     "figuritas15": {
         "codigo": "figuritas15",
@@ -3636,10 +3635,9 @@ const productos = {
         "nombre": "Set Figuritas3",
         "imagen": "img/Set Figuritas3.webp",
         "tipo": "simple",
-        "mayor": 1500,
-        "unitario": 1500,
         "descripcion": "Set de figuritas para imanes  Cocina sin imanes",
-        "medida_original": ""
+        "unitario": 1800,
+        "mayor": 1800
     },
     "setfiguritas4": {
         "codigo": "Set Figuritas4",

@@ -3636,10 +3636,9 @@ const productos = {
         "nombre": "Set Figuritas3",
         "imagen": "img/Set Figuritas3.webp",
         "tipo": "simple",
-        "mayor": 1500,
-        "unitario": 1500,
         "descripcion": "Set de figuritas para imanes  Cocina sin imanes",
-        "medida_original": ""
+        "unitario": 1800,
+        "mayor": 1800
     },
     "setfiguritas4": {
         "codigo": "Set Figuritas4",
@@ -4569,8 +4568,8 @@ const productos = {
         "fecha_creacion": "2026-11-01",
         "descripcion": "Figuritas grabadas de cactus",
         "medida_original": "Medida de 6 a 7,8 cm aprox.",
-        "unitario": 1200,
-        "mayor": 1200
+        "unitario": 1500,
+        "mayor": 1500
     },
     "hada1": {
         "codigo": "HADA1",
@@ -4581,18 +4580,7 @@ const productos = {
         "descripcion": "Hada pintable con accesorios",
         "medida_original": "Medida: 34 cm",
         "unitario": 2700,
-        "mayor": 1900
-    },
-    "hada3": {
-        "codigo": "HADA3",
-        "nombre": "HADA3",
-        "imagen": "img/hada3.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Hada pintable con accesorios",
-        "medida_original": "Medida: 34 Cm alto",
-        "unitario": 2700,
-        "mayor": 1900
+        "mayor": 2000
     },
     "senoraclauss": {
         "codigo": "Señora Clauss",
@@ -4670,5 +4658,49 @@ const productos = {
         "medida_original": "Medida 21 Cm",
         "unitario": 2000,
         "mayor": 2800
+    },
+    "hada2": {
+        "codigo": "HADA2",
+        "nombre": "HADA2",
+        "imagen": "img/hada2.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 cm",
+        "unitario": 2700,
+        "mayor": 2000
+    },
+    "hada3": {
+        "codigo": "HADA3",
+        "nombre": "HADA3",
+        "imagen": "img/hada3.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 Cm.",
+        "unitario": 2700,
+        "mayor": 2000
+    },
+    "figuritas20": {
+        "codigo": "FIGURITAS20",
+        "nombre": "FIGURITAS20",
+        "imagen": "img/figuritas20.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-04",
+        "descripcion": "Figuritas grabadas infantiles",
+        "medida_original": "6,5 a 7,8 cm aprox",
+        "unitario": 1600,
+        "mayor": 1600
+    },
+    "figuritas21": {
+        "codigo": "Figuritas21",
+        "nombre": "Figuritas21",
+        "imagen": "img/figuritas21.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-04",
+        "descripcion": "1700",
+        "medida_original": "7 a 8 cm aprox",
+        "unitario": 1700,
+        "mayor": 1700
     }
 };
