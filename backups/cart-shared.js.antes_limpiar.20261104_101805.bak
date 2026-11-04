@@ -29,6 +29,26 @@ const codigosIntercambiablesNorm = new Set([
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -45,7 +65,28 @@ const codigosIntercambiablesNorm = new Set([
     "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm",
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
     "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43", "co4520cm",
-    "co4530cm", "virgenlourdes", "hada1", "hada3", "hada2"
+    "co4530cm", "virgenlourdes", "cuadroflores1", "cuadroflor2", "virgen6", "co44",
+    "hada2", "hada3", "hada1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,7 +154,14 @@ const gruposCombinables = [
     {
         id: "fridas",
         min: 4,
-        codigos: ["frida1", "frida2", "frida3", "frida4", "frida5"]
+        codigos: [
+            "frida1",
+            "frida2",
+            "frida3",
+            "frida4",
+            "frida5",
+            "frida6"
+        ]
     },
     {
         id: "tienda_vintage",
@@ -280,8 +328,10 @@ const gruposCombinables = [
             "ratitapresumida",
             "snoopy1",
             "snoopy2",
-            "vigendelvalle",
-            "libromagico3"
+            "libromagico3",
+            "virgen6"
+        
+        
         
         
         
@@ -307,8 +357,8 @@ const gruposCombinables = [
             "coronavillanavidena",
             "coronacasa",
             "coronasimple",
-            "coronasimple2",
-            "coronacasita"
+            "coronasimple2"
+        
         
         
         
@@ -321,7 +371,11 @@ const gruposCombinables = [
     {
         id: "cuadros_navidad",
         min: 4,
-        codigos: ["cuadronavideno", "cuadronoel"]
+        codigos: [
+            "cuadronavideno",
+            "cuadronoel",
+            "santaclauss"
+        ]
     },
     {
         id: "arboles_navidad_pino",
@@ -769,11 +823,23 @@ const PRODUCT_CATEGORY_MAPPING = {
     "deconavidena": ["navidad"],
     "estrellanavidena": ["navidad"],
     "virgenlourdes": ["deco"],
-    "figuritas19": ["grabados"],
-    "hada1": ["grabados"],
+    "figuritas19": ["mexicanos-y-calacas"],
+"hada1": ["grabados"],
     "hada2": ["grabados"],
 "hada3": ["grabados"],
     "senoraclauss": ["navidad"],
+    "hada3": ["grabados"],
+"santaclauss": ["navidad"],
+    "cuadroflores1": ["deco"],
+"cuadroflor2": ["deco"],
+    "virgen5": ["deco"],
+"cuadroflor2": ["deco"],
+    "virgen6": ["mexicanos-y-calacas"],
+    "frida6": ["mexicanos-y-calacas"],
+    "co44": ["corazones"],
+    "figuritas20": ["grabados"],
+    "figuritas21": ["navidad"],
+    "hada1": ["grabados"],
 };
 
 function clasificarProducto(id, p) {

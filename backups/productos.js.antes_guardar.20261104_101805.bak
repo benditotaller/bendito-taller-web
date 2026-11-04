@@ -3901,16 +3901,6 @@ const productos = {
         "descripcion": "Útero Florido",
         "medida_original": "27 cm diámetro"
     },
-    "vigendelvalle": {
-        "codigo": "Vigendelvalle",
-        "nombre": "Vigendelvalle",
-        "imagen": "img/Vigendelvalle.webp",
-        "tipo": "simple",
-        "mayor": 4500,
-        "unitario": 5200,
-        "descripcion": "Cuadro temático 3D",
-        "medida_original": "25 x 17 cm"
-    },
     "virgen1": {
         "codigo": "Virgen1",
         "nombre": "Virgen1",
@@ -4579,8 +4569,8 @@ const productos = {
         "fecha_creacion": "2026-11-01",
         "descripcion": "Figuritas grabadas de cactus",
         "medida_original": "Medida de 6 a 7,8 cm aprox.",
-        "unitario": 1200,
-        "mayor": 1200
+        "unitario": 1500,
+        "mayor": 1500
     },
     "hada1": {
         "codigo": "HADA1",
@@ -4591,29 +4581,7 @@ const productos = {
         "descripcion": "Hada pintable con accesorios",
         "medida_original": "Medida: 34 cm",
         "unitario": 2700,
-        "mayor": 1900
-    },
-    "hada2": {
-        "codigo": "HADA2",
-        "nombre": "HADA2",
-        "imagen": "img/hada2.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Hada pintable con accesorios",
-        "medida_original": "Medida: 34 cm",
-        "unitario": 2700,
-        "mayor": 1900
-    },
-    "hada3": {
-        "codigo": "HADA3",
-        "nombre": "HADA3",
-        "imagen": "img/hada3.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Hada pintable con accesorios",
-        "medida_original": "Medida: 34 Cm alto",
-        "unitario": 2700,
-        "mayor": 1900
+        "mayor": 2000
     },
     "senoraclauss": {
         "codigo": "Señora Clauss",
@@ -4659,17 +4627,6 @@ const productos = {
         "unitario": 2600,
         "mayor": 1800
     },
-    "virgen5": {
-        "codigo": "Virgen del Valle",
-        "nombre": "Virgen del Valle",
-        "imagen": "img/virgen5.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Cuadro temático 3D Virgen del Valle",
-        "medida_original": "Medida: 25 x 17 cm",
-        "unitario": 5200,
-        "mayor": 4500
-    },
     "virgen6": {
         "codigo": "Virgen6",
         "nombre": "Virgen6",
@@ -4691,5 +4648,60 @@ const productos = {
         "medida_original": "Medidas 28 x 22 cm.",
         "unitario": 3600,
         "mayor": 3000
+    },
+    "co44": {
+        "codigo": "CO44",
+        "nombre": "CO44",
+        "imagen": "img/co44.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-02",
+        "descripcion": "Corazón 4 capas Mdf 3 mm",
+        "medida_original": "Medida 21 Cm",
+        "unitario": 2000,
+        "mayor": 2800
+    },
+    "hada2": {
+        "codigo": "HADA2",
+        "nombre": "HADA2",
+        "imagen": "img/hada2.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 cm",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "hada3": {
+        "codigo": "HADA3",
+        "nombre": "HADA3",
+        "imagen": "img/hada3.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 Cm.",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "figuritas20": {
+        "codigo": "FIGURITAS20",
+        "nombre": "FIGURITAS20",
+        "imagen": "img/figuritas20.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-04",
+        "descripcion": "Figuritas grabadas infantiles",
+        "medida_original": "6,5 a 7,8 cm aprox",
+        "unitario": 1600,
+        "mayor": 1600
+    },
+    "figuritas21": {
+        "codigo": "Figuritas21",
+        "nombre": "Figuritas21",
+        "imagen": "img/figuritas21.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-04",
+        "descripcion": "1700",
+        "medida_original": "7 a 8 cm aprox",
+        "unitario": 1700,
+        "mayor": 1700
     }
 };

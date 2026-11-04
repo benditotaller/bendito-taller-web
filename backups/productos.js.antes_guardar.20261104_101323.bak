@@ -3901,16 +3901,6 @@ const productos = {
         "descripcion": "Útero Florido",
         "medida_original": "27 cm diámetro"
     },
-    "vigendelvalle": {
-        "codigo": "Vigendelvalle",
-        "nombre": "Vigendelvalle",
-        "imagen": "img/Vigendelvalle.webp",
-        "tipo": "simple",
-        "mayor": 4500,
-        "unitario": 5200,
-        "descripcion": "Cuadro temático 3D",
-        "medida_original": "25 x 17 cm"
-    },
     "virgen1": {
         "codigo": "Virgen1",
         "nombre": "Virgen1",
@@ -4593,28 +4583,6 @@ const productos = {
         "unitario": 2700,
         "mayor": 1900
     },
-    "hada2": {
-        "codigo": "HADA2",
-        "nombre": "HADA2",
-        "imagen": "img/hada2.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Hada pintable con accesorios",
-        "medida_original": "Medida: 34 cm",
-        "unitario": 2700,
-        "mayor": 1900
-    },
-    "hada3": {
-        "codigo": "HADA3",
-        "nombre": "HADA3",
-        "imagen": "img/hada3.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Hada pintable con accesorios",
-        "medida_original": "Medida: 34 Cm alto",
-        "unitario": 2700,
-        "mayor": 1900
-    },
     "senoraclauss": {
         "codigo": "Señora Clauss",
         "nombre": "Señora Clauss",
@@ -4659,17 +4627,6 @@ const productos = {
         "unitario": 2600,
         "mayor": 1800
     },
-    "virgen5": {
-        "codigo": "Virgen del Valle",
-        "nombre": "Virgen del Valle",
-        "imagen": "img/virgen5.webp",
-        "tipo": "simple",
-        "fecha_creacion": "2026-11-01",
-        "descripcion": "Cuadro temático 3D Virgen del Valle",
-        "medida_original": "Medida: 25 x 17 cm",
-        "unitario": 5200,
-        "mayor": 4500
-    },
     "virgen6": {
         "codigo": "Virgen6",
         "nombre": "Virgen6",
@@ -4702,5 +4659,38 @@ const productos = {
         "medida_original": "Medida 21 Cm",
         "unitario": 2000,
         "mayor": 2800
+    },
+    "hada2": {
+        "codigo": "HADA2",
+        "nombre": "HADA2",
+        "imagen": "img/hada2.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 cm",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "hada3": {
+        "codigo": "HADA3",
+        "nombre": "HADA3",
+        "imagen": "img/hada3.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 Cm.",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "figuritas20": {
+        "codigo": "FIGURITAS20",
+        "nombre": "FIGURITAS20",
+        "imagen": "img/figuritas20.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-04",
+        "descripcion": "Figuritas grabadas infantiles",
+        "medida_original": "6,5 a 7,8 cm aprox",
+        "unitario": 1600,
+        "mayor": 1600
     }
 };

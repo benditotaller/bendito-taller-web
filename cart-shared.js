@@ -47,6 +47,12 @@ const codigosIntercambiablesNorm = new Set([
     
     
     
+    
+    
+    
+    
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -63,8 +69,14 @@ const codigosIntercambiablesNorm = new Set([
     "ca1720cm", "ca1730cm", "ca18", "ca220cm", "ca230cm", "ca420cm",
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
     "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43", "co4520cm",
-    "co4530cm", "virgenlourdes", "hada1", "cuadroflores1", "cuadroflor2", "virgen6",
-    "co44", "hada2", "hada3"
+    "co4530cm", "virgenlourdes", "cuadroflores1", "cuadroflor2", "virgen6", "co44",
+    "hada1", "hada2", "hada3"
+
+
+
+
+
+
 
 
 
@@ -819,8 +831,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "deconavidena": ["navidad"],
     "estrellanavidena": ["navidad"],
     "virgenlourdes": ["deco"],
-    "figuritas19": ["grabados"],
-    "hada1": ["grabados"],
+    "figuritas19": ["mexicanos-y-calacas"],
+"hada1": ["grabados"],
     "hada2": ["grabados"],
 "hada3": ["grabados"],
     "senoraclauss": ["navidad"],
@@ -833,6 +845,9 @@ const PRODUCT_CATEGORY_MAPPING = {
     "virgen6": ["mexicanos-y-calacas"],
     "frida6": ["mexicanos-y-calacas"],
     "co44": ["corazones"],
+    "figuritas20": ["grabados"],
+    "figuritas21": ["navidad"],
+    "hada1": ["grabados"],
 };
 
 function clasificarProducto(id, p) {
