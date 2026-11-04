@@ -45,6 +45,8 @@ const codigosIntercambiablesNorm = new Set([
     
     
     
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -62,7 +64,9 @@ const codigosIntercambiablesNorm = new Set([
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
     "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43", "co4520cm",
     "co4530cm", "virgenlourdes", "hada1", "cuadroflores1", "cuadroflor2", "virgen6",
-    "co44"
+    "co44", "hada2", "hada3"
+
+
 
 
 
@@ -821,7 +825,7 @@ const PRODUCT_CATEGORY_MAPPING = {
 "hada3": ["grabados"],
     "senoraclauss": ["navidad"],
     "hada3": ["grabados"],
-    "santaclauss": ["navidad"],
+"santaclauss": ["navidad"],
     "cuadroflores1": ["deco"],
 "cuadroflor2": ["deco"],
     "virgen5": ["deco"],

@@ -4659,5 +4659,27 @@ const productos = {
         "medida_original": "Medida 21 Cm",
         "unitario": 2000,
         "mayor": 2800
+    },
+    "hada2": {
+        "codigo": "HADA2",
+        "nombre": "HADA2",
+        "imagen": "img/hada2.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 cm",
+        "unitario": 2700,
+        "mayor": 1900
+    },
+    "hada3": {
+        "codigo": "HADA3",
+        "nombre": "HADA3",
+        "imagen": "img/hada3.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-03",
+        "descripcion": "Hada pintable con accesorios",
+        "medida_original": "34 Cm.",
+        "unitario": 2700,
+        "mayor": 1900
     }
 };
