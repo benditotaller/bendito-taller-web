@@ -828,7 +828,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "co45": ["corazones"],
     "setfiguritas18": ["navidad"],
     "setfiguritas11": ["grabados"],
-    "deconavidena": ["navidad"],
+"deconavidena": ["navidad"],
     "estrellanavidena": ["navidad"],
     "virgenlourdes": ["deco"],
     "figuritas19": ["mexicanos-y-calacas"],

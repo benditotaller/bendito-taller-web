@@ -96,8 +96,8 @@ const productos = {
         "tipo": "simple",
         "descripcion": "Set gatitos para pintar, Mdf 3 mm.",
         "medida_original": "15 y 26cm. de alto",
-        "unitario": 1800,
-        "mayor": 1500
+        "unitario": 2500,
+        "mayor": 1800
     },
     "setfiguritas11": {
         "codigo": "Grabado21",
@@ -106,8 +106,8 @@ const productos = {
         "tipo": "simple",
         "descripcion": "Set gatitos para pintar, Mdf  3 mm.",
         "medida_original": "15 y 26cm. de alto",
-        "unitario": 1800,
-        "mayor": 1500
+        "unitario": 2500,
+        "mayor": 1800
     },
     "abejareina": {
         "codigo": "Abeja reina",
