@@ -427,10 +427,49 @@ function renderCatalog() {
     });
 }
 
+// Estado del carrusel del visor grande
+let lightboxImagenes = [];
+let lightboxIndex = 0;
+
+function moverLightbox(direction) {
+    if (!lightboxImagenes.length) return;
+    lightboxIndex = (lightboxIndex + direction + lightboxImagenes.length) % lightboxImagenes.length;
+    actualizarLightbox();
+}
+
+function irALightbox(index) {
+    lightboxIndex = index;
+    actualizarLightbox();
+}
+
+function actualizarLightbox() {
+    const track = document.getElementById("lightboxTrack");
+    if (track) track.style.transform = `translateX(-${lightboxIndex * 100}%)`;
+
+    const dots = document.querySelectorAll("#lightboxDots .lightbox-dot");
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === lightboxIndex));
+
+    const counter = document.getElementById("lightboxCounter");
+    if (counter) counter.textContent = `${lightboxIndex + 1} / ${lightboxImagenes.length}`;
+}
+
+function lightboxKeyHandler(e) {
+    if (!document.getElementById("popupProducto")) return;
+    if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        moverLightbox(-1);
+    } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        moverLightbox(1);
+    }
+}
+
 // Abrir imagen en grande (Lightbox)
 function abrirImagenGrande(id) {
     if (!productos[id]) return;
     const p = productos[id];
+    const imagenes = [p.imagen, ...(Array.isArray(p.imagenes) ? p.imagenes : [])]
+        .filter(src => typeof src === "string" && src.trim() !== "");
     cerrarPopupSilencioso();
 
     const popup = document.createElement("div");
@@ -440,19 +479,53 @@ function abrirImagenGrande(id) {
         if (e.target === popup) cerrarPopup();
     };
 
-    popup.innerHTML = `
-    <div class="modal-container" style="max-width: 600px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 24px; box-sizing: border-box;">
-        <h2 style="margin: 0; font-family: var(--font-serif); font-size: 24px; color: #4b372d;">${p.nombre}</h2>
-        
-        <div style="width: 100%; border-radius: var(--radius-md); overflow: hidden; background: #ffffff; border: 1px solid rgba(75, 55, 45, 0.1); box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box;">
-            <img src="${p.imagen}" alt="${p.nombre}" style="max-width: 100%; max-height: 60vh; object-fit: contain; display: block; border-radius: var(--radius-sm);" onerror="this.src='https://via.placeholder.com/400?text=Sin+Foto'">
-        </div>
-        
+    const botonVolver = `
         <button onclick="cerrarPopup()" class="modal-btn-secondary" style="width: 100%; margin-top: 10px; font-weight: bold; background: linear-gradient(135deg, #95AB9E 0%, #7d9084 100%); color: white; border: none; border-radius: var(--radius-sm); padding: 12px; cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
             ⬅ Volver
-        </button>
-    </div>
-    `;
+        </button>`;
+
+    if (imagenes.length <= 1) {
+        popup.innerHTML = `
+        <div class="modal-container" style="max-width: 600px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 24px; box-sizing: border-box;">
+            <h2 style="margin: 0; font-family: var(--font-serif); font-size: 24px; color: #4b372d;">${p.nombre}</h2>
+            
+            <div style="width: 100%; border-radius: var(--radius-md); overflow: hidden; background: #ffffff; border: 1px solid rgba(75, 55, 45, 0.1); box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; padding: 10px; box-sizing: border-box;">
+                <img src="${imagenes[0] || p.imagen || ''}" alt="${p.nombre}" style="max-width: 100%; max-height: 60vh; object-fit: contain; display: block; border-radius: var(--radius-sm);" onerror="this.src='https://via.placeholder.com/400?text=Sin+Foto'">
+            </div>
+            
+            ${botonVolver}
+        </div>
+        `;
+    } else {
+        popup.innerHTML = `
+        <div class="modal-container" style="max-width: 680px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 24px; box-sizing: border-box;">
+            <h2 style="margin: 0; font-family: var(--font-serif); font-size: 24px; color: #4b372d;">${p.nombre}</h2>
+
+            <div class="lightbox-carousel">
+                <div class="lightbox-track" id="lightboxTrack">
+                    ${imagenes.map((src) => `
+                        <div class="lightbox-slide">
+                            <img src="${src}" alt="${p.nombre}" onerror="this.src='https://via.placeholder.com/400?text=Sin+Foto'">
+                        </div>
+                    `).join("")}
+                </div>
+                <button class="lightbox-arrow prev" onclick="moverLightbox(-1)" title="Anterior" aria-label="Anterior">&#10094;</button>
+                <button class="lightbox-arrow next" onclick="moverLightbox(1)" title="Siguiente" aria-label="Siguiente">&#10095;</button>
+                <div class="lightbox-counter" id="lightboxCounter">1 / ${imagenes.length}</div>
+                <div class="lightbox-dots" id="lightboxDots">
+                    ${imagenes.map((_, i) => `
+                        <button class="lightbox-dot ${i === 0 ? "active" : ""}" onclick="irALightbox(${i})" aria-label="Foto ${i + 1}"></button>
+                    `).join("")}
+                </div>
+            </div>
+
+            ${botonVolver}
+        </div>
+        `;
+        lightboxImagenes = imagenes;
+        lightboxIndex = 0;
+        document.addEventListener("keydown", lightboxKeyHandler);
+    }
 
     document.body.appendChild(popup);
     document.body.classList.add("modal-open");
@@ -795,6 +868,9 @@ function cerrarPopup() {
     
     popup.classList.remove("active");
     popup.classList.add("closing");
+    document.removeEventListener("keydown", lightboxKeyHandler);
+    lightboxImagenes = [];
+    lightboxIndex = 0;
     
     setTimeout(() => {
         popup.remove();
@@ -820,6 +896,9 @@ function cerrarPopupSilencioso() {
         popup.remove();
         document.body.classList.remove("modal-open");
     }
+    document.removeEventListener("keydown", lightboxKeyHandler);
+    lightboxImagenes = [];
+    lightboxIndex = 0;
     
     const url = new URL(window.location);
     url.searchParams.delete('producto');
