@@ -2478,10 +2478,10 @@ const productos = {
         "nombre": "Estrellas",
         "imagen": "img/Estrellas.webp",
         "tipo": "simple",
-        "mayor": 100,
+        "descripcion": "Estrellas Mdf 3 mm 4,5 cm",
+        "medida_original": "4,5 cm",
         "unitario": 100,
-        "descripcion": "Juego de estrellas (6) Mdf 3 mm 4,5 cm",
-        "medida_original": "4,5 cm"
+        "mayor": 100
     },
     "farol1": {
         "codigo": "Farol1",

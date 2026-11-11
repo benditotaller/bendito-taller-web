@@ -594,7 +594,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "pinohome": ["navidad"],
     "renos": ["navidad"],
     "estrellas": ["navidad"],
-    "copos": ["navidad"],
+"copos": ["navidad"],
     "renograbado": ["navidad"],
     "estrellasgrabadas": ["navidad"],
     "estrellasgrabadas9cm": ["navidad"],
