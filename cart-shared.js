@@ -204,7 +204,11 @@ const gruposCombinables = [
     {
         id: "casita_muneca_torre",
         min: 4,
-        codigos: ["casitamunecas2", "torre"]
+        codigos: [
+            "torre",
+            "casitamunecas2"
+        
+        ]
     },
     {
         id: "composiciones_4_8_arabesco",
@@ -564,7 +568,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "coronaosito": ["navidad"],
     "tiendavintage1": ["navidad", "deco"],
     "casitamunecas2": ["navidad"],
-    "torre": ["navidad"],
+"torre": ["navidad"],
     "renomecedor": ["navidad"],
     "cuadronoel": ["navidad"],
     "arboldenavidad": ["navidad"],

@@ -1162,12 +1162,16 @@ const productos = {
     "casitamunecas2": {
         "codigo": "Casita Muñecas2",
         "nombre": "Casita Muñecas2",
-        "imagen": "img/Casita Muñecas2.webp",
+        "imagen": "img/casitamunecas2.webp",
         "tipo": "simple",
-        "mayor": 7000,
-        "unitario": 7500,
         "descripcion": "Casita simple Mdf 3 mm 38,5 cm",
-        "medida_original": "38,5 cm"
+        "medida_original": "38,5 cm",
+        "imagenes": [
+            "img/casitamunecas2_2.webp",
+            "img/casitamunecas2_3.webp"
+        ],
+        "unitario": 8000,
+        "mayor": 7000
     },
     "catrina1": {
         "codigo": "Catrina1",
