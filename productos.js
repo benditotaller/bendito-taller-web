@@ -64,10 +64,10 @@ const productos = {
         "nombre": "COMP9",
         "imagen": "img/comp9.webp",
         "tipo": "simple",
-        "mayor": 3800,
+        "descripcion": "Composición multicapa corazón para pintar, Mdf  3 mm.",
+        "medida_original": "28,5cm. de alto",
         "unitario": 4600,
-        "descripcion": "Composición multicapa corazón, Mdf  3 mm.",
-        "medida_original": "28,5cm. de alto"
+        "mayor": 3800
     },
     "comp12": {
         "codigo": "COMP12",
