@@ -855,6 +855,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "llavesnavidenas": ["navidad"],
     "pokemon": ["grabados"],
     "onepiece": ["grabados"],
+    "pirata": ["grabados"],
 };
 
 function clasificarProducto(id, p) {

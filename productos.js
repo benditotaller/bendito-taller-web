@@ -4738,5 +4738,16 @@ const productos = {
         "medida_original": "24x23 cm.",
         "unitario": 3000,
         "mayor": 2200
+    },
+    "pirata": {
+        "codigo": "Pirata",
+        "nombre": "Pirata",
+        "imagen": "img/pirata.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-21",
+        "descripcion": "Piarata pintable con accesorios",
+        "medida_original": "34 cm.",
+        "unitario": 2700,
+        "mayor": 2000
     }
 };
