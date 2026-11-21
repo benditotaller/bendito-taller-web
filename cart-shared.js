@@ -561,8 +561,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "gra18": ["grabados"],
 
     // 6. NAVIDAD
-    "setfigurasnav1": ["navidad"],
-    "setnavideno2": ["navidad"],
+    "setfigurasnav1": ["corazones"],
+"setnavideno2": ["navidad"],
     "setnavideno1": ["navidad"],
     "arbolnavideno": ["navidad"],
     "coronaosito": ["navidad"],
@@ -708,7 +708,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "p1": ["deco"],
     "arbolfamiliar": ["deco"],
     "memorialmascotas": ["deco"],
-    "mascara1": ["deco"],
+"mascara1": ["deco"],
     "l001": ["deco"],
     "l002": ["deco"],
 
@@ -852,6 +852,9 @@ const PRODUCT_CATEGORY_MAPPING = {
     "figuritas20": ["grabados"],
     "figuritas21": ["navidad"],
     "hada1": ["grabados"],
+    "llavesnavidenas": ["navidad"],
+    "pokemon": ["grabados"],
+    "onepiece": ["grabados"],
 };
 
 function clasificarProducto(id, p) {

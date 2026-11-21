@@ -3135,12 +3135,12 @@ const productos = {
     "memorialmascotas": {
         "codigo": "Memorial Mascotas",
         "nombre": "Memorial Mascotas",
-        "imagen": "img/Memorial Mascotas.webp",
+        "imagen": "img/memorialmascotas.webp",
         "tipo": "simple",
-        "mayor": 3600,
-        "unitario": 2800,
         "descripcion": "retrato personalizable con el nombre de tu mascota",
-        "medida_original": "28 cm"
+        "medida_original": "28 cm",
+        "unitario": 2800,
+        "mayor": 3600
     },
     "mujerlunar": {
         "codigo": "mujerlunar",
@@ -3609,10 +3609,10 @@ const productos = {
         "nombre": "Set figuras nav1",
         "imagen": "img/Set figuras nav1.webp",
         "tipo": "simple",
-        "mayor": 1200,
-        "unitario": 1500,
         "descripcion": "4 figuras grabadas navideñas",
-        "medida_original": "8 y 9 cm alto"
+        "medida_original": "8 y 9 cm alto",
+        "unitario": 1700,
+        "mayor": 1500
     },
     "setfiguritas1": {
         "codigo": "Set Figuritas1",
@@ -4705,5 +4705,38 @@ const productos = {
         "medida_original": "7 a 8 cm aprox",
         "unitario": 1700,
         "mayor": 1700
+    },
+    "llavesnavidenas": {
+        "codigo": "Llaves Navideñas",
+        "nombre": "Llaves Navideñas",
+        "imagen": "img/llavesnavidenas.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-21",
+        "descripcion": "Set llaves navideñas",
+        "medida_original": "10 a 11 cm.",
+        "unitario": 1700,
+        "mayor": 1200
+    },
+    "pokemon": {
+        "codigo": "Pokemon",
+        "nombre": "Pokemon",
+        "imagen": "img/pokemon.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-21",
+        "descripcion": "Pokemon en capa",
+        "medida_original": "25x21 Cm",
+        "unitario": 2900,
+        "mayor": 2000
+    },
+    "onepiece": {
+        "codigo": "One Piece",
+        "nombre": "One Piece",
+        "imagen": "img/onepiece.webp",
+        "tipo": "simple",
+        "fecha_creacion": "2026-11-21",
+        "descripcion": "Diseño en capas",
+        "medida_original": "24x23 cm.",
+        "unitario": 3000,
+        "mayor": 2200
     }
 };
