@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin">
+    <title>Quiénes Somos | Bendito Taller - Corte Láser Creativo y Más</title>
+    <meta name="description" content="Diseño y corte láser creativo en Chile. Piezas de MDF para manualidades, pintura decorativa y proyectos creativos. Venta al detalle y al por mayor.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.benditotaller.cl/quienes-somos.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="Bendito Taller">
+    <meta property="og:title" content="Quiénes Somos | Bendito Taller - Corte Láser Creativo y Más">
+    <meta property="og:description" content="Diseño y corte láser creativo en Chile. Piezas de MDF para manualidades, pintura decorativa y proyectos creativos. Venta al detalle y al por mayor.">
+    <meta property="og:url" content="https://www.benditotaller.cl/quienes-somos.html">
+    <meta property="og:image" content="https://www.benditotaller.cl/img/imagen_lorena_corazon.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,700;1,400&family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=2.1">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Quiénes Somos | Bendito Taller",
+        "url": "https://www.benditotaller.cl/quienes-somos.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Bendito Taller",
+            "url": "https://www.benditotaller.cl/",
+            "logo": "https://www.benditotaller.cl/img/logo_transparente.webp",
+            "foundingDate": "2023-11-07",
+            "description": "Emprendimiento creativo especializado en diseño, corte láser y fabricación de piezas de MDF para manualidades, pintura decorativa y proyectos creativos.",
+            "areaServed": "CL",
+            "sameAs": ["https://www.instagram.com/bendito_taller_/"]
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand-btn">
+                    Bendito Taller
+                </a>
+
+                <!-- Dropdown Categorías -->
+                <div class="categories-dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown(event)">
+                        Categorías <span class="arrow-down">▼</span>
+                    </button>
+                    <div class="dropdown-content" id="categoriesDropdownContent">
+                        <a class="dropdown-item" href="catalogo.html">Todas las categorías</a>
+                        <a class="dropdown-item" href="catalogo.html?category=corazones">Corazones</a>
+                        <a class="dropdown-item" href="catalogo.html?category=corazones-alados">Corazones Alados</a>
+                        <a class="dropdown-item" href="catalogo.html?category=nichos-y-altares">Nichos y Altares</a>
+                        <a class="dropdown-item" href="catalogo.html?category=mexicanos-y-calacas">Mexicanos y Calacas</a>
+                        <a class="dropdown-item" href="catalogo.html?category=grabados">Grabados</a>
+                        <a class="dropdown-item" href="catalogo.html?category=navidad">Navidad</a>
+                        <a class="dropdown-item" href="catalogo.html?category=deco">Deco</a>
+                        <a class="dropdown-item" href="catalogo.html?category=stencil">Stencil</a>
+                        <a class="dropdown-item" href="catalogo.html?category=mistico-y-mas">Místico y Más</a>
+                        <a class="dropdown-item" href="catalogo.html?category=otros-insumos">Otros Insumos</a>
+                        <a class="dropdown-item" href="catalogo.html?category=libros-3d">Libros 3D</a>
+                        <a class="dropdown-item" href="catalogo.html?category=pascua">Pascua</a>
+                    </div>
+                </div>
+
+                <div class="nav-info-item">
+                    <a href="quienes-somos.html" class="nav-info-btn active" aria-current="page">Quiénes Somos</a>
+                </div>
+
+                <!-- Lupa / Buscador -->
+                <div class="search-bar-container">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar producto..."
+                        oninput="handleNavbarSearch()"
+                        onkeydown="if(event.key === 'Enter') triggerSearch()"
+                    >
+                    <button class="search-btn" onclick="toggleSearchInput(event)" title="Buscar producto">🔍</button>
+                </div>
+            </div>
+
+            <div class="nav-right-group" style="display: flex; align-items: center; gap: 12px;">
+                <button class="nav-cart-btn" onclick="location.href='carrito.html'" style="pointer-events: auto;">
+                    <span class="cart-btn-icon" style="pointer-events: none;">🛒</span>
+                    <div class="cart-btn-label" style="pointer-events: none;">
+                        <span>Carrito</span>
+                        <span id="cartCount">(0)</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="hero-section about-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Quiénes Somos</h1>
+            <p class="hero-subtitle">Corte láser creativo y más.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: QUIÉNES SOMOS -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-prose">
+                    <p class="about-lead">Somos un emprendimiento creativo especializado en diseño, corte láser y fabricación de piezas de MDF para manualidades, pintura decorativa y proyectos creativos.</p>
+
+                    <p>Desde nuestros inicios, el 7 de noviembre de 2023, hemos construido una propuesta propia dentro del mundo de las manualidades, combinando diseño, creatividad y una constante búsqueda de nuevas ideas.</p>
+
+                    <p>Creemos en crear desde nuestra propia mirada. Por eso, nuestros diseños y colecciones nacen de ideas, gustos e inspiraciones que transformamos en propuestas originales, buscando siempre aportar algo diferente al mundo de las manualidades.</p>
+
+                    <p>Desarrollamos colecciones temáticas que se renuevan a lo largo del año, con propuestas para distintas ocasiones y estilos, desde proyectos infantiles y decoración hasta colecciones especiales de temporada.</p>
+
+                    <p>Nuestro catálogo incluye figuras y adornos de MDF cortados a láser, piezas decorativas, stencils, plantillas y una variedad de insumos para manualidades y pintura decorativa. Productos pensados para inspirar y acompañar el trabajo de artesanas, emprendedoras y amantes de las actividades creativas.</p>
+
+                    <p>Trabajamos con venta al por mayor y al detalle, ofreciendo variedad, diseños propios y alternativas para distintos proyectos, con envíos a todo Chile.</p>
+
+                    <p>Más que ofrecer materiales, queremos aportar ideas, despertar la creatividad y entregar nuevas posibilidades a quienes disfrutan transformar una pieza en algo único.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: DETRÁS DE BENDITO TALLER -->
+        <section class="about-founder-section">
+            <div class="about-container">
+                <h2 class="about-heading">Detrás de Bendito Taller</h2>
+
+                <div class="about-founder-grid">
+                    <figure class="about-founder-photo">
+                        <img src="img/imagen_lorena_corazon.webp"
+                             alt="Lorena, fundadora de Bendito Taller, sosteniendo una pieza decorativa con forma de corazón"
+                             width="1000" height="1014" loading="lazy" decoding="async">
+                    </figure>
+
+                    <div class="about-founder-copy">
+                        <p class="about-founder-lead">Una idea, muchas posibilidades.</p>
+
+                        <p>Detrás de Bendito Taller hay una persona apasionada por crear, diseñar y encontrar nuevas formas de transformar ideas en productos.</p>
+
+                        <p>Soy Lorena, fundadora de este proyecto que nació de las ganas de construir algo propio y de convertir la creatividad en una forma de trabajo.</p>
+
+                        <p>Lo que comenzó como una idea fue creciendo hasta convertirse en un taller dedicado al diseño y fabricación de piezas mediante corte láser, donde cada colección, cada producto y cada nuevo proyecto lleva parte de mi mirada creativa.</p>
+
+                        <p>Disfruto explorar nuevas posibilidades, experimentar con diseños y desarrollar propuestas que luego puedan convertirse en parte de los proyectos de otras personas.</p>
+
+                        <p>Hoy, Bendito Taller es mucho más que el proyecto con el que comencé: es una marca en constante evolución, construida con dedicación, creatividad, muchas ideas por desarrollar y, sobre todo, un profundo amor por el mundo de las manualidades y todo lo que nace de crear con nuestras propias manos.</p>
+
+                        <p>Gracias por ser parte de este camino y por permitirnos formar parte de tus propias creaciones.</p>
+
+                        <p class="about-founder-signature">Bendito Taller — Corte láser creativo y más.</p>
+                    </div>
+                </div>
+
+                <div class="about-cta">
+                    <a href="index.html#catalog-section" class="hero-btn about-cta-btn">Ver Catálogo de Productos ➜</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- INSTAGRAM FOOTER -->
+    <footer class="insta-footer">
+        <h3 style="margin: 0 0 10px 0;">¿Tienes dudas o quieres ver novedades diarias?</h3>
+        <p style="color: var(--text-muted); margin: 0 0 20px 0;">Síguenos en nuestro Instagram oficial y mantente informado.</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 25px;">
+            <div class="footer-profile-img" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid rgba(229, 218, 203, 0.8); box-shadow: 0 4px 12px rgba(75, 55, 45, 0.15); flex-shrink: 0;">
+                <img src="img/imagen_lorena.webp" alt="Lorena" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%;">
+            </div>
+            <a href="https://www.instagram.com/bendito_taller_/" target="_blank" class="insta-btn" style="margin: 0;">
+                📸 Ir a @bendito_taller_
+            </a>
+        </div>
+
+        <div class="footer-about">
+            <a href="quienes-somos.html" class="footer-about-link">Quiénes Somos</a>
+        </div>
+
+        <div style="margin-top: 25px;">
+            <div class="visitor-counter" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: rgba(75, 55, 45, 0.04); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(75, 55, 45, 0.12);">
+                <span style="font-size: 14px; color: var(--text-muted); font-weight: 500;">Visitas:</span>
+                <span id="visitCount" style="font-size: 15px; color: var(--text-main); font-weight: 700; font-family: monospace; letter-spacing: 0.5px;">...</span>
+            </div>
+        </div>
+        <div style="margin-top: 40px; font-size: 14px; color: var(--text-muted);">
+            © 2026 Bendito Taller - Corte Láser Creativo y Más. Creando con amor desde 2023. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const content = document.getElementById("categoriesDropdownContent");
+            if (content) {
+                content.classList.toggle("show");
+            }
+        }
+
+        function closeDropdown() {
+            const content = document.getElementById("categoriesDropdownContent");
+            if (content) {
+                content.classList.remove("show");
+            }
+        }
+
+        window.addEventListener("click", (e) => {
+            if (!e.target.closest(".categories-dropdown")) {
+                closeDropdown();
+            }
+        });
+
+        function triggerSearch() {
+            const searchInput = document.getElementById("searchInput");
+            if (!searchInput) return;
+            const query = searchInput.value.trim();
+            window.location.href = `catalogo.html?search=${encodeURIComponent(query)}`;
+        }
+
+        function handleNavbarSearch() {}
+
+        function toggleSearchInput(event) {
+            event.stopPropagation();
+            const container = document.querySelector(".search-bar-container");
+            if (!container) return;
+            const input = container.querySelector("input");
+            if (!input) return;
+
+            if (window.innerWidth <= 768) {
+                if (!container.classList.contains("active")) {
+                    container.classList.add("active");
+                    input.focus();
+                } else {
+                    if (input.value.trim() !== "") {
+                        triggerSearch();
+                    } else {
+                        container.classList.remove("active");
+                    }
+                }
+            } else {
+                triggerSearch();
+            }
+        }
+
+        window.addEventListener("click", (e) => {
+            const container = document.querySelector(".search-bar-container");
+            if (container && !e.target.closest(".search-bar-container")) {
+                const input = container.querySelector("input");
+                if (input && input.value.trim() === "") {
+                    container.classList.remove("active");
+                }
+            }
+        });
+
+        function updateCartBadge() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+            const cartCount = document.getElementById("cartCount");
+            if (cartCount) cartCount.textContent = `(${totalItems})`;
+        }
+
+        window.addEventListener("DOMContentLoaded", updateCartBadge);
+
+        // Contador de Visitas con Control de Sesión
+        async function loadVisitorCounter() {
+            try {
+                const visitedKey = "bendito_taller_visited";
+                let url = "https://api.counterapi.dev/v1/benditotaller/visitas";
+
+                if (!sessionStorage.getItem(visitedKey)) {
+                    url += "/up";
+                    sessionStorage.setItem(visitedKey, "true");
+                }
+
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    const countEl = document.getElementById("visitCount");
+                    if (countEl) {
+                        countEl.textContent = data.count.toLocaleString("es-CL");
+                    }
+                }
+            } catch (error) {
+                console.error("Error al cargar el contador de visitas:", error);
+            }
+        }
+
+        loadVisitorCounter();
+    </script>
+</body>
+</html>

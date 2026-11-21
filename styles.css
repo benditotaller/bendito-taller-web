@@ -3398,3 +3398,435 @@ body.modal-open {
     background: var(--primary-color);
     transform: scale(1.25);
 }
+
+/* ==========================
+   QUIÉNES SOMOS — ENLACE DE NAVEGACIÓN
+========================= */
+.nav-info-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav-info-btn {
+    text-decoration: none;
+    color: #4b372d;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.nav-info-btn:hover {
+    background: rgba(75, 55, 45, 0.05);
+    color: var(--primary-color);
+}
+
+.nav-info-btn.active {
+    background: rgba(230, 189, 179, 0.35);
+    color: #4b372d;
+}
+
+/* Compresión del navbar en tablets (entre móvil y escritorio) */
+@media (max-width: 950px) and (min-width: 769px) {
+    .nav-container {
+        padding: 12px 16px;
+    }
+    .nav-left {
+        gap: 8px;
+    }
+    .nav-brand-btn {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+    .dropdown-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .nav-info-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    .search-bar-container {
+        max-width: 160px;
+    }
+    .nav-cart-btn {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+    .nav-info-item {
+        order: 5;
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-info-btn {
+        height: 34px;
+        padding: 0 18px;
+        border-radius: 17px;
+        background: linear-gradient(135deg, #889c90 0%, #708277 100%);
+        color: #ffffff !important;
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: var(--shadow-sm);
+    }
+    .nav-info-btn:hover,
+    .nav-info-btn.active {
+        background: linear-gradient(135deg, #889c90 0%, #708277 100%);
+        color: #ffffff !important;
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }
+    #catalog-section {
+        scroll-margin-top: 230px;
+    }
+}
+
+/* ==========================
+   DETRÁS DE BENDITO TALLER — BLOQUE RESUMEN (HOME)
+========================= */
+.founder-summary {
+    background: rgba(229, 218, 203, 0.35);
+    padding: 60px 24px;
+}
+
+.founder-summary-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(130px, 170px) 1fr;
+    gap: 48px;
+    align-items: center;
+    background: #fffcf8;
+    border: 1px solid rgba(75, 55, 45, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 40px;
+}
+
+.founder-summary-photo {
+    margin: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    background: #ffffff;
+    box-shadow: 0 14px 30px rgba(75, 55, 45, 0.18);
+}
+
+.founder-summary-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+}
+
+.founder-summary-title {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    line-height: 1.15;
+    color: #4b372d;
+    margin: 0 0 8px 0;
+}
+
+.founder-summary-subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 21px;
+    color: #7d8b63;
+    margin: 0 0 20px 0;
+}
+
+.founder-summary-text {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin: 0 0 14px 0;
+}
+
+.founder-summary-btn {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #4b372d 0%, #6b5243 100%);
+    color: #fffcf8;
+}
+
+.founder-summary-btn:hover {
+    background: linear-gradient(135deg, #3d2c24 0%, #5a4437 100%);
+}
+
+@media (max-width: 900px) {
+    .founder-summary-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px;
+    }
+    .founder-summary-photo {
+        max-width: 170px;
+        margin: 0 auto;
+    }
+    .founder-summary-title,
+    .founder-summary-subtitle {
+        text-align: center;
+    }
+    .founder-summary-content .founder-summary-btn {
+        display: block;
+        width: fit-content;
+        margin: 18px auto 0;
+    }
+}
+
+/* ==========================
+   PÁGINA QUIÉNES SOMOS
+========================= */
+.about-hero {
+    padding: 48px 24px;
+}
+
+.about-section {
+    padding: 60px 24px 20px;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-heading {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    font-weight: 700;
+    color: #4b372d;
+    text-align: center;
+    margin: 0 0 28px 0;
+    letter-spacing: 0.5px;
+}
+
+.about-heading::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    margin: 14px auto 0;
+    background: #E6BDB3;
+}
+
+.about-prose {
+    background: #fffcf8;
+    border: 1px solid rgba(75, 55, 45, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 40px 44px;
+}
+
+.about-prose p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin: 0 0 18px 0;
+}
+
+.about-prose p:last-child {
+    margin-bottom: 0;
+}
+
+.about-prose .about-lead {
+    font-family: var(--font-serif);
+    font-size: 23px;
+    line-height: 1.55;
+    font-weight: 600;
+    color: #4b372d;
+}
+
+.about-founder-section {
+    padding: 50px 24px 70px;
+    margin-top: 40px;
+    background: rgba(230, 189, 179, 0.16);
+}
+
+.about-founder-grid {
+    display: grid;
+    grid-template-columns: minmax(120px, 170px) 1fr;
+    gap: 44px;
+    align-items: center;
+}
+
+.about-founder-photo {
+    margin: 0;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    background: #ffffff;
+    box-shadow: 0 16px 34px rgba(75, 55, 45, 0.2);
+}
+
+.about-founder-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+}
+
+.about-founder-copy p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin: 0 0 16px 0;
+}
+
+.about-founder-copy .about-founder-lead {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.4;
+    color: #4b372d;
+    margin-bottom: 20px;
+}
+
+.about-founder-copy .about-founder-signature {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 18px;
+    color: #7d8b63;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(75, 55, 45, 0.12);
+}
+
+.about-cta {
+    text-align: center;
+    margin-top: 48px;
+}
+
+.about-cta-btn {
+    background: linear-gradient(135deg, #4b372d 0%, #6b5243 100%);
+    color: #fffcf8;
+}
+
+.about-cta-btn:hover {
+    background: linear-gradient(135deg, #3d2c24 0%, #5a4437 100%);
+}
+
+@media (max-width: 900px) {
+    .about-founder-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+    .about-founder-photo {
+        max-width: 160px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 36px 20px;
+    }
+    .about-section {
+        padding: 44px 16px 10px;
+    }
+    .about-heading {
+        font-size: 28px;
+    }
+    .about-prose {
+        padding: 26px 22px;
+        border-radius: var(--radius-md);
+    }
+    .about-prose p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+    .about-prose .about-lead {
+        font-size: 20px;
+    }
+    .about-founder-section {
+        padding: 40px 16px 56px;
+        margin-top: 30px;
+    }
+    .about-founder-copy .about-founder-lead {
+        font-size: 21px;
+    }
+    .about-founder-copy p {
+        font-size: 15.5px;
+    }
+    .about-cta {
+        margin-top: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .founder-summary {
+        padding: 40px 14px;
+    }
+    .founder-summary-inner {
+        padding: 20px;
+        border-radius: var(--radius-md);
+    }
+    .founder-summary-title {
+        font-size: 26px;
+    }
+    .founder-summary-subtitle {
+        font-size: 18px;
+    }
+    .founder-summary-btn {
+        width: 100%;
+        text-align: center;
+    }
+    .about-hero .hero-title {
+        font-size: 30px;
+    }
+    .about-prose {
+        padding: 22px 18px;
+    }
+    .about-founder-signature {
+        font-size: 16px;
+    }
+    .about-cta-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================
+   ENLACE "QUIÉNES SOMOS" EN EL FOOTER
+========================= */
+.footer-about {
+    margin-top: 8px;
+}
+
+.footer-about-link {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid rgba(75, 55, 45, 0.25);
+    border-radius: 20px;
+    color: #4b372d;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.footer-about-link:hover {
+    background: #4b372d;
+    border-color: #4b372d;
+    color: #fffcf8;
+}
+
