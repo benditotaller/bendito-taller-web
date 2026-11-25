@@ -51,6 +51,8 @@ const codigosIntercambiablesNorm = new Set([
     
     
     
+    
+    
     "bc4", "co120cm", "co130cm", "co1020cm", "co1030cm", "co11",
     "co1220cm", "co1230cm", "co13", "co14", "co1520cm", "co1530cm",
     "co16", "co1720cm", "co1730cm", "co18", "co19", "co220cm",
@@ -68,7 +70,9 @@ const codigosIntercambiablesNorm = new Set([
     "ca430cm", "ca520cm", "ca530cm", "ca620cm", "ca630cm", "ca7",
     "ca8", "ca9trio", "setaplicacionesvintage", "ca22", "co43", "co4520cm",
     "co4530cm", "virgenlourdes", "cuadroflores1", "cuadroflor2", "virgen6", "co44",
-    "hada3", "hada1", "hada2"
+    "hada1", "hada2", "hada3"
+
+
 
 
 
@@ -200,7 +204,11 @@ const gruposCombinables = [
     {
         id: "casita_muneca_torre",
         min: 4,
-        codigos: ["casitamunecas2", "torre"]
+        codigos: [
+            "torre",
+            "casitamunecas2"
+        
+        ]
     },
     {
         id: "composiciones_4_8_arabesco",
@@ -519,14 +527,14 @@ const PRODUCT_CATEGORY_MAPPING = {
     "figuritas16": ["grabados"],
     "figuritas15": ["grabados"],
     "figuritas14": ["grabados"],
-    "figuritas13": ["grabados"],
+"figuritas13": ["grabados"],
     "figuritas12": ["grabados"],
     "figuritas11": ["grabados"],
     "figuritas10": ["grabados"],
     "setfiguritas1": ["grabados"],
     "setfiguritas2": ["grabados"],
     "setfiguritas3": ["grabados"],
-    "setfiguritas4": ["grabados"],
+"setfiguritas4": ["grabados"],
     "setfiguritas5": ["grabados"],
     "setfiguritas6": ["grabados"],
     "setfiguritas7": ["grabados"],
@@ -553,14 +561,14 @@ const PRODUCT_CATEGORY_MAPPING = {
     "gra18": ["grabados"],
 
     // 6. NAVIDAD
-    "setfigurasnav1": ["navidad"],
-    "setnavideno2": ["navidad"],
+    "setfigurasnav1": ["corazones"],
+"setnavideno2": ["navidad"],
     "setnavideno1": ["navidad"],
     "arbolnavideno": ["navidad"],
     "coronaosito": ["navidad"],
     "tiendavintage1": ["navidad", "deco"],
     "casitamunecas2": ["navidad"],
-    "torre": ["navidad"],
+"torre": ["navidad"],
     "renomecedor": ["navidad"],
     "cuadronoel": ["navidad"],
     "arboldenavidad": ["navidad"],
@@ -586,7 +594,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "pinohome": ["navidad"],
     "renos": ["navidad"],
     "estrellas": ["navidad"],
-    "copos": ["navidad"],
+"copos": ["navidad"],
     "renograbado": ["navidad"],
     "estrellasgrabadas": ["navidad"],
     "estrellasgrabadas9cm": ["navidad"],
@@ -700,7 +708,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "p1": ["deco"],
     "arbolfamiliar": ["deco"],
     "memorialmascotas": ["deco"],
-    "mascara1": ["deco"],
+"mascara1": ["deco"],
     "l001": ["deco"],
     "l002": ["deco"],
 
@@ -795,8 +803,8 @@ const PRODUCT_CATEGORY_MAPPING = {
     "altar12": ["nichos-y-altares"],
     "ca20": ["corazones-alados"],
     "ca21": ["corazones-alados"],
-    "comp9": ["deco"],
-    "comp12": ["deco"],
+    "comp9": ["corazones"],
+"comp12": ["deco"],
     "comp10": ["mexicanos-y-calacas"],
     "setfiguritas10": ["grabados"],
 "setfiguritas11": ["grabados"],
@@ -824,7 +832,7 @@ const PRODUCT_CATEGORY_MAPPING = {
     "co45": ["corazones"],
     "setfiguritas18": ["navidad"],
     "setfiguritas11": ["grabados"],
-    "deconavidena": ["navidad"],
+"deconavidena": ["navidad"],
     "estrellanavidena": ["navidad"],
     "virgenlourdes": ["deco"],
     "figuritas19": ["mexicanos-y-calacas"],
@@ -844,6 +852,10 @@ const PRODUCT_CATEGORY_MAPPING = {
     "figuritas20": ["grabados"],
     "figuritas21": ["navidad"],
     "hada1": ["grabados"],
+    "llavesnavidenas": ["navidad"],
+    "pokemon": ["grabados"],
+    "onepiece": ["grabados"],
+    "pirata": ["grabados"],
 };
 
 function clasificarProducto(id, p) {
